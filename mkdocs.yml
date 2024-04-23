@@ -1,0 +1,37 @@
+site_name: BIG documantation
+site_author: a-kuznetsov
+site_url: https://docs.imbig.ai
+docs_dir: .docs
+edit_uri: ''
+repo_url: https://github.com/a-kuznetsov/big-docs
+repo_name: big-docs
+theme:
+  name: material
+plugins:
+    - search
+    - mermaid2
+markdown_extensions:
+  - tables
+  - footnotes
+  - pymdownx.tabbed:
+      alternate_style: true
+      combine_header_slug: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+nav:
+  - 'index.md'
+  - 'client-requests.md'
+  - 'client-events.md'
+  - 'server-events.md'
+  - types:
+    - 'attachments.md'
+  - 'examples.md'
+  - 'dialog-ids.md'
+  -  http-api: https://dev.big.a-kuznetsov.cc/docs
+
+
