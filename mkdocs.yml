@@ -1,9 +1,7 @@
 site_name: BIG documantation
 site_author: a-kuznetsov
 site_url: https://docs.imbig.ai
-docs_dir: .docs
-edit_uri: ''
-repo_url: https://github.com/a-kuznetsov/big-docs
+repo_url: https://github.com/a-kuz/big-docs
 repo_name: big-docs
 theme:
   name: material
