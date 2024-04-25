@@ -1,6 +1,6 @@
-# requests
+1# Requests with responses
 
-The following tables represent the structure for various payloads used in the WebSocket protocol.
+The following tables represent the structure for various payloads, client-server requests and responses.
 
 ## payload types
 
@@ -15,13 +15,19 @@ The following tables represent the structure for various payloads used in the We
 
 ### new
 
-New Message Request Payload
+**request payload schema:**
 
-| field       | Type   | Example                                   | Possible Values             |
-| ----------- | ------ | ----------------------------------------- | --------------------------- |
-| chatId      | string | "User2"                                   | Chat IDs                    |
-| message     | string | "Hello, World!"                           | Any string                  |
-| attachments | array  | See ["Attachments"](../types/attachments) | Array of Attachment objects |
+| Field       | Type   | Example                                  | Possible Values             |
+| ----------- | ------ | ---------------------------------------- | --------------------------- |
+| chatId      | string | "User2"                                  | Chat IDs                    |
+| message     | string | "Hello, World!"                          | Any string                  |
+| attachments | array  | See ["Attachments"](types/attachment.md) | Array of Attachment objects |
+
+**response payload schema:**
+
+| Field     | Type    | Example | Possible Values |
+| --------- | ------- | ------- | --------------- |
+| messageId | integer | 123     | Any string      |
 
 ### edit
 
@@ -56,6 +62,32 @@ set mark "read" to message
 | chatId    | string  | "User2" | Chat IDs        |
 | messageId | integer | 123     | Message IDs     |
 
+/// details | read / dlvrd optimizations
+
+“read” and “delivered” marks are placed on all messages whose id <= transmitted, if they are not already marked as “read” and “delivered”. For example, you have 5 new messages. you can pass id = 5 and all 5 will be marked as read. If you pass id = 4, the fifth will remain unread
+///
+
+---
+
+## subscribe
+
+calling this method makes the user {++online++}
+
+after calling this method, the server will sequentially send events after the specified one.
+If there are more than 1000 events, {--the method will return an error???--}
+
+**request payload schema:**
+
+| Field       | Type   | Example |
+| ----------- | ------ | ------- |
+| lastEventId | number | 10      |
+
+**response payload schema:**
+
+| Field       | Type   | Example |
+| ----------- | ------ | ------- |
+| lastEventId | number | 1000    |
+
 ---
 
 ### getMessage
@@ -69,22 +101,11 @@ set mark "read" to message
 
 **response payload schema:**
 
-| Field        | Type      | Example                                   | Possible Values             |
-| ------------ | --------- | ----------------------------------------- | --------------------------- |
-| messageId    | integer   | 123                                       | Message IDs                 |
-| message      | string    | "Hello"                                   | Any string                  |
-| atttachments | array     | See ["Attachments"](../types/attachments) | Array of Attachment objects |
-| sender       | string    | "User1"                                   | User IDs                    |
-| read?        | timestamp | 123456789                                 | Timestamp                   |
-| delivered?   | timestamp | 123456789                                 | Timestamp                   |
-| createdAt    | timestamp | 123456789                                 | Timestamp                   |
-| updatedAt    | timestamp | 123456789                                 | Timestamp                   |
+[Message](types/message.md)
 
 ### getMessages
 
 **request payload schema:**
-
-Message:
 
 | Field  | Type    | Example | Possible Values |
 | ------ | ------- | ------- | --------------- |
@@ -113,7 +134,7 @@ Message:
 
 **response payload schema:**
 
-Message[]
+[Message](types/message)[]
 
 ## getChat
 
@@ -125,14 +146,41 @@ Message[]
 
 **response payload schema:**
 
-| Field        | Type   | Example     | Possible Values              |
-| ------------ | ------ | ----------- | ---------------------------- |
-| chatId       | string | "User2"     | Chat IDs                     |
-| type         | string | "dialog"    | "dialog", "group", "channel" |
-| firstName?   | string | "Alexander" |                              |
-| lastName?    | string | "Kuzopi"    |                              |
-| username?    | string | "User2"     |                              |
-| phoneNumber? | string | "User2"     |                              |
-| groupName?   | string | "User2"     |                              |
-| lastId?      | int    | 1000        |                              |
-| unreadCount? | int    | 1000        |                              |
+[Chat](types/chat.md)
+
+## getChats
+
+**request payload schema:**
+
+| Field | Type | Example |
+| ----- | ---- | ------- |
+
+**response payload schema:**
+
+[Chat](types/chat.md)[]
+
+## getEvent
+
+**request payload schema:**
+
+| Field   | Type   | Example |
+| ------- | ------ | ------- |
+| eventId | number | 1023    |
+
+**response payload schema:**
+
+[ServerEvent](../server-events)
+
+## getEvents
+
+returns all events from some id. If there are more than 100 events, the method will return an error
+
+**request payload schema:**
+
+| Field       | Type   | Example |
+| ----------- | ------ | ------- |
+| fromEventId | number | 10      |
+
+**response payload schema:**
+
+[ServerEvent](../server-events)[]

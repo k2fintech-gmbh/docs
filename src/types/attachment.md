@@ -1,23 +1,23 @@
 # Attachment
 
-| Field    | Type   | Example                                  | Possible Values          |
-| -------- | ------ | ---------------------------------------- | ------------------------ |
-| type     | string | "image"                                  | "file", "image", "video" |
-| id       | string | "file123"                                | Attachment IDs           |
-| filename | string | "greeting.png"                           | File names               |
-| url      | string | "<http://example.com/greeting.png>"      | URLs                     |
-| payload  | object | See "Specific Attachment Payloads" below | Depends on type          |
+| Field    | Type   | Example                               | Possible Values          |
+| -------- | ------ | ------------------------------------- | ------------------------ |
+| type     | string | "image"                               | "file", "image", "video" |
+| id       | string | "file123"                             | Attachment IDs           |
+| filename | string | "greeting.png"                        | File names               |
+| url      | string | "<http://example.com/greeting.png>"   | URLs                     |
+| meta     | object | See "Specific Attachment metas" below | Depends on type          |
 
-## Specific Attachment Payloads
+## Specific Attachment metas
 
-### File Payload
+### File meta
 
 | Field     | Type    | Example | Possible Values                    |
 | --------- | ------- | ------- | ---------------------------------- |
 | extension | string  | "pdf"   | "pdf", "txt", "docx", "xlsx", etc. |
 | size      | integer | 2048000 | File size in bytes                 |
 
-### Image Payload
+### Image meta
 
 | Field    | Type    | Example     | Possible Values                        |
 | -------- | ------- | ----------- | -------------------------------------- |
@@ -26,7 +26,7 @@
 | height   | integer | 600         | Image height in pixels                 |
 | size     | integer | 350000      | File size in bytes                     |
 
-### Video Payload
+### Video meta
 
 | Field    | Type    | Example     | Possible Values          |
 | -------- | ------- | ----------- | ------------------------ |

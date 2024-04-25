@@ -1,14 +1,14 @@
-# Server event payloads
+# Server events
 
 ## new
 
-| Field       | Type    | Example                 | Possible Values             |
-| ----------- | ------- | ----------------------- | --------------------------- |
-| chatId      | string  | "User1"                 | Chat IDs                    |
-| userId      | string  | "User1"                 | User IDs                    |
-| messageId   | integer | 124                     | Message IDs                 |
-| message     | string  | "Hello, World!"         | Any string                  |
-| attachments | array   | See "Attachments Table" | Array of Attachment objects |
+| Field         | Type    | Example                                     | Possible Values             |
+| ------------- | ------- | ------------------------------------------- | --------------------------- |
+| chatId        | string  | "User1"                                     | Chat IDs                    |
+| userId?       | string  | "User1"                                     | User IDs                    |
+| messageId     | integer | 124                                         | Message IDs                 |
+| message       | string  | "Hello, World!"                             | Any string                  |
+| atttachments? | array   | See ["Attachments"](../types/attachment.md) | Array of Attachment objects |
 
 ## edit
 
@@ -39,10 +39,10 @@
 
 ## typing
 
-| Field  | Type   | Example | Possible Values |
-| ------ | ------ | ------- | --------------- |
-| userId | string | "User2" | User IDs        |
-| chatId | string | "User2" | Chat IDs        |
+| Field   | Type   | Example | Possible Values |
+| ------- | ------ | ------- | --------------- |
+| userId  | string | "User2" | User IDs        |
+| chatId? | string | "User2" | Chat IDs        |
 
 ## dlvrd
 
@@ -50,7 +50,7 @@
 | --------- | ------- | ------------- | --------------- |
 | chatId    | string  | "User2"       | Chat IDs        |
 | messageId | integer | 123           | Message IDs     |
-| timestamp | integer | 1700500000100 |                 |
+| timestamp | integer | 1700500000 |                 |
 
 ## read
 
@@ -58,4 +58,4 @@
 | --------- | ------- | ------------- | --------------- |
 | chatId    | string  | "User2"       | Chat IDs        |
 | messageId | integer | 123           | Message IDs     |
-| timestamp | integer | 1700500000100 |                 |
+| timestamp | integer | 1700500000 |                 |

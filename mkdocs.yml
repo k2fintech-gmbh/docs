@@ -5,32 +5,81 @@ repo_url: https://github.com/a-kuz/big-docs
 docs_dir: src
 repo_name: big-docs
 theme:
-  name: material
+  name: material  
+  features:
+    - content.tooltips
 plugins:
     - search
-    - mermaid2
 markdown_extensions:
-  - tables
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
   - footnotes
+  - md_in_html
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - toc:
+      permalink: true
+
+  # Python Markdown Extensions
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
   - pymdownx.tabbed:
       alternate_style: true
-      combine_header_slug: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+  - tables
+  - footnotes
   - pymdownx.highlight:
       anchor_linenums: true
       line_spans: __span
       pygments_lang_class: true
-  - admonition
   - pymdownx.details
-  - pymdownx.superfences
+  - pymdownx.blocks.details
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
 nav:
   - 'index.md'
-  - 'client-requests.md'
+  - 'Requests - messaging':
+    - 'new': 'client-requests#new'
+    - 'edit': 'client-requests#edit'
+    - 'delete': 'client-requests#delete'
+    - 'delivered': 'client-requests#dlvrd'
+    - 'read': 'client-requests#read'
+  - 'Requests - retrieve data':
+    - 'getChats': 'client-requests#getchats'
+    - 'getChat': 'client-requests/#getchat'
+    - 'getMessages': 'client-requests/#getmessages'
+    - 'subscribe': 'client-requests/#subscribe'
   - 'client-events.md'
   - 'server-events.md'
-  - types:
-    - 'attachments.md'
+  - 'Types':
+     - 'types/attachment.md'    
+     - 'types/message.md'    
+     - 'types/chat.md'    
+     - 'types/chat-list.md'    
   - 'examples.md'
   - 'dialog-ids.md'
-  -  http-api: https://dev.big.a-kuznetsov.cc/docs
+  -  Http-api: https://dev.big.a-kuznetsov.cc/docs
 
 
