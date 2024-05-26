@@ -2,21 +2,45 @@
 
 ## new
 
-| Field         | Type    | Example                                     | Possible Values             |
-| ------------- | ------- | ------------------------------------------- | --------------------------- |
-| chatId        | string  | "User1"                                     | Chat IDs                    |
-| userId?       | string  | "User1"                                     | User IDs                    |
-| messageId     | integer | 124                                         | Message IDs                 |
-| message       | string  | "Hello, World!"                             | Any string                  |
-| atttachments? | array   | See ["Attachments"](../types/attachment.md) | Array of Attachment objects |
+| Field            | Type    | Example                                  | Possible Values             |
+| ---------------- | ------- | ---------------------------------------- | --------------------------- |
+| chatId           | string  | "User1"                                  | Chat IDs                    |
+| userId?          | string  | "User1"                                  | User IDs                    |
+| messageId        | integer | 124                                      | Message IDs                 |
+| clientMessageId? | string  | "66d93f9b-a8ff-4f18-a092-c19bdeb31fa4"   | Any string                  |
+| message          | string  | "Hello, World!"                          | Any string                  |
+| atttachments?    | array   | See ["Attachments"](types/attachment.md) | Array of Attachment objects |
+
+## chats
+
+new chat / chat deletion
+
+[ChatList](types/chat-list.md) (1)
+{ .annotate }
+
+  | 1.                 | Field         |
+  | ------------------ | ------------- |
+  | type               | ChatType      |
+  | id                 | string        |
+  | photoUrl?          | string        |
+  | name               | string        |
+  | lastMessageText    | string        |
+  | lastMessageTime    | Date          |
+  | lastMessageAuthor? | string        |
+  | lastMessageStatus  | MessageStatus |
+  | missed?            | number        |
+  | verified?          | boolean       |
+  | isMine             | boolean       |
+  | lastMessageId      | integer       |
 
 ## edit
 
-| Field     | Type    | Example                | Possible Values |
-| --------- | ------- | ---------------------- | --------------- |
-| chatId    | string  | "User1"                | Chat IDs        |
-| messageId | integer | 124                    | Message IDs     |
-| message   | string  | "Updated message text" | Any string      |
+| Field         | Type    | Example                                  | Possible Values             |
+| ------------- | ------- | ---------------------------------------- | --------------------------- |
+| chatId        | string  | "User1"                                  | Chat IDs                    |
+| messageId     | integer | 124                                      | Message IDs                 |
+| message       | string  | "Updated message text"                   | Any string                  |
+| atttachments? | array   | See ["Attachments"](types/attachment.md) | Array of Attachment objects |
 
 ## delete
 
@@ -46,16 +70,29 @@
 
 ## dlvrd
 
-| Field     | Type    | Example       | Possible Values |
-| --------- | ------- | ------------- | --------------- |
-| chatId    | string  | "User2"       | Chat IDs        |
-| messageId | integer | 123           | Message IDs     |
-| timestamp | integer | 1700500000 |                 |
+| Field     | Type    | Example       | Possible Values   |
+| --------- | ------- | ------------- | ----------------- |
+| chatId    | string  | "User2"       | Chat IDs          |
+| userId?   | string  | "User2"       | user (for groups) |
+| messageId | integer | 123           | Message IDs       |
+| timestamp | integer | 1700500000000 |                   |
 
 ## read
 
-| Field     | Type    | Example       | Possible Values |
-| --------- | ------- | ------------- | --------------- |
-| chatId    | string  | "User2"       | Chat IDs        |
-| messageId | integer | 123           | Message IDs     |
-| timestamp | integer | 1700500000 |                 |
+| Field     | Type    | Example       | Possible Values   |
+| --------- | ------- | ------------- | ----------------- |
+| chatId    | string  | "User2"       | Chat IDs          |
+| userId?   | string  | "User2"       | user (for groups) |
+| messageId | integer | 123           | Message IDs       |
+| timestamp | integer | 1700500000000 |                   |
+
+### dlvrd/read marks rules
+
+!!! info inline end "dlvrd and read mark side effect"
+    affected chatList and messages response
+
+- ⁠If you mark message #5 as read, but it is not marked as delivered, both delivery and reading are marked
+
+- ⁠⁠if you mark message #10 as read or delivered, and before that only message #5 was marked, then messages #6,7,8,9,10 are marked with the same timestamp
+
+-

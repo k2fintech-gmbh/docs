@@ -3,83 +3,111 @@ site_author: a-kuznetsov
 site_url: https://docs.imbig.ai
 repo_url: https://github.com/a-kuz/big-docs
 docs_dir: src
-repo_name: big-docs
+repo_name: GitHub
 theme:
-  name: material  
+  name: material
   features:
     - content.tooltips
+
+  palette:
+    # Palette toggle for light mode
+    - scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+  icon:
+    admonition:
+      note: octicons/tag-16
+      abstract: octicons/checklist-16
+      info: octicons/info-16
+      tip: octicons/squirrel-16
+      success: octicons/check-16
+      question: octicons/question-16
+      warning: octicons/alert-16
+      failure: octicons/x-circle-16
+      danger: octicons/zap-16
+      bug: octicons/bug-16
+      example: octicons/beaker-16
+      quote: octicons/quote-16
+nav:
+  - "index.md"
+  - "Requests - messaging":
+      - "new": "client-requests#new"
+      - "edit": "client-requests#edit"
+      - "delete": "client-requests#delete"
+      - "delivered": "client-requests#dlvrd"
+      - "read": "client-requests#read"
+
+  - "Requests - retrieve data":
+      - "chat": "client-requests#chat"
+      - "chats": "client-requests#chats"
+      - "messages": "client-requests/#messages"
+
+  - "client-events.md"
+  - "server-events.md"
+  - "Types":
+      - "types/attachment.md"
+      - "types/message.md"
+      - "types/reply-to.md"
+      - "types/chat.md"
+      - "types/chat-list.md"
+  - "examples.md"
+  - "dialog-ids.md"
+  - Http-api: "http-api.md"
+  - Upload-file: upload.md
 plugins:
-    - search
+  - render_swagger:
+      allow_arbitrary_locations: true
+  - search
 markdown_extensions:
+  - attr_list
+  - md_in_html
   - abbr
   - admonition
-  - attr_list
   - def_list
   - footnotes
-  - md_in_html
   - pymdownx.critic
   - pymdownx.caret
-  - pymdownx.keys
   - pymdownx.mark
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.smartsymbols
   - pymdownx.tilde
   - toc:
       permalink: true
-
-  # Python Markdown Extensions
   - pymdownx.arithmatex:
       generic: true
   - pymdownx.betterem:
       smart_enable: all
-  - pymdownx.caret
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
-  - pymdownx.highlight
-  - pymdownx.inlinehilite
-  - pymdownx.keys
-  - pymdownx.mark
-  - pymdownx.smartsymbols
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.tasklist:
       custom_checkbox: true
-  - pymdownx.tilde
   - tables
-  - footnotes
   - pymdownx.highlight:
       anchor_linenums: true
       line_spans: __span
       pygments_lang_class: true
   - pymdownx.details
   - pymdownx.blocks.details
-  - pymdownx.snippets
+  - pymdownx.snippets:
+      auto_append:
+        - "types/attachment.md"
+        - "types/message.md"
+        - "types/chat.md"
+        - "types/chat-list.md"
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
-nav:
-  - 'index.md'
-  - 'Requests - messaging':
-    - 'new': 'client-requests#new'
-    - 'edit': 'client-requests#edit'
-    - 'delete': 'client-requests#delete'
-    - 'delivered': 'client-requests#dlvrd'
-    - 'read': 'client-requests#read'
-  - 'Requests - retrieve data':
-    - 'getChats': 'client-requests#getchats'
-    - 'getChat': 'client-requests/#getchat'
-    - 'getMessages': 'client-requests/#getmessages'
-    - 'subscribe': 'client-requests/#subscribe'
-  - 'client-events.md'
-  - 'server-events.md'
-  - 'Types':
-     - 'types/attachment.md'    
-     - 'types/message.md'    
-     - 'types/chat.md'    
-     - 'types/chat-list.md'    
-  - 'examples.md'
-  - 'dialog-ids.md'
-  -  Http-api: https://dev.big.a-kuznetsov.cc/docs
-
-

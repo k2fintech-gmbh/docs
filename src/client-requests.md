@@ -1,66 +1,67 @@
-1# Requests with responses
+# Requests with responses
 
 The following tables represent the structure for various payloads, client-server requests and responses.
 
 ## payload types
 
-- [new](#new)
-- [edit](#edit)
-- [delete](#delete)
-- [dlvrd](#dlvrd)
-- [read](#read)
-- [getMessage](#getmessage)
-- [getMessages](#getmessages)
-- [getChat](#getchat)
-
 ### new
 
 **request payload schema:**
 
-| Field       | Type   | Example                                  | Possible Values             |
-| ----------- | ------ | ---------------------------------------- | --------------------------- |
-| chatId      | string | "User2"                                  | Chat IDs                    |
-| message     | string | "Hello, World!"                          | Any string                  |
-| attachments | array  | See ["Attachments"](types/attachment.md) | Array of Attachment objects |
+| Field           | Type    | Example                                  | Possible Values             |
+| --------------- | ------- | ---------------------------------------- | --------------------------- |
+| chatId          | string  | "User2"                                  | Chat IDs                    |
+| message         | string  | "Hello, World!"                          | Any string                  |
+| clientMessageId | string  | "66d93f9b-a8ff-4f18-a092-c19bdeb31fa4"   | Any string                  |
+| attachments?    | array   | See ["Attachments"](types/attachment.md) | Array of Attachment objects |
+| replyTo?        | integer | 1                                        |
 
 **response payload schema:**
 
-| Field     | Type    | Example | Possible Values |
-| --------- | ------- | ------- | --------------- |
-| messageId | integer | 123     | Any string      |
-
-### edit
-
-| Field     | Type    | Example                | Possible Values |
-| --------- | ------- | ---------------------- | --------------- |
-| chatId    | string  | "User2"                | Chat IDs        |
-| messageId | integer | 123                    | Message IDs     |
-| message   | string  | "Updated message text" | Any string      |
-
-### delete
-
-| Field     | Type    | Example | Possible Values |
-| --------- | ------- | ------- | --------------- |
-| chatId    | string  | "User2" | Chat IDs        |
-| messageId | integer | 123     | Message IDs     |
+| Field           | Type    | Example                                | Possible Values    |
+| --------------- | ------- | -------------------------------------- | ------------------ |
+| messageId       | integer | 123                                    | message seq number |
+| timestamp       | integer | 1700500000000                          |                    |
+| clientMessageId | string  | "66d93f9b-a8ff-4f18-a092-c19bdeb31fa4" | Any string         |
 
 ### dlvrd
 
-set mark "delivered" to message
+set mark "delivered" to message.
 
-| Field     | Type    | Example | Possible Values |
-| --------- | ------- | ------- | --------------- |
-| chatId    | string  | "User2" | Chat IDs        |
-| messageId | integer | 123     | Message IDs     |
+**request payload schema:**
+
+| Field      | Type    | Example | Possible Values |
+| ---------- | ------- | ------- | --------------- |
+| chatId     | string  | "User2" | Chat IDs        |
+| messageId? | integer | 123     | Message IDs     |
+
+message id is optional, if not specified, all messages will be marked as delivered
+
+**response payload schema:**
+
+| Field     | Type    | Example       | Possible Values |
+| --------- | ------- | ------------- | --------------- |
+| messageId | integer | 123           | Message IDs     |
+| timestamp | integer | 1700500000000 |                 |
 
 ### read
 
 set mark "read" to message
 
-| Field     | Type    | Example | Possible Values |
-| --------- | ------- | ------- | --------------- |
-| chatId    | string  | "User2" | Chat IDs        |
-| messageId | integer | 123     | Message IDs     |
+| Field      | Type    | Example | Possible Values |
+| ---------- | ------- | ------- | --------------- |
+| chatId     | string  | "User2" | Chat IDs        |
+| messageId? | integer | 123     | Message IDs     |
+
+message id is optional, if not specified, all messages will be marked as read
+
+**response payload schema:**
+
+| Field     | Type    | Example       | Possible Values |
+| --------- | ------- | ------------- | --------------- |
+| messageId | integer | 123           | Message IDs     |
+| timestamp | integer | 1700500000000 |                 |
+| missed    | integer | 2             |                 |
 
 /// details | read / dlvrd optimizations
 
@@ -69,74 +70,34 @@ set mark "read" to message
 
 ---
 
-## subscribe
-
-calling this method makes the user {++online++}
-
-after calling this method, the server will sequentially send events after the specified one.
-If there are more than 1000 events, {--the method will return an error???--}
+### messages
 
 **request payload schema:**
 
-| Field       | Type   | Example |
-| ----------- | ------ | ------- |
-| lastEventId | number | 10      |
+(1)
+{ .annotate }
+
+  1. **endIs is optional**
+
+    ```json
+      {
+        "chatId": "User2",
+        "count": 50
+      }
+
+    ```
+  
+| Field  | Type    | Example | Possible Values               |
+| ------ | ------- | ------- | ----------------------------- |
+| chatId | string  | "User2" | Chat IDs                      |
+| endId? | integer | 199     | Message IDs                   |
+| count? | integer | 50      | 1 - ∞, default - all messages |
 
 **response payload schema:**
 
-| Field       | Type   | Example |
-| ----------- | ------ | ------- |
-| lastEventId | number | 1000    |
+[Message](types/message.md)[]
 
----
-
-### getMessage
-
-**request payload schema:**
-
-| Field     | Type    | Example | Possible Values |
-| --------- | ------- | ------- | --------------- |
-| chatId    | string  | "User2" | Chat IDs        |
-| messageId | integer | 123     | Message IDs     |
-
-**response payload schema:**
-
-[Message](types/message.md)
-
-### getMessages
-
-**request payload schema:**
-
-| Field  | Type    | Example | Possible Values |
-| ------ | ------- | ------- | --------------- |
-| chatId | string  | "User2" | Chat IDs        |
-| endId? | integer | 199     | Message IDs     |
-| count  | integer | 50      | 1 - 100         |
-
-> to get 50 messages from the end of the chat:\*\*
-
-```json
-{
-  "chatId": "User2",
-  "count": 50
-}
-```
-
-> to get messages with ids 80-100:
-
-```json
-{
-  "chatId": "User2",
-  "count": 20,
-  "endId": 100
-}
-```
-
-**response payload schema:**
-
-[Message](types/message)[]
-
-## getChat
+## chat
 
 **request payload schema:**
 
@@ -148,7 +109,7 @@ If there are more than 1000 events, {--the method will return an error???--}
 
 [Chat](types/chat.md)
 
-## getChats
+## chats
 
 **request payload schema:**
 
@@ -157,30 +118,4 @@ If there are more than 1000 events, {--the method will return an error???--}
 
 **response payload schema:**
 
-[Chat](types/chat.md)[]
-
-## getEvent
-
-**request payload schema:**
-
-| Field   | Type   | Example |
-| ------- | ------ | ------- |
-| eventId | number | 1023    |
-
-**response payload schema:**
-
-[ServerEvent](../server-events)
-
-## getEvents
-
-returns all events from some id. If there are more than 100 events, the method will return an error
-
-**request payload schema:**
-
-| Field       | Type   | Example |
-| ----------- | ------ | ------- |
-| fromEventId | number | 10      |
-
-**response payload schema:**
-
-[ServerEvent](../server-events)[]
+[ChatList](types/chat-list.md)

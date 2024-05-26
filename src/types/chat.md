@@ -1,18 +1,18 @@
 # Chat
 
-## common part
+| Field          | Type                              | Example                                    |
+| -------------- | --------------------------------- | ------------------------------------------ |
+| chatId         | string                            | "User2"                                    |
+| photoUrl       | string                            | "iambig.ai/public/de5d8114f9" |
+| type           | "dialog", "group", "channel",'ai' | "dialog"                                   |
+| lastMessageId? | integer                           | 1000                                       |
+| meta           | [Meta](#meta)                     | ...                                        |
 
-| Field    | Type                         | Example  |
-| -------- | ---------------------------- | -------- |
-| id       | string                       | "User2"  |
-| photoUrl | string                       | "<https://dev.big.a-kuznetsov.cc/public/gb24ixCWLL25S-jtzYck7>"  |
-| type     | "dialog", "group", "channel" | "dialog" |
-| lastId?  | int                          | 1000     |
-| ...      | ...                          | ...      |
+## Meta
 
-## dialog
+[DialogMeta](#dialogmeta) | [GroupMeta](#groupmeta)
 
-common part +
+## DialogMeta
 
 | Field        | Type   | Example     |
 | ------------ | ------ | ----------- |
@@ -21,10 +21,11 @@ common part +
 | username?    | string | "User2"     |
 | phoneNumber? | string | "User2"     |
 
-## group
+## GroupMeta
 
-common part +
-
-| Field        | Type   | Example     |
-| ------------ | ------ | ----------- |
-| groupName?   | string | "group"     |
+| Field        | Type     | Example                                           |
+| ------------ | -------- | ------------------------------------------------- |
+| name         | string   | "group1"                                          |
+| owner        | string   | "User1"                                           |
+| participants | string[] | ["Xp6ucajJ39P8rhjtgbHba", "XWLGmb-grXAZxG1te4NKr] |
+| createdAt    | integer  | 1663272000000                                     |

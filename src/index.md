@@ -1,4 +1,4 @@
-# WebSocket overview
+# WebSocket protocol
 
 This document provides an overview of the WebSocket protocol, which is used for messaging
 
@@ -24,10 +24,10 @@ Clients send requests to perform actions like sending, editing, or deleting mess
 | Field       | Type                                                              | Example                                         |
 | ----------- | ----------------------------------------------------------------- | ----------------------------------------------- |
 | type        | const                                                             | "request"                                       |
-| timestamp   | number                                                            | 1700000000                                   |
+| timestamp   | number                                                            | 1700000000000                                   |
 | id          | string                                                            | "req001"                                        |
 | payloadType | "new", “edit”, “delete”, ... see [requests](./client-requests.md) | "new"                                           |
-| payload     | [requests](./client-requests.md)                                  | `{"chatId":"User2","message":"Hi from User1!"}` |
+| payload     | [requests](./client-requests.md)                                  | ****`{"chatId":"User2","message":"Hi from User1!"}` |
 
 ### 2. Server Response
 
@@ -36,7 +36,7 @@ The server sends an response message in response to client requests,confirming t
 | Field     | Type   | Example           |
 | --------- | ------ | ----------------- |
 | type      | const  | "response"        |
-| timestamp | number | 1700000000     |
+| timestamp | number | 1700000000000     |
 | id        | string | "req001"          |
 | payload?  | any    | `{"messageId":5}` |
 
@@ -48,7 +48,7 @@ existing ones.
 | Field     | Type                              | Example               |
 | --------- | --------------------------------- | --------------------- |
 | type      | const                             | "event"               |
-| timestamp | number                            | 1700000000         |
+| timestamp | number                            | 1700000000000         |
 | id?       | number                            | 23                    |
 | eventType | [ServerEvent](./server-events.md) | "typing"              |
 | payload?  | [ServerEvent](./server-events.md) | `{"userId": "User2"}` |
@@ -66,20 +66,7 @@ sequenceDiagram
     participant Server
     participant User2
 
-    User1->>Server: subscribe, my last event id: 1
-    Note over User1,Server: request
 
-    Server->>User1: accept, you last event - 9, 8 events for you
-    Note over  Server,User1: response
-    
-    Server--)User1: 8 events ....
-    
-
-    User2->>Server: subscribe
-    Note over User2,Server: request
-
-    Server->>User2: accept
-    Note over  Server,User2: response
         
     User1--)Server: Typing event, chat User2
     Note over User1,Server: event

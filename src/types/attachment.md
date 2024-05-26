@@ -5,7 +5,7 @@
 | type     | string | "image"                               | "file", "image", "video" |
 | id       | string | "file123"                             | Attachment IDs           |
 | filename | string | "greeting.png"                        | File names               |
-| url      | string | "<http://example.com/greeting.png>"   | URLs                     |
+| url      | string | "https:\/\/example.com/greeting.png"    | URLs                     |
 | meta     | object | See "Specific Attachment metas" below | Depends on type          |
 
 ## Specific Attachment metas
