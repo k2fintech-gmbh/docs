@@ -1,4 +1,4 @@
 !!! info "WebSocket Connection Timeout"
-    Если в течение 20 секунд от клиента не поступает ping, WebSocket соединение будет закрыто, и всем участникам будет отправлено событие "offline".
+    If no ping is received from the client within 20 seconds, the WebSocket connection will be closed, and an "offline" event will be sent to all participants.
     
-    Чтобы поддерживать соединение, клиент должен отправлять любое сообщение не реже одного раза в 20 секунд. Если нечего отправить, клиент может отправить любой символ или строку "ping". Сервер ответит `{"event": "pong"}`. Через 20 секунд без запросов или пинга клиент будет отключен, и событие "offline" будет разослано.
+    To keep the connection alive, the client must send any message at least once every 20 seconds. If there is nothing to send, the client can send any character or the string "ping". The server will respond with `{"event": "pong"}`. After 20 seconds without requests or pings, the client will be disconnected, and an "offline" event will be broadcast.
