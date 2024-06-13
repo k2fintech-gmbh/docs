@@ -4,6 +4,7 @@
 
 | Field            | Type    | Example                                  | Possible Values             |
 | ---------------- | ------- | ---------------------------------------- | --------------------------- |
+| id               | number  | 124                                      | Event ID                   |
 | chatId           | string  | "User1"                                  | Chat IDs                    |
 | userId?          | string  | "User1"                                  | User IDs                    |
 | messageId        | integer | 124                                      | Message IDs                 |
@@ -60,6 +61,9 @@ new chat / chat deletion
 | Field  | Type   | Example | Possible Values |
 | ------ | ------ | ------- | --------------- |
 | userId | string | "User1" | User IDs        |
+
+!!! info "Offline Event Trigger"
+    If there is no ping from the client for 20 seconds, the WebSocket connection will be closed, and an "offline" event will be sent to all participants.
 
 ## typing
 
