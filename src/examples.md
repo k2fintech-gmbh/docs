@@ -13,34 +13,44 @@ sequenceDiagram
     
 
         
-    User1--)Server: Typing event, chat User2
-    Note over User1,Server: event
-
-    Server--)User2: Typing event, chat User1
-    Note over  Server,User2: event
+    Note over User1,User2: "typing"
+    User1->>Server: client event 'typing', chatId User2
+    activate Server
     
-    User1->>Server: Sends message with image to User2
-    Note over User1,Server: request
+    Server->>User2: server event 'typing', chatId User1
+    deactivate Server
+
+    Note over User1,User2: message sending
+    User1->>Server: Sends message to User2
+    activate Server
+    Note over User1,Server: request 'new'
     Server->>User1: messageId: 125
-    Note over  Server,User1: response
-    Server--)User2: New message event (messageId: 125)
-    Note over  Server,User2: event
+    Note over  Server,User1: response to 'new' request
+    Server->>User2: server event 'new' (messageId: 125)
+    User2--)Server: Ack for 'new' event
+    deactivate Server
+    Note over User1,User2: "delivering"
     
     User2->>Server: Message 125 delivered
-    Note over  User2,Server: request
-    Server->>User2: Accept delivered status
+    activate Server
+    Note over  User2,Server: request 'dlvrd'
+    Server->>User2: 🫡
+    Note over  Server,User2: response to 'dlvrd'
+    Server->>User1: Event that message has been delivered
+    Note over  Server,User1: server event 'dlvrd'
+    User1->>Server: Ack for dlvrd event
+    
+    
+    User2->>Server: Message read (messageId: 125)
+    Note over User2,Server: request 'read'
+    Server->>User2: 🫡
     Note over  Server,User2: response
     
-    Server--)User1: Event that message has been delivered
-    Note over  Server,User1: event
-    
-    User2->>Server: Message read (messageId: 125, id: 102)
-    Note over User2,Server: request
-    Server->>User2: Accept read status (id: 2)
-    Note over  Server,User2: response
     Server--)User1: Notification that message has been read
-    Note over  Server,User1: event
+    Note over  Server,User1: server event 'read'
+    User1->>Server: Ack for read event
     
+        
     User1->>Server: User1 requests deletion of a message sent to User2 (id: 2)
     Note over User1,Server: request
     
@@ -48,6 +58,9 @@ sequenceDiagram
     Note over Server,User1: response
     Server--)User2: Notification that a message from User1 has been deleted
     Note over  Server,User2: event
+    User2->>Server: Ack for message deleted event
+    
+    
 ```
 
 User1 to server: User1 is typing a message to User2
@@ -88,6 +101,7 @@ User1 to server: User1 sends a message with an image to User2
   "payloadType": "new",
   "payload": {
     "chatId": "User2",
+    "clientMessageId": "9CD99794-6D8E-4E82-9C97-D474831A43E3",
     "message": "Check out this photo!",
     "attachments": [
       {
@@ -115,7 +129,7 @@ Server to User1: 🫡
   "type": "response",
   "timestamp": 1700200000000,
   "id": "1",
-  "payload": { "messageId": 125 }
+  "payload": { "messageId": 125, "clientMessageId": "9CD99794-6D8E-4E82-9C97-D474831A43E3" }
 }
 ```
 
@@ -130,6 +144,7 @@ Server to User2: New Message Event with Image
   "payload": {
     "chatId": "User1",
     "messageId": 125,
+    "clientMessageId": "9CD99794-6D8E-4E82-9C97-D474831A43E3",
     "message": "Check out this photo!",
     "attachments": [
       {
@@ -144,10 +159,20 @@ Server to User2: New Message Event with Image
           "size": 204800
         }
       }
-    ]
+    ],
+    "missed": 1
   }
 }
 
+```
+
+User2 to server: ack
+
+```json
+{
+  "type": "ack",
+  "id": 1  
+}
 ```
 
 User2 to server: message delivered
@@ -181,12 +206,22 @@ Server to User1: notification that message from User2 has been delivered
 {
   "type": "event",
   "timestamp": 1700200000000,
-  "id": 10,
+  "id": 1,
   "eventType": "dlvrd",
   "payload": {
     "chatId": "User1",
-    "messageId": 125
+    "messageId": 125,
+    "clientMessageId": "9CD99794-6D8E-4E82-9C97-D474831A43E3"
   }
+}
+```
+
+User1 to server: ack
+
+```json
+{
+  "type": "ack",
+  "id": 1  
 }
 ```
 
@@ -215,7 +250,9 @@ Server to User2: response 🫡
   "payloadType": "read",
   "payload": {
     "chatId": "User1",
-    "messageId": 125
+    "messageId": 125,
+    "clientMessageId": "9CD99794-6D8E-4E82-9C97-D474831A43E3",
+    "missed": 0
   }
 }
 ```
@@ -226,12 +263,22 @@ Server to User1: notification that message from User2 has been read
 {
   "type": "event",
   "timestamp": 1700200000000,
-  "id": 11,
+  "id": 2,
   "eventType": "read",
   "payload": {
     "chatId": "User2",
-    "messageId": 125
+    "messageId": 125,
+    "clientMessageId": "9CD99794-6D8E-4E82-9C97-D474831A43E3"
   }
+}
+```
+
+User1 to server: ack
+
+```json
+{
+  "type": "ack",
+  "id": 2 
 }
 ```
 
@@ -245,7 +292,8 @@ User1 to server: User1 requests deletion of a message sent to User2
   "payloadType": "delete",
   "payload": {
     "chatId": "User2",
-    "messageId": 125
+    "messageId": 125,
+    "clientMessageId": "9CD99794-6D8E-4E82-9C97-D474831A43E3"
   }
 }
 ```
@@ -270,10 +318,21 @@ Server to User2: notification that a message from User1 has been deleted
   "eventType": "delete",
   "payload": {
     "chatId": "User1",
-    "messageId": 125
+    "messageId": 125,
+    "clientMessageId": "9CD99794-6D8E-4E82-9C97-D474831A43E3"
   }
 }
 ```
+
+User2 to server: ack
+
+```json
+{
+  "type": "ack",
+  "id": 2 
+}
+```
+
 
 ## Example: user status notifications
 
@@ -318,6 +377,27 @@ Server to User2: User1 Goes Offline
   }
 }
 
+```
+
+## ack
+
+Client to server: Acknowledgment of an event
+
+```json
+{
+  "type": "ack",
+  "id": 23
+}
+```
+
+Server to client: Acknowledgment received
+
+```json
+{
+  "type": "response",
+  "timestamp": 1700200000000,
+  "id": "23"
+}
 ```
 
 ## dlvrd

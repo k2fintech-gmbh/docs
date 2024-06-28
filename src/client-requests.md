@@ -74,25 +74,17 @@ message id is optional, if not specified, all messages will be marked as read
 
 **request payload schema:**
 
-(1)
-{ .annotate }
+| Field    | Type    | Example | Possible Values        |
+| -------- | ------- | ------- | ---------------------- |
+| chatId   | string  | "User2" | Chat IDs               |
+| endId?   | integer | 199     | Message IDs            |
+| startId? | integer | 199     | Message IDs            |
+| count?   | integer | 50      | 1 - 500, default - 300 |
 
-  1. **endIs is optional**
+/// details | pagination
 
-    ```json
-      {
-        "chatId": "User2",
-        "count": 50
-      }
-
-    ```
-  
-| Field  | Type    | Example | Possible Values               |
-| ------ | ------- | ------- | ----------------------------- |
-| chatId | string  | "User2" | Chat IDs                      |
-| endId? | integer | 199     | Message IDs                   |
-| count? | integer | 50      | 1 - ∞, default - all messages |
-
+endId and startId are optional. You cannot specify them at the same time. If you want to download several messages starting with N, specify startId=N. if the user scrolls up the chat, specify the endId (before which message the next portion should be loaded). if you need to get the last few messages, don't pass endId and startId, then the "count" of the latest ones will be loaded.
+///
 **response payload schema:**
 
 [Message](types/message.md)[]

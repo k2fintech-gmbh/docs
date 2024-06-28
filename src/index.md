@@ -14,6 +14,9 @@ This document provides an overview of the WebSocket protocol, which is used for 
     deactivate Server
 
     Server->>Client: Events
+    activate Client
+    Client-->>Server: Acknowledgments
+    deactivate Client
     Client->>Server: Events
 ```
 
@@ -85,41 +88,55 @@ sequenceDiagram
     participant Server
     participant User2
 
+    
 
+        
+    Note over User1,User2: "typing"
+    User1->>Server: client event 'typing', chatId User2
+    activate Server
+    
+    Server->>User2: server event 'typing', chatId User1
+    deactivate Server
 
-    User1--)Server: Typing event, chat User2
-    Note over User1,Server: event
-
-    Server--)User2: Typing event, chat User1
-    Note over  Server,User2: event
-
-    User1->>Server: Sends message with image to User2
-    Note over User1,Server: request
+    Note over User1,User2: message sending
+    User1->>Server: Sends message to User2
+    activate Server
+    Note over User1,Server: request 'new'
     Server->>User1: messageId: 125
-    Note over  Server,User1: response
-    Server--)User2: New message event (messageId: 125)
-    Note over  Server,User2: event
-
+    Note over  Server,User1: response to 'new' request
+    Server->>User2: server event 'new' (messageId: 125)
+    User2--)Server: Ack for 'new' event
+    deactivate Server
+    Note over User1,User2: "delivering"
+    
     User2->>Server: Message 125 delivered
-    Note over  User2,Server: request
-    Server->>User2: Accept delivered status
+    activate Server
+    Note over  User2,Server: request 'dlvrd'
+    Server->>User2: 🫡
+    Note over  Server,User2: response to 'dlvrd'
+    Server->>User1: Event that message has been delivered
+    Note over  Server,User1: server event 'dlvrd'
+    User1->>Server: Ack for dlvrd event
+    
+    
+    User2->>Server: Message read (messageId: 125)
+    Note over User2,Server: request 'read'
+    Server->>User2: 🫡
     Note over  Server,User2: response
-
-    Server--)User1: Event that message has been delivered
-    Note over  Server,User1: event
-
-    User2->>Server: Message read (messageId: 125, id: 102)
-    Note over User2,Server: request
-    Server->>User2: Accept read status (id: 2)
-    Note over  Server,User2: response
+    
     Server--)User1: Notification that message has been read
-    Note over  Server,User1: event
-
+    Note over  Server,User1: server event 'read'
+    User1->>Server: Ack for read event
+    
+        
     User1->>Server: User1 requests deletion of a message sent to User2 (id: 2)
     Note over User1,Server: request
-
+    
     Server->>User1: Accept deletion
     Note over Server,User1: response
     Server--)User2: Notification that a message from User1 has been deleted
     Note over  Server,User2: event
+    User2->>Server: Ack for message deleted event
+    
+    
 ```

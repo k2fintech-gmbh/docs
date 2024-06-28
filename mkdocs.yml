@@ -52,6 +52,7 @@ nav:
 
   - "client-events.md"
   - "server-events.md"
+  - Ping: ping.md
   - "Types":
       - "types/attachment.md"
       - "types/message.md"
@@ -62,7 +63,6 @@ nav:
   - "dialog-ids.md"
   - Http-api: "http-api.md"
   - Upload-file: upload.md
-  - Ping: ping.md
 plugins:
   - render_swagger:
       allow_arbitrary_locations: true
