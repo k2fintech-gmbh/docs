@@ -51,6 +51,7 @@ nav:
       - "messages": "client-requests/#messages"
 
   - "client-events.md"
+  - "grouping-events-by-key.md"
   - "server-events.md"
   - Ping: ping.md
   - "Types":

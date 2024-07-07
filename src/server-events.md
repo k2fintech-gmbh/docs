@@ -2,21 +2,17 @@
 
 ## new
 
-### Example of missed events
-
-For the chat list, it is important to discard missed events with a timestamp less than the maximum of previously processed events. For example, if 3 messages with missed counts of 1, 2, and 3 arrive simultaneously, they can come in any order, but the largest timestamp will be with the last one (where missed=3).
-
-This also applies to `lastMessageText` and other fields of the chat list in the context of the `new` event.
 
 | Field            | Type    | Example                                  | Possible Values             |
 | ---------------- | ------- | ---------------------------------------- | --------------------------- |
-| id               | number  | 124                                      | Event ID                    |
 | chatId           | string  | "User1"                                  | Chat IDs                    |
-| userId?          | string  | "User1"                                  | User IDs                    |
+| sender?          | string  | "User1"                                  | User IDs                    |
+| senderName?      | string  | "John Doe"                               | Any string                  |
 | messageId        | integer | 124                                      | Message IDs                 |
-| clientMessageId? | string  | "66d93f9b-a8ff-4f18-a092-c19bdeb31fa4"   | Any string                  |
-| message          | string  | "Hello, World!"                          | Any string                  |
-| atttachments?    | array   | See ["Attachments"](types/attachment.md) | Array of Attachment objects |
+| clientMessageId  | string  | "66d93f9b-a8ff-4f18-a092-c19bdeb31fa4"   | Any string                  |
+| message?         | string  | "Hello, World!"                          | Any string                  |
+| attachments?     | array   | See ["Attachments"](types/attachment.md) | Array of Attachment objects |
+| timestamp?       | integer | 1700500000000                            | Unix timestamp              |
 | missed           | integer | 1                                        | Missed messages             |
 
 ## chats
