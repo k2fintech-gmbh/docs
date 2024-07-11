@@ -13,7 +13,7 @@
 | lastMessageText    | string        | "Hello, World!"                    | The text of the last message in the chat.                                |
 | lastMessageTime    | Date          | 1700000000000                      | The timestamp of the last message. Use Date for DateTime representation. |
 | lastMessageAuthor? | string        | "User1"                            | Optional author of the last message.                                     |
-| lastMessageStatus  | MessageStatus | "read"                             | "read" \| "unread" \| "undelivered"                                      |
+| lastMessageStatus  | MessageStatus | "read"                             | "read" \| "unread" \| "undelivered" \| "deleted"                         |
 | missed?            | number        | 3                                  | The count of missed messages in the chat.                                |
 | verified?          | boolean       | true                               | Indicates whether the chat is verified.                                  |
 | isMine             | boolean       | true                               | Indicates whether the chat item belongs to the current user.             |

@@ -3,17 +3,18 @@
 ## new
 
 
-| Field            | Type    | Example                                  | Possible Values             |
-| ---------------- | ------- | ---------------------------------------- | --------------------------- |
-| chatId           | string  | "User1"                                  | Chat IDs                    |
-| sender?          | string  | "User1"                                  | User IDs                    |
-| senderName?      | string  | "John Doe"                               | Any string                  |
-| messageId        | integer | 124                                      | Message IDs                 |
-| clientMessageId  | string  | "66d93f9b-a8ff-4f18-a092-c19bdeb31fa4"   | Any string                  |
-| message?         | string  | "Hello, World!"                          | Any string                  |
-| attachments?     | array   | See ["Attachments"](types/attachment.md) | Array of Attachment objects |
-| timestamp?       | integer | 1700500000000                            | Unix timestamp              |
-| missed           | integer | 1                                        | Missed messages             |
+| Field           | Type    | Example                                  | Possible Values                            |
+| --------------- | ------- | ---------------------------------------- | ------------------------------------------ |
+| chatId          | string  | "User1"                                  | Chat IDs                                   |
+| sender?         | string  | "User1"                                  | User IDs                                   |
+| senderName?     | string  | "John Doe"                               | Any string                                 |
+| messageId       | integer | 124                                      | Message IDs                                |
+| clientMessageId | string  | "66d93f9b-a8ff-4f18-a092-c19bdeb31fa4"   | Any string                                 |
+| message?        | string  | "Hello, World!"                          | Any string                                 |
+| attachments?    | array   | See ["Attachments"](types/attachment.md) | Array of Attachment objects                |
+| timestamp?      | integer | 1700500000000                            | Unix timestamp                             |
+| missed          | integer | 1                                        | Missed messages                            |
+| status          | string  | "read"                                   | "read", "unread", "undelivered", "deleted" |
 
 ## chats
 
@@ -39,19 +40,21 @@ new chat / chat deletion
 
 ## edit
 
-| Field         | Type    | Example                                  | Possible Values             |
-| ------------- | ------- | ---------------------------------------- | --------------------------- |
-| chatId        | string  | "User1"                                  | Chat IDs                    |
-| messageId     | integer | 124                                      | Message IDs                 |
-| message       | string  | "Updated message text"                   | Any string                  |
-| atttachments? | array   | See ["Attachments"](types/attachment.md) | Array of Attachment objects |
+| Field             | Type    | Example                                  | Possible Values             |
+| ----------------- | ------- | ---------------------------------------- | --------------------------- |
+| chatId            | string  | "User1"                                  | Chat IDs                    |
+| messageId         | integer | 124                                      | Message IDs                 |
+| originalMessageId | integer | 1                                        |                             |
+| message           | string  | "Updated message text"                   | Any string                  |
+| atttachments?     | array   | See ["Attachments"](types/attachment.md) | Array of Attachment objects |
 
 ## delete
 
-| Field     | Type    | Example | Possible Values |
-| --------- | ------- | ------- | --------------- |
-| chatId    | string  | "User1" | Chat IDs        |
-| messageId | integer | 124     | Message IDs     |
+| Field             | Type    | Example | Possible Values |
+| ----------------- | ------- | ------- | --------------- |
+| chatId            | string  | "User1" | Chat IDs        |
+| messageId         | integer | 124     | Message IDs     |
+| originalMessageId | integer | 1       | Message IDs     |
 
 ## online
 
@@ -77,21 +80,23 @@ new chat / chat deletion
 
 ## dlvrd
 
-| Field     | Type    | Example       | Possible Values   |
-| --------- | ------- | ------------- | ----------------- |
-| chatId    | string  | "User2"       | Chat IDs          |
-| userId?   | string  | "User2"       | user (for groups) |
-| messageId | integer | 123           | Message IDs       |
-| timestamp | integer | 1700500000000 |                   |
+| Field           | Type    | Example       | Possible Values   |
+| --------------- | ------- | ------------- | ----------------- |
+| chatId          | string  | "User2"       | Chat IDs          |
+| userId?         | string  | "User2"       | user (for groups) |
+| messageId       | integer | 123           | Message IDs       |
+| clientMessageId | string  | "123"         |                   |
+| timestamp       | integer | 1700500000000 |                   |
 
 ## read
 
-| Field     | Type    | Example       | Possible Values   |
-| --------- | ------- | ------------- | ----------------- |
-| chatId    | string  | "User2"       | Chat IDs          |
-| userId?   | string  | "User2"       | user (for groups) |
-| messageId | integer | 123           | Message IDs       |
-| timestamp | integer | 1700500000000 |                   |
+| Field           | Type    | Example       | Possible Values   |
+| --------------- | ------- | ------------- | ----------------- |
+| chatId          | string  | "User2"       | Chat IDs          |
+| userId?         | string  | "User2"       | user (for groups) |
+| messageId       | integer | 123           | Message IDs       |
+| clientMessageId | string  | "123"         |                   |
+| timestamp       | integer | 1700500000000 |                   |
 
 ### dlvrd/read marks rules
 
