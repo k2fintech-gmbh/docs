@@ -37,33 +37,38 @@ theme:
       example: octicons/beaker-16
       quote: octicons/quote-16
 nav:
-  - "index.md"
-  - "Requests - messaging":
-      - "new": "client-requests#new"
-      - "edit": "client-requests#edit"
-      - "delete": "client-requests#delete"
-      - "delivered": "client-requests#dlvrd"
-      - "read": "client-requests#read"
-
-  - "Requests - retrieve data":
-      - "chat": "client-requests#chat"
-      - "chats": "client-requests#chats"
-      - "messages": "client-requests/#messages"
-
-  - "client-events.md"
-  - "grouping-events-by-key.md"
-  - "server-events.md"
-  - Ping: ping.md
-  - "Types":
-      - "types/attachment.md"
-      - "types/message.md"
-      - "types/reply-to.md"
-      - "types/chat.md"
-      - "types/chat-list.md"
-  - "examples.md"
-  - "dialog-ids.md"
-  - Http-api: "http-api.md"
-  - Upload-file: upload.md
+  - Home: "index"
+  - Requests:
+      - Messaging:
+          - New: "client-requests#new"
+          - Edit: "client-requests#edit"
+          - Delete: "client-requests#delete"
+          - Delivered: "client-requests#dlvrd"
+          - Read: "client-requests#read"
+      - Retrieve Data:
+          - Chat: "client-requests#chat"
+          - Chats: "client-requests#chats"
+          - Messages: "client-requests#messages"
+  - Events:
+      - Client Events: "client-events"
+      - Server Events: "server-events"
+  - Types:
+      - Attachment: "types/attachment"
+      - Message: "types/message"
+      - Reply To: "types/reply-to"
+      - Chat: "types/chat"
+      - Chat List: "types/chat-list"
+  - Guides:
+      - Ping: "ping"
+      - Dialog IDs: "dialog-ids"
+      - Grouping Events by Key: "guides/grouping-events-by-key"
+      - dlvrd/read marks rules: "guides/dlvrd-read-marks-rules"
+      - Message Edit/Delete: "guides/message-edit-delete"
+      - Examples: "examples"
+  - HTTP and more:
+      - Upload File: "upload"
+      - HTTP API: "http-api"
+      - Your network: "https://dev.iambig.ai/network"
 plugins:
   - render_swagger:
       allow_arbitrary_locations: true
@@ -104,10 +109,10 @@ markdown_extensions:
   - pymdownx.blocks.details
   - pymdownx.snippets:
       auto_append:
-        - "types/attachment.md"
-        - "types/message.md"
-        - "types/chat.md"
-        - "types/chat-list.md"
+        - "types/attachment"
+        - "types/message"
+        - "types/chat"
+        - "types/chat-list"
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid

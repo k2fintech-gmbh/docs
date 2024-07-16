@@ -45,23 +45,6 @@ message id is optional, if not specified, all messages will be marked as deliver
 | timestamp       | integer | 1700500000000                          |                 |
 | clientMessageId | string  | "66d93f9b-a8ff-4f18-a092-c19bdeb31fa4" | Any string      |
 
-### delete
-
-delete a message.
-
-**request payload schema:**
-
-| Field             | Type    | Example | Possible Values |
-| ----------------- | ------- | ------- | --------------- |
-| chatId            | string  | "User2" | Chat IDs        |
-| originalMessageId | integer | 123     | Message IDs     |
-
-**response payload schema:**
-
-| Field             | Type    | Example | Possible Values |
-| ----------------- | ------- | ------- | --------------- |
-| messageId         | integer | 123     | Message IDs     |
-| timestamp         | integer | 1700500000000 |               |
 
 ### read
 
@@ -89,6 +72,47 @@ message id is optional, if not specified, all messages will be marked as read
 ///
 
 ---
+
+### delete
+
+delete a message.
+
+**request payload schema:**
+
+| Field             | Type    | Example | Possible Values |
+| ----------------- | ------- | ------- | --------------- |
+| chatId            | string  | "User2" | Chat IDs        |
+| originalMessageId | integer | 123     | Message IDs     |
+
+**response payload schema:**
+
+| Field           | Type    | Example                                | Possible Values |
+| --------------- | ------- | -------------------------------------- | --------------- |
+| messageId       | integer | 123                                    | Message IDs     |
+| timestamp       | integer | 1700500000000                          |                 |
+| clientMessageId | string  | "66d93f9b-a8ff-4f18-a092-c19bdeb31fa4" | Any string      |
+
+### edit
+
+edit a message.
+
+**request payload schema:**
+
+| Field             | Type    | Example                                  | Possible Values             |
+| ----------------- | ------- | ---------------------------------------- | --------------------------- |
+| chatId            | string  | "User2"                                  | Chat IDs                    |
+| originalMessageId | integer | 123                                      | Message IDs                 |
+| message           | string  | "Hello, World!"                          | Any string                  |
+| attachments?      | array   | See ["Attachments"](types/attachment.md) | Array of Attachment objects |
+
+**response payload schema:**
+
+| Field           | Type    | Example                                | Possible Values |
+| --------------- | ------- | -------------------------------------- | --------------- |
+| messageId       | integer | 123                                    | Message IDs     |
+| timestamp       | integer | 1700500000000                          |                 |
+| clientMessageId | string  | "66d93f9b-a8ff-4f18-a092-c19bdeb31fa4" | Any string      |
+
 
 ### messages
 
