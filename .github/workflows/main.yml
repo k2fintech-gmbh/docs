@@ -1,0 +1,22 @@
+            - name: Build and Deploy MkDocs Material (Reloaded)
+  # You may pin to the exact commit or the version.
+  # uses: Reloaded-Project/devops-mkdocs@b386f4bf9d88e179a69fbe878a895758dbfde150
+  uses: Reloaded-Project/devops-mkdocs@v1
+  with:
+    # MkDocs version to use
+    mkdocs-version: # optional, default is latest
+    # Path to the requirements.txt file
+    requirements: # optional, default is ./docs/requirements.txt
+    # Path to the mkdocs.yml file
+    config-file: # optional, default is mkdocs.yml
+    # Whether to publish to GitHub Pages
+    publish-to-pages: # optional, default is true
+    # Whether to perform repository checkout
+    checkout-current-repo: # optional, default is true
+    # Path to the pre-build command
+    pre-build-command: # optional
+    # Shell to use for running the pre-build command
+    pre-build-command-shell: # optional, default is bash
+    # Custom output directory for the MkDocs build
+    output-directory: # optional, default is ./site
+          
