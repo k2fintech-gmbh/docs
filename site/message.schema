@@ -1,0 +1,14 @@
+| Field         | Type      | Example                                  | Possible Values             |
+| ------------- | --------- | ---------------------------------------- | --------------------------- |
+| messageId     | integer   | 123                                      | Message IDs                 |
+| message       | string    | "Hello"                                  | Any string                  |
+| sender        | string    | "User1"                                  | User IDs                    |
+| atttachments? | array     | See ["Attachments"](../types/attachment.md) | Array of Attachment objects |
+| read?         | timestamp | 123456789                                | Timestamp                   |
+| delivered?    | timestamp | 123456789                                | Timestamp                   |
+| createdAt     | timestamp | 123456789                                | Timestamp                   |
+| updatedAt     | timestamp | 123456789                                | Timestamp                   |
+
+/// details | Some summary
+Some content
+///
