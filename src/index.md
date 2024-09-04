@@ -63,20 +63,17 @@ Clients must send an acknowledgment message back to the server for each event re
 | Field | Type   | Example |
 | ----- | ------ | ------- |
 | type  | const  | "ack"   |
-| id    | number | 23      |
+| id    | string | "23"      |
 
 Example acknowledgment message:
 
 ```json
 {
   "type": "ack",
-  "id": 23
+  "id": "23"
 }
 ```
 
-
-!!! info "Sequence of events by ID"
-    id - increasing int
 
 ### Example
 
@@ -86,7 +83,7 @@ Example acknowledgment message:
 sequenceDiagram
     participant User1
     participant Server
-    participant User2
+    participant ****
 
     
 

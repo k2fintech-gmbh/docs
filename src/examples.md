@@ -67,7 +67,7 @@ User1 to server: User1 is typing a message to User2
 
 ```json
 {
-  "type": "request",
+  "type": "event",
   "timestamp": 1700500000000,
   "payloadType": "typing",
   "payload": {

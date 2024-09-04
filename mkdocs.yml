@@ -45,25 +45,26 @@ nav:
           - Delete: "client-requests#delete"
           - Delivered: "client-requests#dlvrd"
           - Read: "client-requests#read"
-      - Retrieve Data:
+      - Stories: "stories"
+      - Retrieve data:
           - Chat: "client-requests#chat"
           - Chats: "client-requests#chats"
           - Messages: "client-requests#messages"
   - Events:
-      - Client Events: "client-events"
-      - Server Events: "server-events"
+      - Client events: "client-events"
+      - Server events: "server-events"
   - Types:
-      - Attachment: "types/attachment"
-      - Message: "types/message"
-      - Reply To: "types/reply-to"
       - Chat: "types/chat"
-      - Chat List: "types/chat-list"
+      - Chat list: "types/chat-list"
+      - Message: "types/message"
+      - Reply: "types/reply-to"
+      - Attachment: "types/attachment"
+  
   - Guides:
       - Ping: "ping"
-      - Dialog IDs: "dialog-ids"
-      - Grouping Events by Key: "guides/grouping-events-by-key"
-      - dlvrd/read marks rules: "guides/dlvrd-read-marks-rules"
-      - Message Edit/Delete: "guides/message-edit-delete"
+      - Grouping events by key: "guides/grouping-events-by-key"
+      - Delivered and read marks: "guides/dlvrd-read-marks-rules"
+      - Message edit/delete: "guides/message-edit-delete"
       - Examples: "examples"
   - HTTP and more:
       - Upload File: "upload"

@@ -494,6 +494,27 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../stories" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Stories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
     
     
     
@@ -502,24 +523,24 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
         
           
-          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
-    Retrieve Data
+    Retrieve data
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
-            Retrieve Data
+            Retrieve data
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -647,7 +668,7 @@
         
   
   <span class="md-ellipsis">
-    Client Events
+    Client events
   </span>
   
 
@@ -668,7 +689,7 @@
         
   
   <span class="md-ellipsis">
-    Server Events
+    Server events
   </span>
   
 
@@ -727,11 +748,32 @@
   
   
     <li class="md-nav__item">
-      <a href="../attachment" class="md-nav__link">
+      <a href="." class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Attachment
+    Chat
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chat-list" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chat list
   </span>
   
 
@@ -773,7 +815,7 @@
         
   
   <span class="md-ellipsis">
-    Reply To
+    Reply
   </span>
   
 
@@ -790,32 +832,11 @@
   
   
     <li class="md-nav__item">
-      <a href="." class="md-nav__link">
+      <a href="../attachment" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Chat
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../chat-list" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Chat List
+    Attachment
   </span>
   
 
@@ -895,32 +916,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../dialog-ids" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Dialog IDs
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../guides/grouping-events-by-key" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Grouping Events by Key
+    Grouping events by key
   </span>
   
 
@@ -941,7 +941,7 @@
         
   
   <span class="md-ellipsis">
-    dlvrd/read marks rules
+    Delivered and read marks
   </span>
   
 
@@ -962,7 +962,7 @@
         
   
   <span class="md-ellipsis">
-    Message Edit/Delete
+    Message edit/delete
   </span>
   
 
@@ -1158,6 +1158,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      Profile
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1197,6 +1206,11 @@
 <td>"iambig.ai/public/de5d8114f9"</td>
 </tr>
 <tr>
+<td>name</td>
+<td>string</td>
+<td>"Stive"</td>
+</tr>
+<tr>
 <td>type</td>
 <td>"dialog", "group", "channel",'ai'</td>
 <td>"dialog"</td>
@@ -1205,6 +1219,16 @@
 <td>lastMessageId?</td>
 <td>integer</td>
 <td>1000</td>
+</tr>
+<tr>
+<td>missed</td>
+<td>integer</td>
+<td>0</td>
+</tr>
+<tr>
+<td>firstMissed?</td>
+<td>string</td>
+<td>clientMessageId of first missed (unread)</td>
 </tr>
 <tr>
 <td>meta</td>
@@ -1245,6 +1269,16 @@
 <td>string</td>
 <td>"User2"</td>
 </tr>
+<tr>
+<td>verified?</td>
+<td>bool</td>
+<td>true</td>
+</tr>
+<tr>
+<td>lastSeen?</td>
+<td>integer</td>
+<td>only for offline status</td>
+</tr>
 </tbody>
 </table>
 <h2 id="groupmeta">GroupMeta<a class="headerlink" href="#groupmeta" title="Permanent link">&para;</a></h2>
@@ -1258,24 +1292,61 @@
 </thead>
 <tbody>
 <tr>
-<td>name</td>
-<td>string</td>
-<td>"group1"</td>
-</tr>
-<tr>
 <td>owner</td>
 <td>string</td>
 <td>"User1"</td>
 </tr>
 <tr>
 <td>participants</td>
-<td>string[]</td>
-<td>["Xp6ucajJ39P8rhjtgbHba", "XWLGmb-grXAZxG1te4NKr]</td>
+<td><a href="#profile">Profile</a>[]</td>
+<td>[{ "id": "weEwdx2","firstName": "Aleksandr","avatarUrl": "https://pics.png/png.png", "verified": "true" }]</td>
 </tr>
 <tr>
 <td>createdAt</td>
 <td>integer</td>
 <td>1663272000000</td>
+</tr>
+</tbody>
+</table>
+<h2 id="profile">Profile<a class="headerlink" href="#profile" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>firstName?</td>
+<td>string</td>
+<td>"Alexander"</td>
+</tr>
+<tr>
+<td>lastName?</td>
+<td>string</td>
+<td>"Kuzopi"</td>
+</tr>
+<tr>
+<td>username?</td>
+<td>string</td>
+<td>"User2"</td>
+</tr>
+<tr>
+<td>phoneNumber?</td>
+<td>string</td>
+<td>"User2"</td>
+</tr>
+<tr>
+<td>verified?</td>
+<td>bool</td>
+<td>true</td>
+</tr>
+<tr>
+<td>avatarUrl?</td>
+<td>string</td>
+<td>"https://pics.png/png.png"</td>
 </tr>
 </tbody>
 </table>

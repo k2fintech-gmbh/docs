@@ -10,7 +10,7 @@
         <meta name="author" content="a-kuznetsov">
       
       
-        <link rel="canonical" href="https://docs.imbig.ai/grouping-events-by-key/">
+        <link rel="canonical" href="https://docs.imbig.ai/stories/">
       
       
       
@@ -20,7 +20,7 @@
     
     
       
-        <title>Handling Out-of-Order Events - BIG documantation</title>
+        <title>Stories API - BIG documantation</title>
       
     
     
@@ -113,7 +113,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#handling-out-of-order-events" class="md-skip">
+        <a href="#stories-api" class="md-skip">
           Skip to content
         </a>
       
@@ -149,7 +149,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Handling Out-of-Order Events
+              Stories API
             
           </span>
         </div>
@@ -494,6 +494,27 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Stories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
     
     
     
@@ -502,24 +523,24 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
         
           
-          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
-    Retrieve Data
+    Retrieve data
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
-            Retrieve Data
+            Retrieve data
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -647,7 +668,7 @@
         
   
   <span class="md-ellipsis">
-    Client Events
+    Client events
   </span>
   
 
@@ -668,7 +689,7 @@
         
   
   <span class="md-ellipsis">
-    Server Events
+    Server events
   </span>
   
 
@@ -727,11 +748,32 @@
   
   
     <li class="md-nav__item">
-      <a href="../types/attachment" class="md-nav__link">
+      <a href="../types/chat" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Attachment
+    Chat
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../types/chat-list" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chat list
   </span>
   
 
@@ -773,7 +815,7 @@
         
   
   <span class="md-ellipsis">
-    Reply To
+    Reply
   </span>
   
 
@@ -790,32 +832,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../types/chat" class="md-nav__link">
+      <a href="../types/attachment" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Chat
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../types/chat-list" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Chat List
+    Attachment
   </span>
   
 
@@ -895,32 +916,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../dialog-ids" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Dialog IDs
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../guides/grouping-events-by-key" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Grouping Events by Key
+    Grouping events by key
   </span>
   
 
@@ -941,7 +941,7 @@
         
   
   <span class="md-ellipsis">
-    dlvrd/read marks rules
+    Delivered and read marks
   </span>
   
 
@@ -962,7 +962,7 @@
         
   
   <span class="md-ellipsis">
-    Message Edit/Delete
+    Message edit/delete
   </span>
   
 
@@ -1132,27 +1132,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#problems-without-proper-event-handling" class="md-nav__link">
+  <a href="#request" class="md-nav__link">
     <span class="md-ellipsis">
-      Problems Without Proper Event Handling
+      Request
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#solution-defining-keys-for-events" class="md-nav__link">
+  <a href="#response" class="md-nav__link">
     <span class="md-ellipsis">
-      Solution: Defining Keys for Events
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#event-processing-rules" class="md-nav__link">
-    <span class="md-ellipsis">
-      Event Processing Rules
+      Response
     </span>
   </a>
   
@@ -1176,58 +1167,72 @@
   
 
 
-<h1 id="handling-out-of-order-events">Handling Out-of-Order Events<a class="headerlink" href="#handling-out-of-order-events" title="Permanent link">&para;</a></h1>
-<p>Events can arrive in any order. For example, a user may go offline and then come back online. If this is not taken into account, the following issues may arise:</p>
-<h2 id="problems-without-proper-event-handling">Problems Without Proper Event Handling<a class="headerlink" href="#problems-without-proper-event-handling" title="Permanent link">&para;</a></h2>
-<ol>
-<li>
-<p><strong>Online/Offline:</strong>
-Events can arrive in any order. For example, a user might go offline first and then come back online. If the system does not account for timestamps, the user's status may remain "offline" even though they are actually online. This leads to incorrect status display.</p>
-</li>
-<li>
-<p><strong>Last Messages for Chat List:</strong>
-New message events can also arrive in any order. For example, a chat message might arrive later than it was sent. If timestamps are not considered and events are not grouped by <code>chatId</code>, outdated messages might be displayed in the chat list, showing users incorrect message order.</p>
-</li>
-<li>
-<p><strong>Editing:</strong>
-Edit events can arrive in any order. For example, the first edit event of message might arrive later than the second edit event. If the combination of <code>chatId</code> and <code>messageId</code> is not considered, the system might process the second edit first and then the first edit, leading to loss of edit data and incorrect information display.</p>
-</li>
-</ol>
-<h2 id="solution-defining-keys-for-events">Solution: Defining Keys for Events<a class="headerlink" href="#solution-defining-keys-for-events" title="Permanent link">&para;</a></h2>
-<ol>
-<li>
-<p><strong>Online/Offline:</strong>
-Use <code>userId</code> as the key. Example: <code>online-status:bS8JHietAb5O4l7KvGIwf</code>.</p>
-</li>
-<li>
-<p><strong>Last Messages for Chat List:</strong>
-Use <code>chatId</code> as the key. Example: <code>chat:superId</code>.</p>
-</li>
-<li>
-<p><strong>Editing:</strong>
-Use a combination of <code>chatId</code> and <code>messageId</code> as the key. Example: <code>edit:chat123:1002</code>.</p>
-</li>
-</ol>
-<h2 id="event-processing-rules">Event Processing Rules<a class="headerlink" href="#event-processing-rules" title="Permanent link">&para;</a></h2>
-<ol>
-<li>
-<p><strong>Store the last timestamp for each key:</strong>
-Keep track of the last timestamp for each key.</p>
-</li>
-<li>
-<p><strong>Compare the new event's timestamp with the stored one:</strong>
-When a new event arrives, determine its key and compare its timestamp with the stored one.</p>
-</li>
-<li>
-<p><strong>Discard outdated events:</strong>
-If the new timestamp is less than the stored timestamp, discard the event. (Note: if it is a new message event for the chat list, it will not be applied to the chat list, but the message itself will be loaded).</p>
-</li>
-<li>
-<p><strong>Accept and update the timestamp:</strong>
-If the new timestamp is greater, update the stored timestamp for the key and accept the event.</p>
-</li>
-</ol>
-<p><img alt="Event Processing Rules" src="../event_processing.gif" /></p>
+<h1 id="stories-api">Stories API<a class="headerlink" href="#stories-api" title="Permanent link">&para;</a></h1>
+<h2 id="request">Request<a class="headerlink" href="#request" title="Permanent link">&para;</a></h2>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&quot;lastStoryTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1724318805948</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="p">}</span>
+</span></code></pre></div>
+<h2 id="response">Response<a class="headerlink" href="#response" title="Permanent link">&para;</a></h2>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">&quot;stories&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">      </span><span class="nt">&quot;userId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;User11&quot;</span><span class="p">,</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;JuPapCdd2&quot;</span><span class="p">,</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">      </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;unseen&quot;</span><span class="p">,</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">      </span><span class="nt">&quot;time&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1724318805948</span><span class="p">,</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">      </span><span class="nt">&quot;content&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">        </span><span class="p">{</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">          </span><span class="nt">&quot;startTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">          </span><span class="nt">&quot;duration&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">          </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;photo&quot;</span><span class="p">,</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">          </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://dev.iambig.ai/public/c71ef0877c75566ae5a3a794e67cee43d81e6c719bab5339d08775779386e6f3&quot;</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">      </span><span class="p">]</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">    </span><span class="p">},</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">      </span><span class="nt">&quot;userId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;User11&quot;</span><span class="p">,</span>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sddsds&quot;</span><span class="p">,</span>
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">      </span><span class="nt">&quot;time&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1724600000000</span><span class="p">,</span>
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="w">      </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;seen&quot;</span><span class="p">,</span>
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="w">      </span><span class="nt">&quot;content&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="w">        </span><span class="p">{</span>
+</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="w">          </span><span class="nt">&quot;startTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="w">          </span><span class="nt">&quot;duration&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span>
+</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="w">          </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;video&quot;</span><span class="p">,</span>
+</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a><span class="w">          </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;stream://dev.iambig.ai/public/c71ef0877c75566ae5a3a794e67cee43d81e6c719bab5339d08775779386e6f3&quot;</span>
+</span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-1-29"><a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a><span class="w">      </span><span class="p">]</span>
+</span><span id="__span-1-30"><a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a><span class="w">    </span><span class="p">},</span>
+</span><span id="__span-1-31"><a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-1-32"><a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a><span class="w">      </span><span class="nt">&quot;userId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;User122&quot;</span><span class="p">,</span>
+</span><span id="__span-1-33"><a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a><span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;JuPapCdd2d&quot;</span><span class="p">,</span>
+</span><span id="__span-1-34"><a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a><span class="w">      </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;unseen&quot;</span><span class="p">,</span>
+</span><span id="__span-1-35"><a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a><span class="w">      </span><span class="nt">&quot;time&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1724318805948</span><span class="p">,</span>
+</span><span id="__span-1-36"><a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a><span class="w">      </span><span class="nt">&quot;content&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-1-37"><a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a><span class="w">        </span><span class="p">{</span>
+</span><span id="__span-1-38"><a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a><span class="w">          </span><span class="nt">&quot;startTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-1-39"><a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a><span class="w">          </span><span class="nt">&quot;duration&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span>
+</span><span id="__span-1-40"><a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a><span class="w">          </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;photo&quot;</span><span class="p">,</span>
+</span><span id="__span-1-41"><a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a><span class="w">          </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://dev.iambig.ai/public/c71ef0877c75566ae5a3a794e67cee43d81e6c719bab5339d08775779386e6f3&quot;</span>
+</span><span id="__span-1-42"><a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-1-43"><a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a><span class="w">      </span><span class="p">]</span>
+</span><span id="__span-1-44"><a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-1-45"><a id="__codelineno-1-45" name="__codelineno-1-45" href="#__codelineno-1-45"></a><span class="w">  </span><span class="p">],</span>
+</span><span id="__span-1-46"><a id="__codelineno-1-46" name="__codelineno-1-46" href="#__codelineno-1-46"></a><span class="w">  </span><span class="nt">&quot;authors&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-1-47"><a id="__codelineno-1-47" name="__codelineno-1-47" href="#__codelineno-1-47"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-1-48"><a id="__codelineno-1-48" name="__codelineno-1-48" href="#__codelineno-1-48"></a><span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;User11&quot;</span><span class="p">,</span>
+</span><span id="__span-1-49"><a id="__codelineno-1-49" name="__codelineno-1-49" href="#__codelineno-1-49"></a><span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;User One&quot;</span><span class="p">,</span>
+</span><span id="__span-1-50"><a id="__codelineno-1-50" name="__codelineno-1-50" href="#__codelineno-1-50"></a><span class="w">      </span><span class="nt">&quot;avatarUrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://example.com/avatar1.jpg&quot;</span>
+</span><span id="__span-1-51"><a id="__codelineno-1-51" name="__codelineno-1-51" href="#__codelineno-1-51"></a><span class="w">    </span><span class="p">},</span>
+</span><span id="__span-1-52"><a id="__codelineno-1-52" name="__codelineno-1-52" href="#__codelineno-1-52"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-1-53"><a id="__codelineno-1-53" name="__codelineno-1-53" href="#__codelineno-1-53"></a><span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;User122&quot;</span><span class="p">,</span>
+</span><span id="__span-1-54"><a id="__codelineno-1-54" name="__codelineno-1-54" href="#__codelineno-1-54"></a><span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;User Two&quot;</span><span class="p">,</span>
+</span><span id="__span-1-55"><a id="__codelineno-1-55" name="__codelineno-1-55" href="#__codelineno-1-55"></a><span class="w">      </span><span class="nt">&quot;avatarUrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://example.com/avatar2.jpg&quot;</span>
+</span><span id="__span-1-56"><a id="__codelineno-1-56" name="__codelineno-1-56" href="#__codelineno-1-56"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-1-57"><a id="__codelineno-1-57" name="__codelineno-1-57" href="#__codelineno-1-57"></a><span class="w">  </span><span class="p">]</span>
+</span><span id="__span-1-58"><a id="__codelineno-1-58" name="__codelineno-1-58" href="#__codelineno-1-58"></a><span class="p">}</span>
+</span></code></pre></div>
 
 
 

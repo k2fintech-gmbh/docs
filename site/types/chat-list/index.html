@@ -494,6 +494,27 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../stories" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Stories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
     
     
     
@@ -502,24 +523,24 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
         
           
-          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
-    Retrieve Data
+    Retrieve data
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
-            Retrieve Data
+            Retrieve data
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -647,7 +668,7 @@
         
   
   <span class="md-ellipsis">
-    Client Events
+    Client events
   </span>
   
 
@@ -668,7 +689,7 @@
         
   
   <span class="md-ellipsis">
-    Server Events
+    Server events
   </span>
   
 
@@ -727,11 +748,32 @@
   
   
     <li class="md-nav__item">
-      <a href="../attachment" class="md-nav__link">
+      <a href="../chat" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Attachment
+    Chat
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chat list
   </span>
   
 
@@ -773,7 +815,7 @@
         
   
   <span class="md-ellipsis">
-    Reply To
+    Reply
   </span>
   
 
@@ -790,32 +832,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../chat" class="md-nav__link">
+      <a href="../attachment" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Chat
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="." class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Chat List
+    Attachment
   </span>
   
 
@@ -895,32 +916,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../dialog-ids" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Dialog IDs
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../guides/grouping-events-by-key" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Grouping Events by Key
+    Grouping events by key
   </span>
   
 
@@ -941,7 +941,7 @@
         
   
   <span class="md-ellipsis">
-    dlvrd/read marks rules
+    Delivered and read marks
   </span>
   
 
@@ -962,7 +962,7 @@
         
   
   <span class="md-ellipsis">
-    Message Edit/Delete
+    Message edit/delete
   </span>
   
 
@@ -1214,13 +1214,13 @@
 <td>The name of the chat.</td>
 </tr>
 <tr>
-<td>lastMessageText</td>
+<td>lastMessageText?</td>
 <td>string</td>
 <td>"Hello, World!"</td>
 <td>The text of the last message in the chat.</td>
 </tr>
 <tr>
-<td>lastMessageTime</td>
+<td>lastMessageTime?</td>
 <td>Date</td>
 <td>1700000000000</td>
 <td>The timestamp of the last message. Use Date for DateTime representation.</td>
@@ -1232,7 +1232,7 @@
 <td>Optional author of the last message.</td>
 </tr>
 <tr>
-<td>lastMessageStatus</td>
+<td>lastMessageStatus?</td>
 <td>MessageStatus</td>
 <td>"read"</td>
 <td>"read" | "unread" | "undelivered" | "deleted"</td>
@@ -1244,22 +1244,34 @@
 <td>The count of missed messages in the chat.</td>
 </tr>
 <tr>
+<td>firstMissed?</td>
+<td>string</td>
+<td></td>
+<td>clientMessageId of first missed (unread)</td>
+</tr>
+<tr>
 <td>verified?</td>
 <td>boolean</td>
 <td>true</td>
 <td>Indicates whether the chat is verified.</td>
 </tr>
 <tr>
-<td>isMine</td>
+<td>isMine?</td>
 <td>boolean</td>
 <td>true</td>
 <td>Indicates whether the chat item belongs to the current user.</td>
 </tr>
 <tr>
-<td>lastMessageId</td>
+<td>lastMessageId?</td>
 <td>integer</td>
 <td>123</td>
 <td>The unique identifier for the last message in the chat.</td>
+</tr>
+<tr>
+<td>lastSeen?</td>
+<td>integer</td>
+<td>1700000000000</td>
+<td>only for offline status</td>
 </tr>
 </tbody>
 </table>

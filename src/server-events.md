@@ -64,10 +64,11 @@ new chat / chat deletion
 
 ## typing
 
-| Field   | Type   | Example | Possible Values |
-| ------- | ------ | ------- | --------------- |
-| userId  | string | "User2" | User IDs        |
-| chatId? | string | "User2" | Chat IDs        |
+| Field   | Type    | Example | Possible Values |
+| ------- | ------- | ------- | --------------- |
+| userId  | string  | "User2" | User IDs        |
+| chatId? | string  | "User2" | Chat IDs        |
+| stop?   | boolean | true    |                 |
 
 ## dlvrd
 
