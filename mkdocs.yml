@@ -46,6 +46,7 @@ nav:
           - Delivered: "client-requests#dlvrd"
           - Read: "client-requests#read"
       - Stories: "stories"
+      - Videos API: "video-requests"  
       - Retrieve data:
           - Chat: "client-requests#chat"
           - Chats: "client-requests#chats"
