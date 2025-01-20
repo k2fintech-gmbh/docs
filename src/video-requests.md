@@ -1,11 +1,16 @@
 # Video files API (CF Stream)
 
-#### Uploading video file
+### Uploading video file
 
 <summary><code>POST</code> <code><b>/video/upload</b></code></summary> 
-<code>Upload a video file as FromData.<br /> 
-Set downloadable to true so downloadable link can be get for this file.
-</code>
+or
+<summary><code>POST</code> <code><b>/public/upload</b></code></summary>
+
+Upload a video file as FromData.<br />
+
+Set `downloadable` to true so downloadable link can be get for this file.<br />
+`Downloadable` option not available on /public endpoint.
+
 
 ##### Parameters (FromData)
 
@@ -27,16 +32,26 @@ Set downloadable to true so downloadable link can be get for this file.
 
 > ```javascript
 >  curl -X POST http://localhost:8787/video/upload -F "file=@SampleVideo_1280x720_1mb.mp4" -F "downloadable=true"
-> ```
+> ```    
+
+##### Example Response
+
+> ```json
+> {
+>   "url": "https://dev.iambig.ai/public/zAE2h2mPSKjWwnxw8qxp4"
+> }
+> ``` 
  
 <br />
 
-#### Uploading video file via URL
+### Uploading video file via URL
 
 <summary><code>POST</code> <code><b>/video/uploadByUrl</b></code></summary>
-<code>Upload a video file via URL.<br /> 
-Set downloadable to true so downloadable link can be get for this file.
-</code>
+
+Upload a video file via URL.<br /> 
+
+Set `downloadable` to true so downloadable link can be get for this file.
+
 
 ##### Parameters (body)
 
@@ -60,13 +75,23 @@ Set downloadable to true so downloadable link can be get for this file.
 >  curl -X POST http://localhost:8787/video/uploadByUrl --data '{"url":"https://sample-videos.com/video321/mp4/720/big_buck_bunny_720p_2mb.mp4","downloadable":"true"}'
 > ```
 
+##### Example Response
+
+> ```json
+> {
+>   "url": "https://dev.iambig.ai/public/zAE2h2mPSKjWwnxw8qxp4"
+> }
+> ```
 <br />
 
-#### Retrieving video file
+### Retrieving video file
 
 <summary><code>GET</code> <code><b>/video/{id}</b></code> </summary>
-<code>Get video file link for playback.
-</code>
+or
+<summary><code>GET</code> <code><b>/public/{id}</b></code> </summary>
+
+Get video file link for playback.
+
 
 ##### Parameters
 
@@ -88,13 +113,18 @@ Set downloadable to true so downloadable link can be get for this file.
 >  curl -X GET -H "Content-Type: application/json" http://localhost:8787/video/zAE2h2mPSKjWwnxw8qxp4
 > ```
 
+##### Example Response
+
+> ```text
+> https://customer-....cloudflarestream.com/...video.m3u8
+> ```
 <br />
 
-#### Retrieving video file Metadata
+### Retrieving video file Metadata
 
 <summary><code>GET</code> <code><b>/video/{id}/metadata</b></code></summary>
-<code>Get video file Metadata.
-</code>
+
+Get video file Metadata.
 
 ##### Parameters
 
@@ -116,14 +146,56 @@ Set downloadable to true so downloadable link can be get for this file.
 >  curl -X GET -H "Content-Type: application/json" http://localhost:8787/video/zAE2h2mPSKjWwnxw8qxp4/metadata
 > ```
 
+##### Example Response
+
+> ```json
+> {
+> "uid": "string",
+> "thumbnail": "string",
+> "thumbnailTimestampPct": 0,
+> "readyToStream": true,
+> "status": {
+>   "state": "string",
+>   "pctComplete": "string",
+>   "errorReasonCode": "string",
+>   "errorReasonText": "string"
+>   },
+> "meta": {
+>   "name": "string"
+>   },
+> "created": "string",
+> "modified": "string",
+> "scheduledDeletion": "string",
+> "size": 0,
+> "preview": "string",
+> "uploaded": "string",
+> "duration": 0,
+> "input": {
+>   "width": 0,
+>   "height": 0
+>   },
+> "playback": {
+>   "hls": "string",
+>   "dash": "string"
+>   },
+> "publicDetails": {
+>   "title": "string",
+>   "share_link": "string",
+>   "channel_link": "string",
+>   "logo": "string"
+>   }
+> }
+> ```
 <br />
 
-#### Retrieving Thumbnail link for video file
+### Retrieving Thumbnail link for video file
 
 <summary><code>GET</code> <code><b>/video/{id}/thumbnail?anim=false</b></code></summary>
-<code>Get video file Thumbnail.<br />
-Pass anim query param as true to get animated preview (GIF)
-</code>
+
+Get video file Thumbnail.<br />
+
+Pass `anim` query param as true to get animated preview (GIF)
+
 
 ##### Parameters
 
@@ -146,14 +218,20 @@ Pass anim query param as true to get animated preview (GIF)
 >  curl -X GET -H "Content-Type: application/json" http://localhost:8787/video/zAE2h2mPSKjWwnxw8qxp4/thumbnail
 > ```
 
+##### Example Response
+
+> ```text
+> https://customer-....cloudflarestream.com/...thumbnail.jpg
+> ```
 <br />
 
-#### Retrieving direct Download link for video file
+### Retrieving direct Download link for video file
 
 <summary><code>GET</code> <code><b>/video/{id}/download</b></code></summary> 
-<code>Get direct download link for video file.<br /> 
+
+Get direct download link for video file.<br /> 
+
 Link is available only if file was uploaded with `downloadable` option.
-</code>
 
 ##### Parameters
 
@@ -177,12 +255,18 @@ Link is available only if file was uploaded with `downloadable` option.
 >  curl -X GET -H "Content-Type: application/json" http://localhost:8787/video/zAE2h2mPSKjWwnxw8qxp4/download
 > ```
 
+##### Example Response
+
+> ```text
+> https://customer-....cloudflarestream.com/downloads/default.mp4
+> ```
 <br />
 
-#### Delete video file
+### Delete video file
 
 <summary><code>DELETE</code> <code><b>/video/{id}</b></code></summary>
-<code>Completely delete video file.</code>
+
+Completely delete video file.
 
 ##### Parameters
 
@@ -204,3 +288,8 @@ Link is available only if file was uploaded with `downloadable` option.
 >  curl -X DELETE -H "Content-Type: application/json" http://localhost:8787/video/zAE2h2mPSKjWwnxw8qxp4
 > ```
 
+##### Example Response
+
+> ```json
+> {}
+> ```
