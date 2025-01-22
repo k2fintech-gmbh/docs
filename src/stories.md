@@ -461,6 +461,8 @@ Set or remove a reaction to a specific story.<br />
 `reaction` is required but is not taken into account when `isSet` is `false`. <br />
 Setting `isSet` to `false` will remove any previous reaction of this user.
 
+**NOTE**: `x-timestamp` header required
+
 ##### Parameters (body)
 
 > | name      | type     | data type | description                                                 |
