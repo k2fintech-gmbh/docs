@@ -24,7 +24,7 @@ All contacts (either all friends if `isForAll` is `true`, or contacts from `incl
 ##### Responses
 > | http code | content-type       | response                                                                     |
 > |-----------|--------------------|------------------------------------------------------------------------------|
-> | `200`     | `application/json` | `{"result": true, "id": "SYDY5qXsnv2aJnkoI9qF8E20"}`                         |
+> | `200`     | `application/json` | `{"id": "SYDY5qXsnv2aJnkoI9qF8E20"}`                         |
 > | `400`     | `application/json` | `{"error": "Failed...","timestamp": 1737195610743,"status": 400}`            |
 > | `401`     | `application/json` | `{"error": "Unauthorized","timestamp": 1737195610743,"status": 401}`         |
 > | `500`     | `application/json` | `{"error": "Something went wrong","timestamp": 1737195610743,"status": 500}` |
@@ -44,7 +44,6 @@ All contacts (either all friends if `isForAll` is `true`, or contacts from `incl
 ##### Example Response
 > ```json
 > {
->   "result": true,
 >   "id": "string"
 > } 
 > ```
@@ -78,7 +77,7 @@ If pass JSON object with `ID` defined - old stored object will be updated.
 ##### Responses
 > | http code | content-type       | response                                                                     |
 > |-----------|--------------------|------------------------------------------------------------------------------|
-> | `200`     | `application/json` | `{"result": true, "id": "SYDY5qXsnv2aJnkoI9qF8E20"}`                         |
+> | `200`     | `application/json` | `{"id": "SYDY5qXsnv2aJnkoI9qF8E20"}`                         |
 > | `400`     | `application/json` | `{"error": "Failed...","timestamp": 1737195610743,"status": 400}`            |
 > | `401`     | `application/json` | `{"error": "Unauthorized","timestamp": 1737195610743,"status": 401}`         |
 > | `500`     | `application/json` | `{"error": "Something went wrong","timestamp": 1737195610743,"status": 500}` |
@@ -96,7 +95,6 @@ If pass JSON object with `ID` defined - old stored object will be updated.
 ##### Example Response
 > ```json
 > {
->   "result": true, 
 >   "id": "SYDY5qXsnv2aJnkoI9qF8E20"
 > }
 > ```
@@ -180,7 +178,7 @@ All contacts (all friends will receive WebSocket event `removedStory`)
 ##### Responses
 > | http code | content-type       | response                                                                       |
 > |-----------|--------------------|--------------------------------------------------------------------------------|
-> | `200`     | `application/json` | `{"result": true, "id": "SYDY5qXsnv2aJnkoI9qF8E20"}`                           |
+> | `200`     | `application/json` | `{"id": "SYDY5qXsnv2aJnkoI9qF8E20"}`                           |
 > | `400`     | `application/json` | `{"error": "Failed...","timestamp": 1737195610743,"status": 400}`              |
 > | `401`     | `application/json` | `{"error": "Unauthorized","timestamp": 1737195610743,"status": 401}`           |
 > | `404`     | `application/json` | `{"error": "Exclude list not found","timestamp": 1737195610743,"status": 404}` |
@@ -189,7 +187,6 @@ All contacts (all friends will receive WebSocket event `removedStory`)
 ##### Example Response
 > ```json
 > {
->   "result": true,
 >   "id": "string"
 > }
 > ```  
@@ -336,17 +333,14 @@ Delete a specific story and its associated statistics.
 ##### Responses
 > | http code | content-type       | response                                                                                    |
 > |-----------|--------------------|---------------------------------------------------------------------------------------------|
-> | `200`     | `application/json` | `{"result": true, "id": "SYDY5qXsnv2aJnkoI9qF8E20"}` |
+> | `200`     | `application/json` | `{}` |
 > | `401`     | `application/json` | `{"error": "Unauthorized","timestamp": 1737195610743,"status": 401}`           |
 > | `404`     | `application/json` | `{"error": "Story not found","timestamp": 1737195610743,"status": 404}`                      |
 > | `500`     | `application/json` | `{"error": "Something went wrong","timestamp": 1737195610743,"status": 500}`               |
 
 ##### Example Response
 > ```json
-> {
->   "result": true,
->   "id": "string"
-> }
+> { }
 > ```
 
 ---
