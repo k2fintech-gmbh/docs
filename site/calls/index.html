@@ -20,7 +20,7 @@
     
     
       
-        <title>swagger - BIG documantation</title>
+        <title>Call Events and Payloads - BIG documantation</title>
       
     
     
@@ -113,7 +113,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#swagger" class="md-skip">
+        <a href="#call-events-and-payloads" class="md-skip">
           Skip to content
         </a>
       
@@ -149,7 +149,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              swagger
+              Call Events and Payloads
             
           </span>
         </div>
@@ -859,6 +859,26 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Calls
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
     
     
     
@@ -867,10 +887,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -881,8 +901,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             Guides
           </label>
@@ -1014,10 +1034,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1028,8 +1048,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             HTTP and more
           </label>
@@ -1125,6 +1145,32 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#call-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      Call Events
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#call-payloads" class="md-nav__link">
+    <span class="md-ellipsis">
+      Call Payloads
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1141,17 +1187,31 @@
   
 
 
-<h1 id="swagger">swagger<a class="headerlink" href="#swagger" title="Permanent link">&para;</a></h1>
-<p><link type="text/css" rel="stylesheet" href="https://unpkg.com/swagger-ui-dist@5/swagger-ui.css"></p>
-<div id="swagger-ui-1">
-</div>
-<script src="https://unpkg.com/swagger-ui-dist@5/swagger-ui-bundle.js" charset="UTF-8"></script>
-<script>
-    SwaggerUIBundle({
-      url: 'https://gist.githubusercontent.com/renandincer/dd6e913a8c824d718e9eeb2e2ed0b783/raw/11e24edac2b0d8e1783f340793673cd576ac417c/Calls%2520API%2520v1',
-      dom_id: '#swagger-ui-1',
-    })
-</script>
+<h1 id="call-events-and-payloads">Call Events and Payloads<a class="headerlink" href="#call-events-and-payloads" title="Permanent link">&para;</a></h1>
+<p>This section describes the different types of call-related events and their associated payloads.</p>
+<h2 id="call-events">Call Events<a class="headerlink" href="#call-events" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>newCall</strong>: Indicates a new call has been initiated.</li>
+<li><strong>closeCall</strong>: Indicates a call has been closed.</li>
+</ul>
+<h2 id="call-payloads">Call Payloads<a class="headerlink" href="#call-payloads" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>CallPayload</strong>: Contains information about a call-related message.</li>
+<li><code>direction</code>: The direction of the call ('incoming' or 'outgoing').</li>
+<li><code>status</code>: (optional) The status of the call ('missed' or 'received').</li>
+<li>
+<p><code>callType</code>: The type of call ('video' or 'audio').</p>
+</li>
+<li>
+<p><strong>CallStoredPayload</strong>: Contains detailed information about a stored call.</p>
+</li>
+<li><code>callId</code>: The unique identifier for the call.</li>
+<li><code>caller</code>: The identifier of the caller.</li>
+<li><code>participants</code>: (optional) List of participant identifiers.</li>
+<li><code>callType</code>: The type of call ('video' or 'audio').</li>
+<li><code>callDuration</code>: The duration of the call in seconds.</li>
+</ul>
+<p>This documentation provides a clear overview of the call events and their payloads, enhancing the understanding of how calls are managed within the system.</p>
 
 
 

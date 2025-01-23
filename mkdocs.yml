@@ -60,6 +60,7 @@ nav:
       - Reply: "types/reply-to"
       - Attachment: "types/attachment"
   
+  - Calls: "calls"
   - Guides:
       - Ping: "ping"
       - Grouping events by key: "guides/grouping-events-by-key"

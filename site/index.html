@@ -859,6 +859,26 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="calls" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Calls
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
     
     
     
@@ -867,10 +887,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -881,8 +901,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             Guides
           </label>
@@ -1014,10 +1034,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1028,8 +1048,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             HTTP and more
           </label>
@@ -1178,11 +1198,62 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
+  <a href="#message-events-and-payloads" class="md-nav__link">
     <span class="md-ellipsis">
-      Example
+      Message Events and Payloads
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#call-events-and-payloads" class="md-nav__link">
+    <span class="md-ellipsis">
+      Call Events and Payloads
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Call Events and Payloads">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#call-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      Call Events
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#call-payloads" class="md-nav__link">
+    <span class="md-ellipsis">
+      Call Payloads
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#message-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      Message Events
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#message-payloads" class="md-nav__link">
+    <span class="md-ellipsis">
+      Message Payloads
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1364,7 +1435,70 @@ existing ones. Clients must acknowledge receipt of these events by sending an ac
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;23&quot;</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="p">}</span>
 </span></code></pre></div>
-<h3 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h3>
+<h3 id="message-events-and-payloads">Message Events and Payloads<a class="headerlink" href="#message-events-and-payloads" title="Permanent link">&para;</a></h3>
+<h3 id="call-events-and-payloads">Call Events and Payloads<a class="headerlink" href="#call-events-and-payloads" title="Permanent link">&para;</a></h3>
+<p>This section describes the different types of call-related events and their associated payloads.</p>
+<h4 id="call-events">Call Events<a class="headerlink" href="#call-events" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>newCall</strong>: Indicates a new call has been initiated.</li>
+<li><strong>closeCall</strong>: Indicates a call has been closed.</li>
+</ul>
+<h4 id="call-payloads">Call Payloads<a class="headerlink" href="#call-payloads" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>CallPayload</strong>: Contains information about a call-related message.</li>
+<li><code>direction</code>: The direction of the call ('incoming' or 'outgoing').</li>
+<li><code>status</code>: (optional) The status of the call ('missed' or 'received').</li>
+<li>
+<p><code>callType</code>: The type of call ('video' or 'audio').</p>
+</li>
+<li>
+<p><strong>CallStoredPayload</strong>: Contains detailed information about a stored call.</p>
+</li>
+<li><code>callId</code>: The unique identifier for the call.</li>
+<li><code>caller</code>: The identifier of the caller.</li>
+<li><code>participants</code>: (optional) List of participant identifiers.</li>
+<li><code>callType</code>: The type of call ('video' or 'audio').</li>
+<li><code>callDuration</code>: The duration of the call in seconds.</li>
+</ul>
+<p>This section describes the different types of message-related events and their associated payloads.</p>
+<h4 id="message-events">Message Events<a class="headerlink" href="#message-events" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>new</strong>: Indicates a new message has been sent.</li>
+<li><strong>edit</strong>: Indicates a message has been edited.</li>
+<li><strong>delete</strong>: Indicates a message has been deleted.</li>
+<li><strong>call</strong>: Indicates a call-related message.</li>
+</ul>
+<h4 id="message-payloads">Message Payloads<a class="headerlink" href="#message-payloads" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>EditPayload</strong>: Contains information about the original message being edited.</li>
+<li><code>originalMessageId</code>: The ID of the original message.</li>
+<li>
+<p><code>originalClientMessageId</code>: The client-generated ID of the original message.</p>
+</li>
+<li>
+<p><strong>CallPayload</strong>: Contains information about a call-related message.</p>
+</li>
+<li><code>direction</code>: The direction of the call ('incoming' or 'outgoing').</li>
+<li><code>status</code>: (optional) The status of the call ('missed' or 'received').</li>
+<li>
+<p><code>callType</code>: The type of call ('video' or 'audio').</p>
+</li>
+<li>
+<p><strong>CallStoredPayload</strong>: Contains detailed information about a stored call.</p>
+</li>
+<li><code>callId</code>: The unique identifier for the call.</li>
+<li><code>caller</code>: The identifier of the caller.</li>
+<li><code>participants</code>: (optional) List of participant identifiers.</li>
+<li><code>callType</code>: The type of call ('video' or 'audio').</li>
+<li>
+<p><code>callDuration</code>: The duration of the call in seconds.</p>
+</li>
+<li>
+<p><strong>DeletionPayload</strong>: Contains information about the message being deleted.</p>
+</li>
+<li><code>originalMessageId</code>: The ID of the original message.</li>
+<li><code>originalClientMessageId</code>: The client-generated ID of the original message.</li>
+</ul>
 <p><a href="examples/">jsons</a></p>
 <pre class="mermaid"><code>sequenceDiagram
     participant User1

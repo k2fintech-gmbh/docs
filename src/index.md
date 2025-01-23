@@ -75,7 +75,61 @@ Example acknowledgment message:
 ```
 
 
-### Example
+### Message Events and Payloads
+
+### Call Events and Payloads
+
+This section describes the different types of call-related events and their associated payloads.
+
+#### Call Events
+
+- **newCall**: Indicates a new call has been initiated.
+- **closeCall**: Indicates a call has been closed.
+
+#### Call Payloads
+
+- **CallPayload**: Contains information about a call-related message.
+  - `direction`: The direction of the call ('incoming' or 'outgoing').
+  - `status`: (optional) The status of the call ('missed' or 'received').
+  - `callType`: The type of call ('video' or 'audio').
+
+- **CallStoredPayload**: Contains detailed information about a stored call.
+  - `callId`: The unique identifier for the call.
+  - `caller`: The identifier of the caller.
+  - `participants`: (optional) List of participant identifiers.
+  - `callType`: The type of call ('video' or 'audio').
+  - `callDuration`: The duration of the call in seconds.
+
+This section describes the different types of message-related events and their associated payloads.
+
+#### Message Events
+
+- **new**: Indicates a new message has been sent.
+- **edit**: Indicates a message has been edited.
+- **delete**: Indicates a message has been deleted.
+- **call**: Indicates a call-related message.
+
+#### Message Payloads
+
+- **EditPayload**: Contains information about the original message being edited.
+  - `originalMessageId`: The ID of the original message.
+  - `originalClientMessageId`: The client-generated ID of the original message.
+
+- **CallPayload**: Contains information about a call-related message.
+  - `direction`: The direction of the call ('incoming' or 'outgoing').
+  - `status`: (optional) The status of the call ('missed' or 'received').
+  - `callType`: The type of call ('video' or 'audio').
+
+- **CallStoredPayload**: Contains detailed information about a stored call.
+  - `callId`: The unique identifier for the call.
+  - `caller`: The identifier of the caller.
+  - `participants`: (optional) List of participant identifiers.
+  - `callType`: The type of call ('video' or 'audio').
+  - `callDuration`: The duration of the call in seconds.
+
+- **DeletionPayload**: Contains information about the message being deleted.
+  - `originalMessageId`: The ID of the original message.
+  - `originalClientMessageId`: The client-generated ID of the original message.
 
 [jsons](examples.md)
 
