@@ -155,3 +155,57 @@ endId and startId are optional. You cannot specify them at the same time. If you
 **response payload schema:**
 
 [ChatList](types/chat-list.md)
+
+## likeStory
+
+**request payload schema:**
+
+| Field      | type     | data type | description                                                 |
+|-----------|----------|-----------|-------------------------------------------------------------|
+| userId    | required | string    | ID of the story's author                                    |
+| storyId   | required | string    | ID of the story                                             |
+| reaction  | required | string    | The emoji reaction (e.g., `👍`)                             |
+| isSet     | required | boolean   | `true` to add a reaction, `false` to remove it             |
+
+## viewStory
+
+**request payload schema:**
+
+| Field      | type     | data type | description                                                 |
+|-----------|----------|-----------|-------------------------------------------------------------|
+| userId    | required | string    | ID of the story's author                                    |
+| storyId   | required | string    | ID of the story                                             |
+
+## purchaseStory
+
+**request payload schema:**
+
+| Field      | type     | data type | description                                                 |
+|-----------|----------|-----------|-------------------------------------------------------------|
+| userId    | required | string    | ID of the story's author                                    |
+| storyId   | required | string    | ID of the story                                             |
+
+## hideStories
+
+**request payload schema:**
+
+| Field      | type     | data type | description                                    |
+|-----------|----------|-----------|------------------------------------------------|
+| userId    | required | string    | ID of the story's author                       |
+| isHidden  | required | boolean   | `true` to hide stories, `false` to unhide them |
+
+## profile
+
+**request payload schema:**
+
+| Field      | type     | data type | description |
+|------------|----------|-----------|-------------|
+| id         | required | string    | user ID     | 
+
+## profiles
+
+**request payload schema:**
+
+| Field | type     | data type | description |
+|-------|----------|-----------|-------------|
+| ids   | required | string[]  | user IDs    | 

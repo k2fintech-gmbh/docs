@@ -45,12 +45,15 @@ nav:
           - Delete: "client-requests#delete"
           - Delivered: "client-requests#dlvrd"
           - Read: "client-requests#read"
-      - Stories: "stories"
+      - Privacy API: "privacy"
+      - Profile API: "profile"
+      - Stories API: "stories"
       - Videos API: "video-requests"  
       - Retrieve data:
           - Chat: "client-requests#chat"
           - Chats: "client-requests#chats"
           - Messages: "client-requests#messages"
+          - Profile: "client-requests#profile"  
   - Events:
       - Client events: "client-events"
       - Server events: "server-events"

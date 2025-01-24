@@ -90,3 +90,19 @@ new chat / chat deletion
 | clientMessageId | string  | "123"         |                   |
 | timestamp       | integer | 1700500000000 |                   |
 
+## newStory
+
+| Field         | Type   | Example                                   | Possible Values |
+|---------------| ------ |-------------------------------------------|-----------------|
+| userId        | string | "_qzjQofkCDvpFe8Da3Nlt2"                  | User IDs        |
+| storyId       | string | "SYDY5qXsnv2aJnkoI9qF8E20"                | Story IDs       |
+| userAvatar?   | string | "https://example.com/picture.jpg"         | URL             |
+| storyPreview  | string | https://cloudflare.com/dsdfsf/preview.jpg | URL             |
+
+## removedStory
+
+| Field         | Type   | Example                                   | Possible Values |
+|---------------| ------ |-------------------------------------------|-----------------|
+| userId        | string | "_qzjQofkCDvpFe8Da3Nlt2"                  | User IDs        |
+| storyId       | string | "SYDY5qXsnv2aJnkoI9qF8E20"                | Story IDs       |
+                 
