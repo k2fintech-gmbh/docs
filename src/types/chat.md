@@ -44,3 +44,8 @@
 | phoneNumber? | string | "User2"                    |
 | verified?    | bool   | true                       |
 | avatarUrl?   | string | "https://pics.png/png.png" |
+
+Profile data in responses may be filtered based on user's privacy settings.\
+`phoneNumber` may be replaced with empty string ` '' ` \
+`avatarUrl` may be excluded \
+`username` may be excluded

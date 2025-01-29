@@ -25,6 +25,11 @@
 
 "read" | "unread" | "undelivered"
 
+## lastSeen meaning
+
+If no `lastSeen` - means that user (other dialog member) is `Online` \
+lastSeen value = `1719781200000` - means that user's privacy does not allow current user to see his Online status
+
 ## ChatType
 
 "dialog" \| "group" \| "channel" \| "favorites" \| "ai"

@@ -45,6 +45,7 @@ nav:
           - Delete: "client-requests#delete"
           - Delivered: "client-requests#dlvrd"
           - Read: "client-requests#read"
+      - Contacts API: "contacts"
       - Privacy API: "privacy"
       - Profile API: "profile"
       - Stories API: "stories"
@@ -58,6 +59,7 @@ nav:
       - Client events: "client-events"
       - Server events: "server-events"
   - Types:
+      - Contacts: "types/contacts"
       - Chat: "types/chat"
       - Chat list: "types/chat-list"
       - Message: "types/message"
