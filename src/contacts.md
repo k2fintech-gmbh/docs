@@ -123,7 +123,7 @@ Profile data in response may be filtered based on user's privacy settings.
 >           "username": "@aivuser",
 >           "firstName": "Aleksandr",
 >           "lastName": "Ivanov",
->           "avatarUrl": "https://iambig.ai/pic.jpg",
+>           "avatarUrl": "https://iambig.ai/pic.jpg"
 > }
 > ```
 
@@ -157,7 +157,7 @@ Profile data in response may be filtered based on user's privacy settings.
 >           "username": "@aivuser",
 >           "firstName": "Aleksandr",
 >           "lastName": "Ivanov",
->           "avatarUrl": "https://iambig.ai/pic.jpg",
+>           "avatarUrl": "https://iambig.ai/pic.jpg"
 > }
 > ```
 
