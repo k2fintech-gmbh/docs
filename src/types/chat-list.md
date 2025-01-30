@@ -5,7 +5,7 @@
 ## ChatListItem
 
 | Field              | Type          | Example                            | Description                                                              |
-| ------------------ | ------------- | ---------------------------------- | ------------------------------------------------------------------------ |
+|--------------------|---------------|------------------------------------| ------------------------------------------------------------------------ |
 | type               | ChatType      | "group"                            | "dialog" \| "group" \| "channel" \| "favorites" \| "ai"                  |
 | id                 | string        | "JC0TvKi3f2bIQtBcW1jIn"            | The unique identifier for the chat item.                                 |
 | photoUrl?          | string        | "dev.big.a-kuznetsov.cc/public/de" | Optional URL to the chat's photo.                                        |
@@ -20,6 +20,7 @@
 | isMine?            | boolean       | true                               | Indicates whether the chat item belongs to the current user.             |
 | lastMessageId?     | integer       | 123                                | The unique identifier for the last message in the chat.                  |
 | lastSeen?          | integer       | 1700000000000                      | only for offline status                                                  |
+| onlineHidden?      | boolean       | false                              | only for offline status                                                  |
 
 ## MessageStatus
 
@@ -29,6 +30,7 @@
 
 If no `lastSeen` - means that user (other dialog member) is `Online` \
 lastSeen value = `1719781200000` - means that user's privacy does not allow current user to see his Online status
+**upd**: for users with hidden online status `onlineHidden` flag will be set to `true` 
 
 ## ChatType
 

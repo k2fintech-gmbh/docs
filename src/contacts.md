@@ -87,7 +87,8 @@ See [ChatListItem](types/chat-list.md#chatlistitem) for additional info
 >           "firstName": "Aleksandr",
 >           "lastName": "Ivanov",
 >           "avatarUrl": "https://iambig.ai/pic.jpg",
->           "lastSeen": 1719781200000
+>           "lastSeen": 1719781200000,
+>           "onlineHidden": true
 >       }
 >   ]
 > }

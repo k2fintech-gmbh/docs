@@ -24,7 +24,7 @@ The following tables represent the structure for various payloads, client-server
 | timestamp       | integer | 1700500000000                          |                    |
 | clientMessageId | string  | "66d93f9b-a8ff-4f18-a092-c19bdeb31fa4" | Any string         |
        
-If message can not be delivered due to user's privacy settings - empty object will be returned in response.
+If message can not be delivered due to user's privacy settings - **empty object** will be returned in response.
 
 ### dlvrd
 

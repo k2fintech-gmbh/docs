@@ -28,4 +28,4 @@ Profile data in responses may be filtered based on user's privacy settings.\
 `lastSeen` may be added if contacts requested with ChatList info \
 If no `lastSeen` - means that user (other dialog member) is `Online` \
 lastSeen value = `1719781200000` - means that user's privacy does not allow current user to see his Online status
-
+**upd**: for users with hidden online status `onlineHidden` flag will be set to `true` 
