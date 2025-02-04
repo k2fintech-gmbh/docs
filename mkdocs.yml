@@ -8,6 +8,8 @@ theme:
   name: material
   features:
     - content.tooltips
+    - navigation.indexes
+    - toc.follow
 
   palette:
     # Palette toggle for light mode
@@ -37,42 +39,49 @@ theme:
       example: octicons/beaker-16
       quote: octicons/quote-16
 nav:
-  - Home: "index"
+  - Home: "index.md"
   - Requests:
       - Messaging:
-          - New: "client-requests#new"
-          - Edit: "client-requests#edit"
-          - Delete: "client-requests#delete"
-          - Delivered: "client-requests#dlvrd"
-          - Read: "client-requests#read"
-      - Contacts API: "contacts"
-      - Privacy API: "privacy"
-      - Profile API: "profile"
-      - Stories API: "stories"
-      - Videos API: "video-requests"  
+          - Client requests: "client-requests.md"
+          - -New: "client-requests#new"
+          - -Edit: "client-requests#edit"
+          - -Delete: "client-requests#delete"
+          - -Delivered: "client-requests#dlvrd"
+          - -Read: "client-requests#read"
       - Retrieve data:
-          - Chat: "client-requests#chat"
-          - Chats: "client-requests#chats"
-          - Messages: "client-requests#messages"
-          - Profile: "client-requests#profile"  
+          - Client data requests: "client-retrieve.md"
+          - -Chat: "client-retrieve#chat"
+          - -Chats: "client-retrieve#chats"
+          - -Messages: "client-retrieve#messages"
+          - -Profile: "client-retrieve#profile"
+          - -Profiles: "client-retrieve#profiles"
+      - REST API:
+          - Contacts API: "contacts.md"
+          - Privacy API: "privacy.md"
+          - Profile API: "profile.md"
+          - Stories API: "stories.md"
+          - Videos API: "video-requests.md"
+
   - Events:
-      - Client events: "client-events"
-      - Server events: "server-events"
+      - Client events: "client-events.md"
+      - Server events: "server-events.md"
   - Types:
-      - Contacts: "types/contacts"
-      - Chat: "types/chat"
-      - Chat list: "types/chat-list"
-      - Message: "types/message"
-      - Reply: "types/reply-to"
-      - Attachment: "types/attachment"
-  
-  - Calls: "calls"
+      - Contacts: "types/contacts.md"
+      - Chat: "types/chat.md"
+      - Chat list: "types/chat-list.md"
+      - Message: "types/message.md"
+      - Reply: "types/reply-to.md"
+      - Forwarder from: "types/forwarded-from.md"
+      - Attachment: "types/attachment.md"
+      - Video: "types/video.md"
+
+  - Calls: "calls.md"
   - Guides:
-      - Ping: "ping"
-      - Grouping events by key: "guides/grouping-events-by-key"
-      - Delivered and read marks: "guides/dlvrd-read-marks-rules"
-      - Message edit/delete: "guides/message-edit-delete"
-      - Examples: "examples"
+      - Ping: "ping.md"
+      - Grouping events by key: "guides/grouping-events-by-key.md"
+      - Delivered and read marks: "guides/dlvrd-read-marks-rules.md"
+      - Message edit/delete: "guides/message-edit-delete.md"
+      - Examples: "examples.md"
   - HTTP and more:
       - Upload File: "upload"
       - HTTP API: "http-api"

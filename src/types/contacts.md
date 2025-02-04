@@ -8,7 +8,7 @@
 | lastName?   | string | "Kuzopi"     |
 | phoneNumber | string | "User2"      |
 
-## Profile
+## Profile {: #Profile }
 
 | Field        | Type   | Example                    |
 |--------------|--------|----------------------------|
