@@ -105,4 +105,19 @@ new chat / chat deletion
 |---------------| ------ |-------------------------------------------|-----------------|
 | userId        | string | "_qzjQofkCDvpFe8Da3Nlt2"                  | User IDs        |
 | storyId       | string | "SYDY5qXsnv2aJnkoI9qF8E20"                | Story IDs       |
-                 
+
+## reaction
+
+notification about added or removed reaction to a message
+
+| Field           | Type      | Example                                | Possible Values   |
+|-----------------|-----------|----------------------------------------|-------------------|
+| chatId          | string    | "_qzjQofkCDvpFe8Da3Nlt2"               | Chat IDs          |
+| messageId       | number    | 1                                      | Positive Int      |
+| userId          | string    | "SYDY5qXsnv2aJnkoI9qF8E20"             | User IDs          |
+| authorId        | string    | "authorId"                             | User IDs          |
+| timestamp       | number    | 1700500000000                          | Positive Int      |
+| reaction        | string    | "👍"                                   | Any string        |
+| isSet           | boolean   | true                                   | True or False     |
+| isNew           | boolean   | false                                  | True or False     |
+| clientMessageId | string    | "440C17F2-FA09-48F8-8273-E3990FE0BAC5" | Message ID string |

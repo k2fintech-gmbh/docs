@@ -5,7 +5,7 @@
 ## ChatListItem
 
 | Field              | Type          | Example                            | Description                                                              |
-|--------------------|---------------|------------------------------------| ------------------------------------------------------------------------ |
+|--------------------|---------------|------------------------------------|--------------------------------------------------------------------------|
 | type               | ChatType      | "group"                            | "dialog" \| "group" \| "channel" \| "favorites" \| "ai"                  |
 | id                 | string        | "JC0TvKi3f2bIQtBcW1jIn"            | The unique identifier for the chat item.                                 |
 | photoUrl?          | string        | "dev.big.a-kuznetsov.cc/public/de" | Optional URL to the chat's photo.                                        |
@@ -20,7 +20,8 @@
 | isMine?            | boolean       | true                               | Indicates whether the chat item belongs to the current user.             |
 | lastMessageId?     | integer       | 123                                | The unique identifier for the last message in the chat.                  |
 | lastSeen?          | integer       | 1700000000000                      | only for offline status                                                  |
-| onlineHidden?      | boolean       | false                              | only for offline status                                                  |
+| onlineHidden?      | boolean       | false                              | if user hides his status                                                 |
+| liked?             | boolean       | false                              | if there are new reactions to user messages in chat                      |
 
 ## MessageStatus
 

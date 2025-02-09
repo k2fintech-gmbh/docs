@@ -48,6 +48,7 @@ nav:
           - -Delete: "client-requests#delete"
           - -Delivered: "client-requests#dlvrd"
           - -Read: "client-requests#read"
+          - -Reaction: "client-requests#reaction"
       - Retrieve data:
           - Client data requests: "client-retrieve.md"
           - -Chat: "client-retrieve#chat"
@@ -60,6 +61,7 @@ nav:
           - Privacy API: "privacy.md"
           - Profile API: "profile.md"
           - Stories API: "stories.md"
+          - Reactions API: "reactions.md"
           - Videos API: "video-requests.md"
 
   - Events:

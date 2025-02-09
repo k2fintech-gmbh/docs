@@ -51,6 +51,7 @@ message id is optional, if not specified, all messages will be marked as deliver
 ### read
 
 set mark "read" to a message
+also set "viewed" mark if message has reaction for message author
 
 | Field      | Type    | Example | Possible Values |
 | ---------- | ------- | ------- | --------------- |
@@ -154,3 +155,14 @@ edit a message.
 | userId    | required | string    | ID of the story's author                       |
 | isHidden  | required | boolean   | `true` to hide stories, `false` to unhide them |
 
+## reaction
+
+**request payload schema:**
+
+| Field           | type     | data type | description                         |
+|-----------------|----------|-----------|-------------------------------------|
+| chatId          | required | string    | chat ID                             | 
+| messageId       | required | number    | message ID in the chat              | 
+| reaction        | optional | string    | string representation of reaction   | 
+| isSet           | required  | boolean   | set or remove reaction              | 
+| clientMessageId | required  | string   | clientMessageId of original message | 
