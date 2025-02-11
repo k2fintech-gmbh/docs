@@ -51,7 +51,7 @@ If timestamp is older than in previous request - `409` error returned.
 > }
 > ```
 
-<br />
+---
 
 ### Set allowed reactions for Group Chat
 <summary><code>POST</code> <code><b>/chat/allowReactions/{id}</b></code></summary>
@@ -88,8 +88,7 @@ If you need to Replace current allowed reaction - first make this call with an e
 > {} 
 > ```
 
-
-<br />
+---
 
 ### Get allowed reactions for Group Chat
 <summary><code>GET</code> <code><b>/chat/allowReactions</b></code></summary>

@@ -24,7 +24,7 @@
 > } 
 > ```
 
-<br />
+---
 
 ### Get profile info by ID
 <summary><code>GET</code> <code><b>/profile/{id}</b></code></summary>
@@ -62,8 +62,7 @@ Can be sent via **WebSocket** as request `profile`
 > } 
 > ```
 
-
-<br />
+---
 
 ### Get profiles info by ID list (batch)
 <summary><code>GET</code> <code><b>/profiles</b></code></summary>
@@ -110,7 +109,7 @@ Can be sent via **WebSocket** as request `profiles`
 > ]
 > ```
 
-<br />
+---
 
 ### Update own profile
 <summary><code>POST</code> <code><b>/profile</b></code></summary>
@@ -136,3 +135,99 @@ Can be sent via **WebSocket** as request `profiles`
 > ```json
 > {}
 > ```        
+
+---
+
+### Add E-mail address to profile (via OTP verification)
+<summary><code>POST</code> <code><b>/send-email</b></code></summary>
+
+Send OTP to validate e-mail address<br/>
+To link a new e-mail - just send new request with new e-mail.<br/> 
+Set `expiration` for testing purposes (its in minutes). Default is `4` hours.
+
+##### Parameters (body)
+> | name       | type     | data type | description                                        |
+> |------------|----------|-----------|----------------------------------------------------|
+> | email      | required | string    | valid e-mail addres                                | 
+> | expiration | optional | number    | Expiration time in minutes. <br/> Needed for tests | 
+
+##### Responses
+> | http code | content-type       | response                                                                           |
+> |-----------|--------------------|------------------------------------------------------------------------------------|
+> | `200`     | `application/json` | `JSON response from Mail server`                                                   |
+> | `400`     | `application/json` | `{"error": "Email address is not valid","timestamp": 1737195610743,"status": 400}` |
+> | `401`     | `application/json` | `{"error": "Unauthorized","timestamp": 1737195610743,"status": 401}`               |
+> | `500`     | `application/json` | `{"error": "Something went wrong","timestamp": 1737195610743,"status": 500}`       |
+
+##### Example Request
+> ```json
+> {
+>   "email": "user@example.com",
+> }
+> ```    
+
+##### Example Response
+> ```json
+> {
+>   "ErrorCode": 0,
+>   "Message": "OK",
+>   "MessageID": "c303aaf1-9fe6-4ce6-8e62-8c570146a395",
+>   "SubmittedAt": "2025-02-11T08:20:12.4989909Z",
+>   "To": "test1@iambig.ai"
+> }
+> ```   
+
+---
+
+### Check OTP code to verify e-mail
+<summary><code>POST</code> <code><b>/verify-email</b></code></summary>
+
+##### Parameters (body)
+> | name     | type     | data type | description            |
+> |----------|----------|-----------|------------------------|
+> | code     | required | string    | OTP code from e-mail   | 
+
+##### Responses
+> | http code | content-type       | response                                                                                   |
+> |-----------|--------------------|--------------------------------------------------------------------------------------------|
+> | `200`     | `application/json` | `{"userId": "string","email": "string"}`                                                   |
+> | `400`     | `application/json` | `{"error": "Wrong code","timestamp": 1737195610743,"status": 400}`                         |
+> | `401`     | `application/json` | `{"error": "Unauthorized","timestamp": 1737195610743,"status": 401}`                       |
+> | `404`     | `application/json` | `{"error": "Verification information not found","timestamp": 1737195610743,"status": 404}` |
+> | `408`     | `application/json` | `{"error": "Code expired","timestamp": 1737195610743,"status": 408}`                       |
+> | `500`     | `application/json` | `{"error": "Something went wrong","timestamp": 1737195610743,"status": 500}`               |
+
+##### Example Request
+> ```json
+> {
+>   "code": "O6EPNA",
+> }
+> ```    
+
+##### Example Response
+> ```json
+> {
+>   "userId": "string",
+>   "email": "string"
+> }
+> ```   
+
+---
+
+### Get linked e-mail for current user
+<summary><code>GET</code> <code><b>/email</b></code></summary>
+
+##### Responses
+> | http code | content-type       | response                                                                                   |
+> |-----------|--------------------|--------------------------------------------------------------------------------------------|
+> | `200`     | `application/json` | `{"userId": "string","email": "string"}`                                                   |
+> | `401`     | `application/json` | `{"error": "Unauthorized","timestamp": 1737195610743,"status": 401}`                       |
+> | `500`     | `application/json` | `{"error": "Something went wrong","timestamp": 1737195610743,"status": 500}`               |
+
+##### Example Response
+> ```json
+> {
+>   "userId": "string",
+>   "email": "string"
+> }
+> ```   

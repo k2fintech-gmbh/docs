@@ -55,7 +55,7 @@ All properties are optional. By default they are set to `EVERYBODY`
 > {} 
 > ```
 
-<br />
+---
 
 ### Ger privacy options
 <summary><code>GET</code> <code><b>/privacy</b></code></summary>
