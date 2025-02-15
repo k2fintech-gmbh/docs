@@ -4,8 +4,8 @@
 **Files & Video API are migrating to different subdomain**<br/>
 `https://dev.files.iambig.ai`
 
-## To be `deprecated` endpoints
-`https://dev.iambig.ai`
+## To be `deprecated` public endpoints
+@ `https://dev.iambig.ai`
 
 ### Uploading file
 

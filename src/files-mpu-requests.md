@@ -118,7 +118,9 @@ Completely delete file from storage.
 > ```json
 > {}
 > ```
+
 ---
+
 ## Video
 
 ### Uploading video file
@@ -239,7 +241,8 @@ Get video file link for playback.
 
 > ```text
 > https://customer-....cloudflarestream.com/...video.m3u8
-> ```
+> ```           
+
 ---
 
 ### Retrieving video file Metadata
@@ -308,6 +311,7 @@ Get video file Metadata.
 >   }
 > }
 > ```
+
 ---
 
 ### Retrieving Thumbnail link for video file
@@ -345,6 +349,7 @@ Pass `anim` query param as true to get animated preview (GIF)
 > ```text
 > https://customer-....cloudflarestream.com/...thumbnail.jpg
 > ```
+
 ---
 
 ### Retrieving direct Download link for video file
@@ -382,7 +387,9 @@ Link is available only if file was uploaded with `downloadable` option.
 > ```text
 > https://customer-....cloudflarestream.com/downloads/default.mp4
 > ```
+
 ---
+
 ### Uploading big video file by means of TUS client
 
 <summary><code>POST</code> <code><b>/video/directUpload</b></code></summary>
@@ -393,6 +400,7 @@ This endpoint should be used directly in TUS client.<br/>
 **NOTE:** Authorization header required.
 
 ---
+
 ## MPU
 
 ### Initiate multi-part file Upload
@@ -533,7 +541,7 @@ Parts array should be sorted by partNumber.
 > {
 >     "url": "https://dev.files.iambig.ai/file/zAE2h2mPSKjWwnxw8qxp4"
 > }
-> > ```
+> ```
 
 ---
 
