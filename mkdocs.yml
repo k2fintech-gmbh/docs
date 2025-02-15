@@ -62,7 +62,8 @@ nav:
           - Profile API: "profile.md"
           - Stories API: "stories.md"
           - Reactions API: "reactions.md"
-          - Videos API: "video-requests.md"
+          - Files (old) API: "files-requests.md"
+          - Files (new) API: "files-mpu-requests.md"
 
   - Events:
       - Client events: "client-events.md"
@@ -87,6 +88,7 @@ nav:
   - HTTP and more:
       - Upload File: "upload"
       - HTTP API: "http-api"
+      - HTTP API files: "http-api-files"
       - Your network: "https://dev.iambig.ai/network"
 plugins:
   - render_swagger:
