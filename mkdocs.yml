@@ -87,6 +87,7 @@ nav:
       - Examples: "examples.md"
   - HTTP and more:
       - Upload File: "upload"
+      - TUS Upload: "tus-upload"
       - HTTP API: "http-api"
       - HTTP API files: "http-api-files"
       - Your network: "https://dev.iambig.ai/network"
