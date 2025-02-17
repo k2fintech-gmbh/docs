@@ -18,8 +18,8 @@
 <summary><code>POST</code> <code><b>/file</b></code></summary>       
 
 Upload a file as FormData.<br />
-For files with size > 10 Mb use multi-part upload
-For Video files - use /video endpoints
+For files with size > 10 Mb use multi-part upload.<br />
+For Video files - use /video endpoints.
 
 ##### Parameters (FormData)
 
@@ -132,7 +132,7 @@ Upload a video file as FormData.<br />
 For video files with size > 10 Mb use TUS client & /video/directUpload
 
 Set `downloadable` to true so downloadable link can be get for this file.<br />
-`Downloadable` option not available on /public endpoint.
+`Downloadable` option not available on /file endpoint.
 
 
 ##### Parameters (FormData)
@@ -210,8 +210,6 @@ Set `downloadable` to true so downloadable link can be get for this file.
 
 ### Retrieving video file
 
-<summary><code>GET</code> <code><b>/video/{id}</b></code> </summary>
-or
 <summary><code>GET</code> <code><b>/file/{id}</b></code> </summary>
 
 Get video file link for playback.
@@ -411,7 +409,9 @@ To upload file grater than 10 Mb used a multi-part upload scheme.<br/>
 This endpoint is used to initiate such upload. Split file in chunks (minimum chunk size is 5 Mb) 
 and upload chunks via **/mpu-uploadpart**<br/>
 After finishing uploading of all chunks - call **/mpu-complete**<br/>
-You can manually abort MPU sequence by calling **/mpu-abort/:id**
+You can manually abort MPU sequence by calling **/mpu-abort/:id**<br/><br/>
+**NOTE**: MPU calculates fingerprint on FileName & FileSize & UserId. If such MPU is already in process - this MPU will be returned. 
+If `parts` is not empty - than it is a Previous unfinished MPU.
 
 ##### Parameters (body)
 
@@ -444,7 +444,13 @@ You can manually abort MPU sequence by calling **/mpu-abort/:id**
 
 > ```json
 > {
->   "url": "https://dev.files.iambig.ai/file/zAE2h2mPSKjWwnxw8qxp4"
+>     "id": "zAE2h2mPSKjWwnxw8qxp4",
+>     "uploadId": "zAE2h2mPSKjWwnxw8qxp4zAE2h2mPSKjWwnxw8qxp4zAE2h2mPSKjWwnxw8qxp4",
+>     "parts": [],
+>     "fingerPrint": "zAE2h2mPSKjWwnxw8qxp4zAE2h2mPSKj",
+>     "size": 100000000,
+>     "chunkSize": 6000000,
+>     "createdAt": 17000000000
 > }
 > ```
 
@@ -499,7 +505,7 @@ Parts from this call may be used in completing MPU.
 
 To Finalize multi-part upload this endpoint must be called.<br/>
 Just provide `id` received from **/mpu-create**.<br/>
-**Note:** Client can provide `parts` or they can be recovered from DO storage.<br/>
+**Note:** Client can provide `parts` or they will be recovered automatically from DO storage.<br/>
 Parts array should be sorted by partNumber.
 
 ##### Parameters (body)
