@@ -56,6 +56,7 @@ If timestamp is older than in previous request - `409` error returned.
 ### Set allowed reactions for Group Chat
 <summary><code>POST</code> <code><b>/chat/allowReactions/{id}</b></code></summary>
 
+Admin should have `editGroup` permission to set Allowed Reactions.<br/>
 Pass object with `undefined` reactions - to enable reactions to messages in the Group<br/>
 Pass an empty array `[]` in `reactions` param to disable any Reaction.<br/>
 Pass reactions list `["👍", "❤️"]` in `reactions` param to append them to Currently allowed.<br/>

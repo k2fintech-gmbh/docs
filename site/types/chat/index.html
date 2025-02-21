@@ -781,6 +781,8 @@
       
         
       
+        
+      
     
     
     
@@ -822,6 +824,28 @@
   
   <span class="md-ellipsis">
     Contacts API
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chat-manage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chat manage API
     
   </span>
   
@@ -1226,6 +1250,24 @@
   <a href="#groupmeta" class="md-nav__link">
     <span class="md-ellipsis">
       GroupMeta
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#administrator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Administrator
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rights" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rights
     </span>
   </a>
   
@@ -1793,6 +1835,24 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#administrator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Administrator
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rights" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rights
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#profile" class="md-nav__link">
     <span class="md-ellipsis">
       Profile
@@ -1867,13 +1927,13 @@
 </tr>
 <tr>
 <td>meta</td>
-<td><a href="#meta">Meta</a></td>
+<td><a href="../chat#meta">Meta</a></td>
 <td>...</td>
 </tr>
 </tbody>
 </table>
 <h2 id="meta">Meta<a class="headerlink" href="#meta" title="Permanent link">&para;</a></h2>
-<p><a href="#dialogmeta">DialogMeta</a> | <a href="#groupmeta">GroupMeta</a></p>
+<p><a href="#dialogmeta">DialogMeta</a> | <a href="../chat#groupmeta">GroupMeta</a></p>
 <h2 id="dialogmeta">DialogMeta<a class="headerlink" href="#dialogmeta" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -1933,13 +1993,72 @@
 </tr>
 <tr>
 <td>participants</td>
-<td><a href="#profile">Profile</a>[]</td>
+<td><a href="../chat#profile">Profile</a>[]</td>
 <td>[{ "id": "weEwdx2","firstName": "Aleksandr","avatarUrl": "https://pics.png/png.png", "verified": "true" }]</td>
 </tr>
 <tr>
 <td>createdAt</td>
 <td>integer</td>
 <td>1663272000000</td>
+</tr>
+</tbody>
+</table>
+<h2 id="administrator">Administrator<a class="headerlink" href="#administrator" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>string</td>
+<td>"User1"</td>
+</tr>
+<tr>
+<td>rights</td>
+<td><a href="../chat#rights">Rights</a></td>
+<td>{}</td>
+</tr>
+</tbody>
+</table>
+<h2 id="rights">Rights<a class="headerlink" href="#rights" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>editGroup</td>
+<td>bool</td>
+<td>false</td>
+</tr>
+<tr>
+<td>editStories</td>
+<td>bool</td>
+<td>false</td>
+</tr>
+<tr>
+<td>inviteUsers</td>
+<td>bool</td>
+<td>false</td>
+</tr>
+<tr>
+<td>makeAdmin</td>
+<td>bool</td>
+<td>false</td>
+</tr>
+<tr>
+<td>payments</td>
+<td>bool</td>
+<td>false</td>
 </tr>
 </tbody>
 </table>

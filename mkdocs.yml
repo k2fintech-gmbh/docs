@@ -58,6 +58,7 @@ nav:
           - -Profiles: "client-retrieve#profiles"
       - REST API:
           - Contacts API: "contacts.md"
+          - Chat manage API: "chat-manage.md"
           - Privacy API: "privacy.md"
           - Profile API: "profile.md"
           - Stories API: "stories.md"
