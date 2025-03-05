@@ -18,7 +18,7 @@
 
 ## chats
 
-new chat / chat deletion
+new chat / chat info changed / chat deletion
 
 [ChatList](types/chat-list.md) (1)
 { .annotate }
@@ -121,3 +121,33 @@ notification about added or removed reaction to a message
 | isSet           | boolean   | true                                   | True or False     |
 | isNew           | boolean   | false                                  | True or False     |
 | clientMessageId | string    | "440C17F2-FA09-48F8-8273-E3990FE0BAC5" | Message ID string |
+                        
+## joinRequest
+
+notification sent to Group admins about users joined via Invite Link with approve required
+
+| Field   | Type   | Example                                   | Possible Values |
+|---------| ------ |-------------------------------------------|-----------------|
+| chatId  | string | "_qzjQofkCDvpFe8Da3Nlt2"                  | Chat IDs        |
+| userId  | string | "_qzjQofkCDvpFe8Da3Nlt2"                  | User IDs        |
+| linkId  | string | "SYDY5qXsnv2aJnkoI9qF8E20"                | Invite Link IDs |
+
+## privateGroupApproveRequest
+
+notification sent to Group admins about users joined via Invite Link to a private group with message approve required
+
+| Field   | Type   | Example                                   | Possible Values |
+|---------| ------ |-------------------------------------------|-----------------|
+| chatId  | string | "_qzjQofkCDvpFe8Da3Nlt2"                  | Chat IDs        |
+| userId  | string | "_qzjQofkCDvpFe8Da3Nlt2"                  | User IDs        |
+| linkId  | string | "SYDY5qXsnv2aJnkoI9qF8E20"                | Invite Link IDs |
+
+## purgeMessages
+
+notification to all group members about all group messages being purged by owner
+
+| Field     | Type   | Example                   | Possible Values |
+|-----------|--------|---------------------------|-----------------|
+| chatId    | string | "_qzjQofkCDvpFe8Da3Nlt2"  | Chat IDs        |
+| userId    | string | "_qzjQofkCDvpFe8Da3Nlt2"  | User IDs        |
+| timestamp | number | 1700500000000             | Positive Int    |

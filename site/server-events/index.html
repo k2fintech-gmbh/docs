@@ -377,6 +377,8 @@
       
         
       
+        
+      
     
     
     
@@ -440,6 +442,28 @@
   
   <span class="md-ellipsis">
     -New
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../client-requests#forward" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    -Forward
     
   </span>
   
@@ -576,6 +600,10 @@
   
     
     
+      
+        
+      
+        
       
         
       
@@ -740,6 +768,50 @@
   
   <span class="md-ellipsis">
     -Profiles
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../client-retrieve#participants" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    -Participants
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../client-retrieve#administrators" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    -Administrators
     
   </span>
   
@@ -1222,6 +1294,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#joinrequest" class="md-nav__link">
+    <span class="md-ellipsis">
+      joinRequest
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#privategroupapproverequest" class="md-nav__link">
+    <span class="md-ellipsis">
+      privateGroupApproveRequest
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#purgemessages" class="md-nav__link">
+    <span class="md-ellipsis">
+      purgeMessages
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1413,7 +1512,7 @@
         
   
   <span class="md-ellipsis">
-    Forwarder from
+    Forwarded from
     
   </span>
   
@@ -1951,6 +2050,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#joinrequest" class="md-nav__link">
+    <span class="md-ellipsis">
+      joinRequest
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#privategroupapproverequest" class="md-nav__link">
+    <span class="md-ellipsis">
+      privateGroupApproveRequest
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#purgemessages" class="md-nav__link">
+    <span class="md-ellipsis">
+      purgeMessages
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2045,7 +2171,7 @@
 </tbody>
 </table>
 <h2 id="chats">chats<a class="headerlink" href="#chats" title="Permanent link">&para;</a></h2>
-<p>new chat / chat deletion</p>
+<p>new chat / chat info changed / chat deletion</p>
 <p class="annotate"><a href="../types/chat-list/">ChatList</a> (1)</p>
 <table>
 <thead>
@@ -2422,6 +2548,102 @@
 <td>string</td>
 <td>"440C17F2-FA09-48F8-8273-E3990FE0BAC5"</td>
 <td>Message ID string</td>
+</tr>
+</tbody>
+</table>
+<h2 id="joinrequest">joinRequest<a class="headerlink" href="#joinrequest" title="Permanent link">&para;</a></h2>
+<p>notification sent to Group admins about users joined via Invite Link with approve required</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Example</th>
+<th>Possible Values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>chatId</td>
+<td>string</td>
+<td>"_qzjQofkCDvpFe8Da3Nlt2"</td>
+<td>Chat IDs</td>
+</tr>
+<tr>
+<td>userId</td>
+<td>string</td>
+<td>"_qzjQofkCDvpFe8Da3Nlt2"</td>
+<td>User IDs</td>
+</tr>
+<tr>
+<td>linkId</td>
+<td>string</td>
+<td>"SYDY5qXsnv2aJnkoI9qF8E20"</td>
+<td>Invite Link IDs</td>
+</tr>
+</tbody>
+</table>
+<h2 id="privategroupapproverequest">privateGroupApproveRequest<a class="headerlink" href="#privategroupapproverequest" title="Permanent link">&para;</a></h2>
+<p>notification sent to Group admins about users joined via Invite Link to a private group with message approve required</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Example</th>
+<th>Possible Values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>chatId</td>
+<td>string</td>
+<td>"_qzjQofkCDvpFe8Da3Nlt2"</td>
+<td>Chat IDs</td>
+</tr>
+<tr>
+<td>userId</td>
+<td>string</td>
+<td>"_qzjQofkCDvpFe8Da3Nlt2"</td>
+<td>User IDs</td>
+</tr>
+<tr>
+<td>linkId</td>
+<td>string</td>
+<td>"SYDY5qXsnv2aJnkoI9qF8E20"</td>
+<td>Invite Link IDs</td>
+</tr>
+</tbody>
+</table>
+<h2 id="purgemessages">purgeMessages<a class="headerlink" href="#purgemessages" title="Permanent link">&para;</a></h2>
+<p>notification to all group members about all group messages being purged by owner</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Example</th>
+<th>Possible Values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>chatId</td>
+<td>string</td>
+<td>"_qzjQofkCDvpFe8Da3Nlt2"</td>
+<td>Chat IDs</td>
+</tr>
+<tr>
+<td>userId</td>
+<td>string</td>
+<td>"_qzjQofkCDvpFe8Da3Nlt2"</td>
+<td>User IDs</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>number</td>
+<td>1700500000000</td>
+<td>Positive Int</td>
 </tr>
 </tbody>
 </table>

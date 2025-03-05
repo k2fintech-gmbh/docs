@@ -1,11 +1,11 @@
 
 # ForwardedFrom
 
-| Field         | Type                                | Example                                  | Possible Values |
-|---------------|-------------------------------------|------------------------------------------|-----------------|
-| chat          | chatInfo                            | `{chatId: "", type: "dialog", name: ""}` | Chat info       |
-| participant   | ["Profile"](contacts.md#Profile)    | `{id: "", name: "", avatarUrl""}`        | Profile         |
-| messageId     | string                              | "JC0TvKi3f2bIQtBcW1jIn"                  | Message ID      |
+| Field         | Type                             | Example                                  | Possible Values |
+|---------------|----------------------------------|------------------------------------------|-----------------|
+| chat          | ["ChatInfo"](chat.md#ChatInfo)    | `{chatId: "", type: "dialog", name: ""}` | Chat info       |
+| participant   | ["Profile"](contacts.md#Profile) | `{id: "", name: "", avatarUrl""}`        | Profile         |
+| messageId     | string                           | "JC0TvKi3f2bIQtBcW1jIn"                  | Message ID      |
 
 ##### Example 
 > ```json
@@ -14,7 +14,8 @@
 >       "chatId": "string",
 >       "photoUrl": "string",
 >       "type": "dialog",
->       "name": "string"
+>       "name": "string",
+>       "participantCount": 2
 >   },
 >   "participant": {
 >       "id": "weEEwwecw_wdx2",

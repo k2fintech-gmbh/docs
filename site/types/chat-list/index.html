@@ -377,6 +377,8 @@
       
         
       
+        
+      
     
     
     
@@ -440,6 +442,28 @@
   
   <span class="md-ellipsis">
     -New
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../client-requests#forward" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    -Forward
     
   </span>
   
@@ -576,6 +600,10 @@
   
     
     
+      
+        
+      
+        
       
         
       
@@ -740,6 +768,50 @@
   
   <span class="md-ellipsis">
     -Profiles
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../client-retrieve#participants" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    -Participants
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../client-retrieve#administrators" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    -Administrators
     
   </span>
   
@@ -1350,7 +1422,7 @@
         
   
   <span class="md-ellipsis">
-    Forwarder from
+    Forwarded from
     
   </span>
   
@@ -1882,6 +1954,12 @@
 <td>The name of the chat.</td>
 </tr>
 <tr>
+<td>username</td>
+<td>string</td>
+<td>"@JohnDoe"</td>
+<td>The name of the chat.</td>
+</tr>
+<tr>
 <td>lastMessageText?</td>
 <td>string</td>
 <td>"Hello, World!"</td>
@@ -1952,6 +2030,30 @@
 <td>boolean</td>
 <td>false</td>
 <td>if there are new reactions to user messages in chat</td>
+</tr>
+<tr>
+<td>attachmentType?</td>
+<td>"file", "image", "video"</td>
+<td>"file"</td>
+<td></td>
+</tr>
+<tr>
+<td>participantCount?</td>
+<td>number</td>
+<td>5</td>
+<td></td>
+</tr>
+<tr>
+<td>payload?</td>
+<td>any   c</td>
+<td></td>
+<td>Assuming CallPayload can be any type for now</td>
+</tr>
+<tr>
+<td>hidden?</td>
+<td>boolean</td>
+<td>false</td>
+<td>Assuming CallPayload can be any type for now</td>
 </tr>
 </tbody>
 </table>

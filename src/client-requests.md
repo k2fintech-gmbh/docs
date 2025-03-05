@@ -16,13 +16,33 @@ The following tables represent the structure for various payloads, client-server
 | attachments?    | array   | See ["Attachments"](types/attachment.md) | Array of Attachment objects |
 | replyTo?        | integer | 1                                        |                             |
 
-**response payload schema:**
+### {: #messageresponse }
+**response payload schema:** 
 
 | Field           | Type    | Example                                | Possible Values    |
 | --------------- | ------- | -------------------------------------- | ------------------ |
 | messageId       | integer | 123                                    | message seq number |
 | timestamp       | integer | 1700500000000                          |                    |
 | clientMessageId | string  | "66d93f9b-a8ff-4f18-a092-c19bdeb31fa4" | Any string         |
+       
+If message can not be delivered due to user's privacy settings - **empty object** will be returned in response.
+
+### forward {: #forward }
+
+**request payload schema:**
+
+| Field             | Type                                  | Example                                | Possible Values             |
+|-------------------|---------------------------------------|----------------------------------------| --------------------------- |
+| chatId            | string                                | "User2"                                | Chat IDs                    |
+| message           | string                                | "Hello, World!"                        | Any string                  |
+| clientMessageId   | string                                | "66d93f9b-a8ff-4f18-a092-c19bdeb31fa4" | Any string                  |
+| forwardedFrom     | { chatId: string; messageId: number } | { chatId: "User2"; messageId: 2 }      |                             |
+
+**response payload schema:**
+
+| Field           | Type                                                     | Example  | Possible Values |
+|-----------------|----------------------------------------------------------|----------|-----------------|
+| messages        | [messageresponse](../client-requests#messageresponse) [] |          |                 |
        
 If message can not be delivered due to user's privacy settings - **empty object** will be returned in response.
 
@@ -83,7 +103,7 @@ delete a message.
 **request payload schema:**
 
 | Field             | Type    | Example | Possible Values |
-| ----------------- | ------- | ------- | --------------- |
+| ----------------- | ------- | ------- |-----------------|
 | chatId            | string  | "User2" | Chat IDs        |
 | originalMessageId | integer | 123     | Message IDs     |
 

@@ -57,3 +57,35 @@ endId and startId are optional. You cannot specify them at the same time. If you
 | Field | type     | data type | description |
 |-------|----------|-----------|-------------|
 | ids   | required | string[]  | user IDs    | 
+
+## participants
+
+**request payload schema:**
+
+| Field     | Type    | Example                 | Possible Values         |
+|-----------|---------|-------------------------|-------------------------|
+| chatId    | string  | "JC0TvKi3f2bIQtBcW1jIn" | Chat IDs                |
+| startPos? | integer | 199                     | positive integer        |
+| filter?   | string  | "economics"             | userName or name search |
+| count?    | integer | 50                      | positive integer        |
+
+**response payload schema:**
+
+| Field        | Type                             | Example       | Possible Values |
+|--------------|----------------------------------|---------------|-----------------|
+| count        | integer                          | 123           | Message IDs     |
+| startPos     | integer                          | 1700500000000 |                 |
+| available    | integer                          | 2             |                 |
+| participants | [Profile](types/chat.md#profile) |               |                 |
+
+## administrators
+
+**request payload schema:**
+
+| Field   | type     | data type | description |
+|---------|----------|-----------|-------------|
+| chatId  | required | string    | Chat IDs    | 
+
+**response payload schema:**
+                  
+Array of [Profile](types/chat.md#profile) & { rights: [Rights](types/chat.md#rights) }

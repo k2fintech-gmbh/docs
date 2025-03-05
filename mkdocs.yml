@@ -44,6 +44,7 @@ nav:
       - Messaging:
           - Client requests: "client-requests.md"
           - -New: "client-requests#new"
+          - -Forward: "client-requests#forward"
           - -Edit: "client-requests#edit"
           - -Delete: "client-requests#delete"
           - -Delivered: "client-requests#dlvrd"
@@ -56,6 +57,8 @@ nav:
           - -Messages: "client-retrieve#messages"
           - -Profile: "client-retrieve#profile"
           - -Profiles: "client-retrieve#profiles"
+          - -Participants: "client-retrieve#participants"
+          - -Administrators: "client-retrieve#administrators"
       - REST API:
           - Contacts API: "contacts.md"
           - Chat manage API: "chat-manage.md"
@@ -75,7 +78,7 @@ nav:
       - Chat list: "types/chat-list.md"
       - Message: "types/message.md"
       - Reply: "types/reply-to.md"
-      - Forwarder from: "types/forwarded-from.md"
+      - Forwarded from: "types/forwarded-from.md"
       - Attachment: "types/attachment.md"
       - Video: "types/video.md"
 

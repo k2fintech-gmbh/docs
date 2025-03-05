@@ -381,6 +381,8 @@
       
         
       
+        
+      
     
     
     
@@ -478,6 +480,24 @@
   <a href="#new" class="md-nav__link">
     <span class="md-ellipsis">
       new
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#messageresponse" class="md-nav__link">
+    <span class="md-ellipsis">
+      {: #messageresponse }
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#forward" class="md-nav__link">
+    <span class="md-ellipsis">
+      forward
     </span>
   </a>
   
@@ -590,6 +610,28 @@
   
   <span class="md-ellipsis">
     -New
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../client-requests#forward" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    -Forward
     
   </span>
   
@@ -726,6 +768,10 @@
   
     
     
+      
+        
+      
+        
       
         
       
@@ -890,6 +936,50 @@
   
   <span class="md-ellipsis">
     -Profiles
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../client-retrieve#participants" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    -Participants
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../client-retrieve#administrators" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    -Administrators
     
   </span>
   
@@ -1421,7 +1511,7 @@
         
   
   <span class="md-ellipsis">
-    Forwarder from
+    Forwarded from
     
   </span>
   
@@ -1880,6 +1970,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#messageresponse" class="md-nav__link">
+    <span class="md-ellipsis">
+      {: #messageresponse }
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#forward" class="md-nav__link">
+    <span class="md-ellipsis">
+      forward
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#dlvrd" class="md-nav__link">
     <span class="md-ellipsis">
       dlvrd
@@ -2031,7 +2139,8 @@
 </tr>
 </tbody>
 </table>
-<p><strong>response payload schema:</strong></p>
+<h3 id="messageresponse">{: #messageresponse }<a class="headerlink" href="#messageresponse" title="Permanent link">&para;</a></h3>
+<p><strong>response payload schema:</strong> </p>
 <table>
 <thead>
 <tr>
@@ -2059,6 +2168,64 @@
 <td>string</td>
 <td>"66d93f9b-a8ff-4f18-a092-c19bdeb31fa4"</td>
 <td>Any string</td>
+</tr>
+</tbody>
+</table>
+<p>If message can not be delivered due to user's privacy settings - <strong>empty object</strong> will be returned in response.</p>
+<h3 id="forward">forward<a class="headerlink" href="#forward" title="Permanent link">&para;</a></h3>
+<p><strong>request payload schema:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Example</th>
+<th>Possible Values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>chatId</td>
+<td>string</td>
+<td>"User2"</td>
+<td>Chat IDs</td>
+</tr>
+<tr>
+<td>message</td>
+<td>string</td>
+<td>"Hello, World!"</td>
+<td>Any string</td>
+</tr>
+<tr>
+<td>clientMessageId</td>
+<td>string</td>
+<td>"66d93f9b-a8ff-4f18-a092-c19bdeb31fa4"</td>
+<td>Any string</td>
+</tr>
+<tr>
+<td>forwardedFrom</td>
+<td>{ chatId: string; messageId: number }</td>
+<td>{ chatId: "User2"; messageId: 2 }</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>response payload schema:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Example</th>
+<th>Possible Values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>messages</td>
+<td><a href="../client-requests#messageresponse">messageresponse</a> []</td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
