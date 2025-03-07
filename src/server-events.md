@@ -89,6 +89,14 @@ new chat / chat info changed / chat deletion
 | messageId       | integer | 123           | Message IDs       |
 | clientMessageId | string  | "123"         |                   |
 | timestamp       | integer | 1700500000000 |                   |
+                
+## messagePinned
+
+| Field     | Type    | Example       | Possible Values   |
+|-----------| ------- | ------------- | ----------------- |
+| chatId    | string  | "User2"       | Chat IDs          |
+| userId    | string  | "User2"       | user (for groups) |
+| messageId | integer | 123           | Message IDs       |
 
 ## newStory
 

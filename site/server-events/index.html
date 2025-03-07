@@ -855,6 +855,8 @@
       
         
       
+        
+      
     
     
     
@@ -918,6 +920,28 @@
   
   <span class="md-ellipsis">
     Chat manage API
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chat-settings/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chat settings API
     
   </span>
   
@@ -1262,6 +1286,15 @@
   <a href="#read" class="md-nav__link">
     <span class="md-ellipsis">
       read
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#messagepinned" class="md-nav__link">
+    <span class="md-ellipsis">
+      messagePinned
     </span>
   </a>
   
@@ -2024,6 +2057,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#messagepinned" class="md-nav__link">
+    <span class="md-ellipsis">
+      messagePinned
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#newstory" class="md-nav__link">
     <span class="md-ellipsis">
       newStory
@@ -2418,6 +2460,37 @@
 <td>integer</td>
 <td>1700500000000</td>
 <td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="messagepinned">messagePinned<a class="headerlink" href="#messagepinned" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Example</th>
+<th>Possible Values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>chatId</td>
+<td>string</td>
+<td>"User2"</td>
+<td>Chat IDs</td>
+</tr>
+<tr>
+<td>userId</td>
+<td>string</td>
+<td>"User2"</td>
+<td>user (for groups)</td>
+</tr>
+<tr>
+<td>messageId</td>
+<td>integer</td>
+<td>123</td>
+<td>Message IDs</td>
 </tr>
 </tbody>
 </table>

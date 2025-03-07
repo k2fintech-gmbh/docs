@@ -62,6 +62,7 @@ nav:
       - REST API:
           - Contacts API: "contacts.md"
           - Chat manage API: "chat-manage.md"
+          - Chat settings API: "chat-settings.md"
           - Privacy API: "privacy.md"
           - Profile API: "profile.md"
           - Stories API: "stories.md"

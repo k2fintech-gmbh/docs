@@ -26,7 +26,9 @@
 | attachmentType?    | "file", "image", "video" | "file"                             |                                                                          |
 | participantCount?  | number                   | 5                                  |                                                                          |
 | payload?           | any   c                  |                                    | Assuming CallPayload can be any type for now                             |
-| hidden?            | boolean                  | false                              | Assuming CallPayload can be any type for now                             |
+| hidden?            | boolean                  | false                              | Hidden chat                                                              |
+| isPinned?          | boolean                  | false                              | Chat is Pinned                                                           |
+| isMuted?           | boolean                  | false                              | Chat is Muted                                                            |
 
 ## MessageStatus
 
