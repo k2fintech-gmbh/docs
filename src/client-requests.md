@@ -102,10 +102,12 @@ delete a message.
 
 **request payload schema:**
 
-| Field             | Type    | Example | Possible Values |
-| ----------------- | ------- | ------- |-----------------|
-| chatId            | string  | "User2" | Chat IDs        |
-| originalMessageId | integer | 123     | Message IDs     |
+| Field             | Type         | Example | Possible Values    |
+|-------------------|--------------|---------|--------------------|
+| chatId            | string       | "User2" | Chat IDs           |
+| clientMessageId   | string       | "123"   | Client message IDs |
+| originalMessageId | integer      | 123     | Message IDs        |
+| for               | 'me' , 'all' | 'me'    | 'me' , 'all'       |
 
 **response payload schema:**
 
