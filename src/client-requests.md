@@ -123,12 +123,13 @@ edit a message.
 
 **request payload schema:**
 
-| Field             | Type    | Example                                  | Possible Values             |
-| ----------------- | ------- | ---------------------------------------- | --------------------------- |
-| chatId            | string  | "User2"                                  | Chat IDs                    |
-| originalMessageId | integer | 123                                      | Message IDs                 |
-| message           | string  | "Hello, World!"                          | Any string                  |
-| attachments?      | array   | See ["Attachments"](types/attachment.md) | Array of Attachment objects |
+| Field             | Type     | Example                                  | Possible Values             |
+|-------------------|----------|------------------------------------------| --------------------------- |
+| chatId            | string   | "User2"                                  | Chat IDs                    |
+| originalMessageId | integer  | 123                                      | Message IDs                 |
+| clientMessageId   | string   | "1233fdsa3"                              | Message IDs                 |
+| message           | string   | "Hello, World!"                          | Any string                  |
+| attachments?      | array    | See ["Attachments"](types/attachment.md) | Array of Attachment objects |
 
 **response payload schema:**
 
