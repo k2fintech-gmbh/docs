@@ -124,10 +124,10 @@ edit a message.
 **request payload schema:**
 
 | Field             | Type     | Example                                  | Possible Values             |
-|-------------------|----------|------------------------------------------| --------------------------- |
+|-------------------|----------|------------------------------------------|-----------------------------|
 | chatId            | string   | "User2"                                  | Chat IDs                    |
 | originalMessageId | integer  | 123                                      | Message IDs                 |
-| clientMessageId   | string   | "1233fdsa3"                              | Message IDs                 |
+| clientMessageId   | string   | "1233fdsa3"                              | Client message IDs          |
 | message           | string   | "Hello, World!"                          | Any string                  |
 | attachments?      | array    | See ["Attachments"](types/attachment.md) | Array of Attachment objects |
 
