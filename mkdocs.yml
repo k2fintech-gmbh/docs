@@ -95,6 +95,7 @@ nav:
       - TUS Upload: "tus-upload"
       - HTTP API: "http-api"
       - HTTP API files: "http-api-files"
+      - HTTP API KYC: "http-api-kyc"
       - Your network: "https://dev.iambig.ai/network"
 plugins:
   - render_swagger:
