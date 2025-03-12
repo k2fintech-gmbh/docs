@@ -31,12 +31,11 @@ If message can not be delivered due to user's privacy settings - **empty object*
 
 **request payload schema:**
 
-| Field             | Type                                  | Example                                | Possible Values             |
-|-------------------|---------------------------------------|----------------------------------------| --------------------------- |
-| chatId            | string                                | "User2"                                | Chat IDs                    |
-| message           | string                                | "Hello, World!"                        | Any string                  |
-| clientMessageId   | string                                | "66d93f9b-a8ff-4f18-a092-c19bdeb31fa4" | Any string                  |
-| forwardedFrom     | { chatId: string; messageId: number } | { chatId: "User2"; messageId: 2 }      |                             |
+| Field             | Type                                                                           | Example         | Possible Values  |
+|-------------------|--------------------------------------------------------------------------------|-----------------|------------------|
+| chatId            | string                                                                         | "User2"         | Chat IDs         |
+| message           | string                                                                         | "Hello, World!" | Any string       |
+| forwardedMessages | [ForwardedFromRequestItem](types/forwarded-from.md#forwardedfromrequestitem)[] |                 | array of Objects |
 
 **response payload schema:**
 

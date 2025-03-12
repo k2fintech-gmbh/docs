@@ -25,4 +25,15 @@
 >   },
 >   "messageId": "JC0TvKi3f2bIQtBcW1jIn"
 > }
-> ```
+> ```    
+
+---
+
+# ForwardedFromRequestItem
+
+| Field           | Type                                  | Example                                  | Possible Values |
+|-----------------|---------------------------------------|------------------------------------------|-----------------|
+| clientMessageId | string                                | "66d93f9b-a8ff-4f18-a092-c19bdeb31fa4"   | Any string      |
+| forwardedFrom   | { chatId: string; messageId: number } | { chatId: "User2"; messageId: 2 }        |                 |
+
+
