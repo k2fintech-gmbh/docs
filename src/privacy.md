@@ -6,17 +6,17 @@
 All properties are optional. By default they are set to `EVERYBODY`
 
 ##### Parameters (JSON body)
-> | name                | type     | data type | description                                |
-> |---------------------|----------|-----------|--------------------------------------------|
-> | showPhoneNumber     | required | boolean   | true if story is available to all contacts |
-> | showUsername        | required | string    | playback.hls from metadata                 |
-> | showOnlineStatus    | required | string    | thumbnail from metadata                    |
-> | showPortfolioPhoto  | required | number    | duration of the story                      |
-> | canForwardMessage   | optional | array     | list of sharing lists IDs                  |
-> | canCall             | optional | number    | price for the story                        |
-> | canSendVoice        | optional | number    | price for the story                        |
-> | canSendMessage      | optional | number    | price for the story                        |
-> | canInvite           | optional | number    | price for the story                        |
+> | name                | type     | data type  | description                    |
+> |---------------------|----------|------------|--------------------------------|
+> | showPhoneNumber     | optional | boolean    | can others see Phone Number    |
+> | showUsername        | optional | boolean    | can others see @username       |
+> | showOnlineStatus    | optional | boolean    | can others see online status   |
+> | showPortfolioPhoto  | optional | boolean    | can others see Avatar          |
+> | canForwardMessage   | optional | boolean    | can others forward my messages |
+> | canCall             | optional | boolean    | can others call me             |
+> | canSendVoice        | optional | boolean    | can others send me Media       |
+> | canSendMessage      | optional | boolean    | can others ssen me Messages    |
+> | canInvite           | optional | boolean    | can others add me to Chats     |
                
 ##### Possible values
 > | value            | description                                   |
