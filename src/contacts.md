@@ -163,3 +163,71 @@ Profile data in response may be filtered based on user's privacy settings.
 > ```
 
 ---
+
+
+### Block contact/user
+<summary><code>POST</code> <code><b>/contacts/block</b></code></summary>
+
+Blocked user does not know that he is blocked.<br />
+Blocked user can not see online status of blocker.<br />
+He still can send messages. But the blocker will not receive them.<br />
+Messages of blocked user are not deleted.
+
+##### Parameters (body)
+> | name   | type     | data type | description |
+> |--------|----------|-----------|-------------|
+> | userId | required | string    | user IDs    |
+
+##### Responses
+> | http code | content-type       | response                                                                     |
+> |-----------|--------------------|------------------------------------------------------------------------------|
+> | `200`     | `application/json` | `{}`                                                                         |
+> | `401`     | `application/json` | `{"error": "Unauthorized","timestamp": 1737195610743,"status": 401}`         |
+> | `404`     | `application/json` | `{"error": "User not found","timestamp": 1737195610743,"status": 404}`       |
+> | `500`     | `application/json` | `{"error": "Something went wrong","timestamp": 1737195610743,"status": 500}` |
+
+##### Example Request
+> ```json
+> {
+>           "userId": "WEhNPJ1uVRonZRYC4nXmK"
+> }
+> ```
+
+##### Example Response
+> ```json
+> {}
+> ```
+
+---
+
+### Un-Block contact/user
+<summary><code>POST</code> <code><b>/contacts/unblock</b></code></summary>
+
+All (non-delivered) messages from unBlocked user will be delivered.
+
+##### Parameters (body)
+> | name   | type     | data type | description |
+> |--------|----------|-----------|-------------|
+> | userId | required | string    | user IDs    |
+
+##### Responses
+> | http code | content-type       | response                                                                     |
+> |-----------|--------------------|------------------------------------------------------------------------------|
+> | `200`     | `application/json` | `{}`                                                                         |
+> | `401`     | `application/json` | `{"error": "Unauthorized","timestamp": 1737195610743,"status": 401}`         |
+> | `404`     | `application/json` | `{"error": "User not found","timestamp": 1737195610743,"status": 404}`       |
+> | `500`     | `application/json` | `{"error": "Something went wrong","timestamp": 1737195610743,"status": 500}` |
+
+##### Example Request
+> ```json
+> {
+>           "userId": "WEhNPJ1uVRonZRYC4nXmK"
+> }
+> ```
+
+##### Example Response
+> ```json
+> {}
+> ```
+
+---
