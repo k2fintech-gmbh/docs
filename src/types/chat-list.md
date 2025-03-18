@@ -29,6 +29,7 @@
 | hidden?            | boolean                  | false                              | Hidden chat                                                              |
 | isPinned?          | boolean                  | false                              | Chat is Pinned                                                           |
 | isMuted?           | boolean                  | false                              | Chat is Muted                                                            |
+| isMyContact?       | boolean                  | false                              | If it's a dialog with user from my Contacts                              |
 
 ## MessageStatus
 

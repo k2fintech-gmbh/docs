@@ -100,20 +100,21 @@
 
 ## Profile
 
-| Field        | Type   | Example                    |
-| ------------ | ------ | -------------------------- |
-| firstName?   | string | "Alexander"                |
-| lastName?    | string | "Kuzopi"                   |
-| username?    | string | "User2"                    |
-| phoneNumber? | string | "User2"                    |
-| verified?    | bool   | true                       |
-| avatarUrl?   | string | "https://pics.png/png.png" |
+| Field         | Type   | Example                    |
+|---------------| ------ | -------------------------- |
+| firstName?    | string | "Alexander"                |
+| lastName?     | string | "Kuzopi"                   |
+| username?     | string | "User2"                    |
+| phoneNumber?  | string | "User2"                    |
+| verified?     | bool   | true                       |
+| avatarUrl?    | string | "https://pics.png/png.png" |
 | lastSeen?     | number | 1700000000000              |
 | onlineHidden? | bool   | false                      |
 | permitCall?   | bool   | false                      |
 | permitInvite? | bool   | false                      |
 | permitStatus? | bool   | false                      |
 | isAdmin?      | bool   | false                      |
+| isMyContact?  | bool   | false                      |
 
 Profile data in responses may be filtered based on user's privacy settings.\
 `phoneNumber` may be replaced with empty string ` '' ` \

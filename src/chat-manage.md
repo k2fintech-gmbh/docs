@@ -62,6 +62,69 @@ There is no limit on the number of pinned chats.
    
 ---
 
+### Hide (lock/close) chat
+<summary><code>POST</code> <code><b>/chats/hide</b></code></summary>
+
+When chat is locked - flag `hidden` in ChatList response is set to true.
+
+##### Parameters (JSON body)
+> | name       | type     | data type  | description                          |
+> |------------|----------|------------|--------------------------------------|
+> | chatId     | required | string     | chat IDs                             |
+
+##### Responses
+> | http code | content-type       | response                                                                     |
+> |-----------|--------------------|------------------------------------------------------------------------------|
+> | `200`     | `application/json` | `{}`                                                                         |
+> | `404`     | `application/json` | `{"error": "Chat not found","timestamp": 1737195610743,"status": 404}`       |
+> | `500`     | `application/json` | `{"error": "Something went wrong","timestamp": 1737195610743,"status": 500}` |
+
+##### Example Request
+> ```json
+> {
+>     "chatId": "JC0TvKi3f2bIQtBcW1jIn",
+> }
+> ```        
+
+##### Example Response
+> ```json
+> {} 
+> ```
+     
+---
+
+
+### UnHide chat
+<summary><code>POST</code> <code><b>/chats/unhide</b></code></summary>
+
+When chat is Unlocked - flag `hidden` in ChatList response is set to false or undefined
+
+##### Parameters (JSON body)
+> | name       | type     | data type  | description                          |
+> |------------|----------|------------|--------------------------------------|
+> | chatId     | required | string     | chat IDs                             |
+
+##### Responses
+> | http code | content-type       | response                                                                     |
+> |-----------|--------------------|------------------------------------------------------------------------------|
+> | `200`     | `application/json` | `{}`                                                                         |
+> | `404`     | `application/json` | `{"error": "Chat not found","timestamp": 1737195610743,"status": 404}`       |
+> | `500`     | `application/json` | `{"error": "Something went wrong","timestamp": 1737195610743,"status": 500}` |
+
+##### Example Request
+> ```json
+> {
+>     "chatId": "JC0TvKi3f2bIQtBcW1jIn",
+> }
+> ```        
+
+##### Example Response
+> ```json
+> {} 
+> ```
+   
+---
+
 ### Mute chat
 <summary><code>POST</code> <code><b>/chats/mute</b></code></summary>
 

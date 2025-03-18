@@ -231,3 +231,35 @@ All (non-delivered) messages from unBlocked user will be delivered.
 > ```
 
 ---
+
+### Add user to My contacts
+<summary><code>POST</code> <code><b>/contacts/add</b></code></summary>
+
+Add non-contact user to my Contacts by ID.
+
+##### Parameters (body)
+> | name   | type     | data type | description |
+> |--------|----------|-----------|-------------|
+> | userId | required | string    | user IDs    |
+
+##### Responses
+> | http code | content-type       | response                                                                     |
+> |-----------|--------------------|------------------------------------------------------------------------------|
+> | `200`     | `application/json` | `{}`                                                                         |
+> | `401`     | `application/json` | `{"error": "Unauthorized","timestamp": 1737195610743,"status": 401}`         |
+> | `404`     | `application/json` | `{"error": "User not found","timestamp": 1737195610743,"status": 404}`       |
+> | `500`     | `application/json` | `{"error": "Something went wrong","timestamp": 1737195610743,"status": 500}` |
+
+##### Example Request
+> ```json
+> {
+>           "userId": "WEhNPJ1uVRonZRYC4nXmK"
+> }
+> ```
+
+##### Example Response
+> ```json
+> {}
+> ```
+
+---
