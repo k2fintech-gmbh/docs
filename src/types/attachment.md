@@ -28,13 +28,14 @@
 
 ### Video meta
 
-| Field    | Type    | Example     | Possible Values          |
-| -------- | ------- | ----------- | ------------------------ |
-| mimetype | string  | "video/mp4" | "video/mp4", "video/gif" |
-| width    | integer | 1920        | Video width in pixels    |
-| height   | integer | 1080        | Video height in pixels   |
-| size     | integer | 5000000     | File size in bytes       |
-| duration | integer | 120         | Duration in seconds      |
+| Field    | Type    | Example          | Possible Values          |
+|----------|---------|------------------|--------------------------|
+| mimetype | string  | "video/mp4"      | "video/mp4", "video/gif" |
+| width    | integer | 1920             | Video width in pixels    |
+| height   | integer | 1080             | Video height in pixels   |
+| size     | integer | 5000000          | File size in bytes       |
+| duration | integer | 120              | Duration in seconds      |
+| preview  | string  | "https://...jpg" | URL                      |
 
 ### Voice meta
 
