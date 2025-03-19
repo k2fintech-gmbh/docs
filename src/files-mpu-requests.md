@@ -161,7 +161,8 @@ Set `downloadable` to true so downloadable link can be get for this file.<br />
 
 > ```json
 > {
->   "url": "https://dev.files.iambig.ai/file/zAE2h2mPSKjWwnxw8qxp4"
+>   "url": "https://dev.files.iambig.ai/file/zAE2h2mPSKjWwnxw8qxp4",
+>   "preview": "https://cloudflare.com/file/thumbnail.jpg"
 > }
 > ``` 
 
@@ -202,7 +203,8 @@ Set `downloadable` to true so downloadable link can be get for this file.
 
 > ```json
 > {
->   "url": "https://dev.files.iambig.ai/file/zAE2h2mPSKjWwnxw8qxp4"
+>   "url": "https://dev.files.iambig.ai/file/zAE2h2mPSKjWwnxw8qxp4",
+>   "preview": "https://cloudflare.com/file/thumbnail.jpg"
 > }
 > ```
 

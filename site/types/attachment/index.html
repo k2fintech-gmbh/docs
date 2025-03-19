@@ -1471,6 +1471,51 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#voice-meta" class="md-nav__link">
+    <span class="md-ellipsis">
+      Voice meta
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#audio-meta" class="md-nav__link">
+    <span class="md-ellipsis">
+      Audio meta
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#call-meta" class="md-nav__link">
+    <span class="md-ellipsis">
+      Call meta
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contact-meta" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contact meta
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geo-meta" class="md-nav__link">
+    <span class="md-ellipsis">
+      Geo meta
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1952,6 +1997,51 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#voice-meta" class="md-nav__link">
+    <span class="md-ellipsis">
+      Voice meta
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#audio-meta" class="md-nav__link">
+    <span class="md-ellipsis">
+      Audio meta
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#call-meta" class="md-nav__link">
+    <span class="md-ellipsis">
+      Call meta
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contact-meta" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contact meta
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geo-meta" class="md-nav__link">
+    <span class="md-ellipsis">
+      Geo meta
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2122,6 +2212,191 @@
 <td>integer</td>
 <td>120</td>
 <td>Duration in seconds</td>
+</tr>
+</tbody>
+</table>
+<h3 id="voice-meta">Voice meta<a class="headerlink" href="#voice-meta" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Example</th>
+<th>Possible Values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>duration</td>
+<td>integer</td>
+<td>120</td>
+<td>Duration in seconds</td>
+</tr>
+</tbody>
+</table>
+<h3 id="audio-meta">Audio meta<a class="headerlink" href="#audio-meta" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Example</th>
+<th>Possible Values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>duration</td>
+<td>integer</td>
+<td>120</td>
+<td>Duration in seconds</td>
+</tr>
+</tbody>
+</table>
+<h3 id="call-meta">Call meta<a class="headerlink" href="#call-meta" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Example</th>
+<th>Possible Values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>callId</td>
+<td>string</td>
+<td>"SdewSF32DF"</td>
+<td>"video/mp4", "video/gif"</td>
+</tr>
+<tr>
+<td>direction</td>
+<td>CallDirection</td>
+<td>"incoming"</td>
+<td>'incoming' , 'outgoing'</td>
+</tr>
+<tr>
+<td>status</td>
+<td>CallStatus</td>
+<td>"missed"</td>
+<td>'missed', 'received', 'in progress'</td>
+</tr>
+<tr>
+<td>callType</td>
+<td>CallType</td>
+<td>"video"</td>
+<td>'video', 'audio'</td>
+</tr>
+<tr>
+<td>closedAt</td>
+<td>number</td>
+<td>5000000</td>
+<td>timestamp</td>
+</tr>
+<tr>
+<td>isGroup</td>
+<td>boolean</td>
+<td>false</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td>caller</td>
+<td>string</td>
+<td>"SdewSF32DF"</td>
+<td>user ID's</td>
+</tr>
+<tr>
+<td>headMessageId</td>
+<td>number</td>
+<td>120</td>
+<td>Duration in seconds</td>
+</tr>
+<tr>
+<td>groupedAt</td>
+<td>number</td>
+<td>5000000</td>
+<td>timestamp</td>
+</tr>
+<tr>
+<td>duration</td>
+<td>number</td>
+<td>120</td>
+<td>Duration in seconds</td>
+</tr>
+<tr>
+<td>participants</td>
+<td>string[]</td>
+<td>["SdewSF32DF", "SdewSF32DF"]</td>
+<td>user ID's</td>
+</tr>
+</tbody>
+</table>
+<h3 id="contact-meta">Contact meta<a class="headerlink" href="#contact-meta" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Example</th>
+<th>Possible Values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>userId</td>
+<td>string</td>
+<td>"SdewSF32DF"</td>
+<td>user ID's</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>"Peter"</td>
+<td>Name, Surname</td>
+</tr>
+<tr>
+<td>phoneNumber</td>
+<td>string</td>
+<td>"+878831080"</td>
+<td>phone number</td>
+</tr>
+<tr>
+<td>avatarUrl</td>
+<td>string</td>
+<td>"https://..."</td>
+<td>url</td>
+</tr>
+</tbody>
+</table>
+<h3 id="geo-meta">Geo meta<a class="headerlink" href="#geo-meta" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Example</th>
+<th>Possible Values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>latitude</td>
+<td>number</td>
+<td></td>
+<td>latitude</td>
+</tr>
+<tr>
+<td>longitude</td>
+<td>number</td>
+<td></td>
+<td>longitude</td>
+</tr>
+<tr>
+<td>address</td>
+<td>string</td>
+<td>'Some City,...'</td>
+<td>Address (text)</td>
 </tr>
 </tbody>
 </table>
