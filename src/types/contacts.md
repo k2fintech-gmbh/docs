@@ -24,6 +24,7 @@
 | permitCall?   | bool   | false                      |
 | permitInvite? | bool   | false                      |
 | permitStatus? | bool   | false                      |
+| isBlocked?    | bool   | false                      |
 | isAdmin?      | bool   | false                      |
 
 Profile data in responses may be filtered based on user's privacy settings.\
