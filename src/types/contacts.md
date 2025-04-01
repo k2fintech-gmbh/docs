@@ -26,6 +26,8 @@
 | permitStatus? | bool   | false                      |
 | isBlocked?    | bool   | false                      |
 | isAdmin?      | bool   | false                      |
+| paidMessages? | bool   | false                      |
+| paidCalls?    | bool   | false                      |
 
 Profile data in responses may be filtered based on user's privacy settings.\
 `phoneNumber` may be replaced with empty string ` '' ` \

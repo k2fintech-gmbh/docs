@@ -4,32 +4,34 @@
 
 ## ChatListItem
 
-| Field              | Type                     | Example                            | Description                                                              |
-|--------------------|--------------------------|------------------------------------|--------------------------------------------------------------------------|
-| type               | ChatType                 | "group"                            | "dialog" \| "group" \| "channel" \| "favorites" \| "ai"                  |
-| id                 | string                   | "JC0TvKi3f2bIQtBcW1jIn"            | The unique identifier for the chat item.                                 |
-| photoUrl?          | string                   | "dev.big.a-kuznetsov.cc/public/de" | Optional URL to the chat's photo.                                        |
-| name               | string                   | "John Doe"                         | The name of the chat.                                                    |
-| username           | string                   | "@JohnDoe"                         | The name of the chat.                                                    |
-| lastMessageText?   | string                   | "Hello, World!"                    | The text of the last message in the chat.                                |
-| lastMessageTime?   | Date                     | 1700000000000                      | The timestamp of the last message. Use Date for DateTime representation. |
-| lastMessageAuthor? | string                   | "User1"                            | Optional author of the last message.                                     |
-| lastMessageStatus? | MessageStatus            | "read"                             | "read" \| "unread" \| "undelivered" \| "deleted"                         |
-| missed?            | number                   | 3                                  | The count of missed messages in the chat.                                |
-| firstMissed?       | string                   |                                    | clientMessageId of first missed (unread)                                 |
-| verified?          | boolean                  | true                               | Indicates whether the chat is verified.                                  |
-| isMine?            | boolean                  | true                               | Indicates whether the chat item belongs to the current user.             |
-| lastMessageId?     | integer                  | 123                                | The unique identifier for the last message in the chat.                  |
-| lastSeen?          | integer                  | 1700000000000                      | only for offline status                                                  |
-| onlineHidden?      | boolean                  | false                              | if user hides his status                                                 |
-| liked?             | boolean                  | false                              | if there are new reactions to user messages in chat                      |
-| attachmentType?    | "file", "image", "video" | "file"                             |                                                                          |
-| participantCount?  | number                   | 5                                  |                                                                          |
-| payload?           | any   c                  |                                    | Assuming CallPayload can be any type for now                             |
-| hidden?            | boolean                  | false                              | Hidden chat                                                              |
-| isPinned?          | boolean                  | false                              | Chat is Pinned                                                           |
-| isMuted?           | boolean                  | false                              | Chat is Muted                                                            |
-| isMyContact?       | boolean                  | false                              | If it's a dialog with user from my Contacts                              |
+| Field               | Type                     | Example                            | Description                                                              |
+|---------------------|--------------------------|------------------------------------|--------------------------------------------------------------------------|
+| type                | ChatType                 | "group"                            | "dialog" \| "group" \| "channel" \| "favorites" \| "ai"                  |
+| id                  | string                   | "JC0TvKi3f2bIQtBcW1jIn"            | The unique identifier for the chat item.                                 |
+| photoUrl?           | string                   | "dev.big.a-kuznetsov.cc/public/de" | Optional URL to the chat's photo.                                        |
+| name                | string                   | "John Doe"                         | The name of the chat.                                                    |
+| username            | string                   | "@JohnDoe"                         | The name of the chat.                                                    |
+| lastMessageText?    | string                   | "Hello, World!"                    | The text of the last message in the chat.                                |
+| lastMessageTime?    | Date                     | 1700000000000                      | The timestamp of the last message. Use Date for DateTime representation. |
+| lastMessageAuthor?  | string                   | "User1"                            | Optional author of the last message.                                     |
+| lastMessageStatus?  | MessageStatus            | "read"                             | "read" \| "unread" \| "undelivered" \| "deleted"                         |
+| missed?             | number                   | 3                                  | The count of missed messages in the chat.                                |
+| firstMissed?        | string                   |                                    | clientMessageId of first missed (unread)                                 |
+| verified?           | boolean                  | true                               | Indicates whether the chat is verified.                                  |
+| isMine?             | boolean                  | true                               | Indicates whether the chat item belongs to the current user.             |
+| lastMessageId?      | integer                  | 123                                | The unique identifier for the last message in the chat.                  |
+| lastSeen?           | integer                  | 1700000000000                      | only for offline status                                                  |
+| onlineHidden?       | boolean                  | false                              | if user hides his status                                                 |
+| liked?              | boolean                  | false                              | if there are new reactions to user messages in chat                      |
+| attachmentType?     | "file", "image", "video" | "file"                             |                                                                          |
+| participantCount?   | number                   | 5                                  |                                                                          |
+| payload?            | any   c                  |                                    | Assuming CallPayload can be any type for now                             |
+| hidden?             | boolean                  | false                              | Hidden chat                                                              |
+| isPinned?           | boolean                  | false                              | Chat is Pinned                                                           |
+| isMuted?            | boolean                  | false                              | Chat is Muted                                                            |
+| isMyContact?        | boolean                  | false                              | If it's a dialog with user from my Contacts                              |
+| blockCalls?         | boolean                  | false                              | Does this chat blocks calls (without subscription)                       |
+| blockMessages?      | boolean                  | false                              | Does this chat blocks messages (without subscription)                    |
 
 ## MessageStatus
 
