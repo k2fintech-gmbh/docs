@@ -1423,6 +1423,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#likepayload" class="md-nav__link">
+    <span class="md-ellipsis">
+      LikePayload
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1739,6 +1748,8 @@
       
         
       
+        
+      
     
     
     
@@ -1824,6 +1835,28 @@
   
   <span class="md-ellipsis">
     HTTP API
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../http-api-channels" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HTTP API channels
     
   </span>
   
@@ -1988,6 +2021,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#likepayload" class="md-nav__link">
+    <span class="md-ellipsis">
+      LikePayload
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2082,7 +2124,7 @@
 <td>type</td>
 <td>string</td>
 <td>"new"</td>
-<td>"new", "edit", "delete", "call"</td>
+<td>"new", "edit", "delete", "call", "like"</td>
 </tr>
 <tr>
 <td>payload?</td>
@@ -2107,6 +2149,30 @@
 <td>timestamp</td>
 <td>123456789</td>
 <td>Timestamp</td>
+</tr>
+<tr>
+<td>deletedFor?</td>
+<td>string array</td>
+<td>["SJKDuygi"]</td>
+<td>array of User IDs</td>
+</tr>
+<tr>
+<td>blockedFor?</td>
+<td>string</td>
+<td>"SJKDuygi"</td>
+<td>array of User IDs</td>
+</tr>
+<tr>
+<td>read?</td>
+<td>timestamp</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>dlvrd?</td>
+<td>timestamp</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>likeViewed?</td>
@@ -2188,6 +2254,12 @@
 <td>Timestamp</td>
 </tr>
 <tr>
+<td>deletedFor?</td>
+<td>array string</td>
+<td>["SJKDuygi"]</td>
+<td>User IDs</td>
+</tr>
+<tr>
 <td>likeViewed?</td>
 <td>number or timestamp</td>
 <td>-1 - if exists new unviewed like, empty - if no likes</td>
@@ -2197,6 +2269,12 @@
 <td>reactions?</td>
 <td><a href="../reaction/">Reaction</a>[]</td>
 <td>See <a href="../reaction/">Reaction</a></td>
+<td>Reactions array</td>
+</tr>
+<tr>
+<td>autoDeleteAt?</td>
+<td>timestamp</td>
+<td>123456789</td>
 <td>Reactions array</td>
 </tr>
 </tbody>
@@ -2251,6 +2329,24 @@
 <td>123</td>
 <td>Message IDs</td>
 </tr>
+<tr>
+<td>originalClientMessageId</td>
+<td>string</td>
+<td>"sdas2343"</td>
+<td>Message Client IDs</td>
+</tr>
+<tr>
+<td>message</td>
+<td>string</td>
+<td>"some text"</td>
+<td>any text</td>
+</tr>
+<tr>
+<td>attachments</td>
+<td>array</td>
+<td></td>
+<td></td>
+</tr>
 </tbody>
 </table>
 <h3 id="deletionpayload">DeletionPayload<a class="headerlink" href="#deletionpayload" title="Permanent link">&para;</a></h3>
@@ -2269,6 +2365,43 @@
 <td>integer</td>
 <td>123</td>
 <td>Message IDs</td>
+</tr>
+<tr>
+<td>originalClientMessageId</td>
+<td>string</td>
+<td>"sdas2343"</td>
+<td>Message Client IDs</td>
+</tr>
+</tbody>
+</table>
+<h3 id="likepayload">LikePayload<a class="headerlink" href="#likepayload" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Example</th>
+<th>Possible Values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>originalMessageId</td>
+<td>integer</td>
+<td>123</td>
+<td>Message IDs</td>
+</tr>
+<tr>
+<td>originalClientMessageId</td>
+<td>string</td>
+<td>"sdas2343"</td>
+<td>Message Client IDs</td>
+</tr>
+<tr>
+<td>reaction</td>
+<td>string</td>
+<td>":)"</td>
+<td>any</td>
 </tr>
 </tbody>
 </table>

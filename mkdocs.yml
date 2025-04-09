@@ -94,6 +94,7 @@ nav:
       - Upload File: "upload"
       - TUS Upload: "tus-upload"
       - HTTP API: "http-api"
+      - HTTP API channels: "http-api-channels"
       - HTTP API files: "http-api-files"
       - HTTP API KYC: "http-api-kyc"
       - Your network: "https://dev.iambig.ai/network"
