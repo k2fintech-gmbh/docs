@@ -91,12 +91,12 @@ nav:
       - Message edit/delete: "guides/message-edit-delete.md"
       - Examples: "examples.md"
   - HTTP and more:
-      - Upload File: "upload"
-      - TUS Upload: "tus-upload"
-      - HTTP API: "http-api"
-      - HTTP API channels: "http-api-channels"
-      - HTTP API files: "http-api-files"
-      - HTTP API KYC: "http-api-kyc"
+      - Upload File: "upload.md"
+      - TUS Upload: "tus-upload.md"
+      - HTTP API: "http-api.md"
+      - HTTP API channels: "http-api-channels.md"
+      - HTTP API files: "http-api-files.md"
+      - HTTP API KYC: "http-api-kyc.md"
       - Your network: "https://dev.iambig.ai/network"
 plugins:
   - render_swagger:
