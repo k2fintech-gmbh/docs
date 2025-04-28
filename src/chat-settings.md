@@ -823,14 +823,14 @@ Only the Owner can change these settings.<br/>
 
 Owner can purge all messages from Group.<br/>
 Any user can purge messages for himself.<br/>
-Flag `forAll` has no effect when used by User or even Admin<br/>
+Flag `for: "all"` has no effect when used by User or even Admin<br/>
 After messages being Purged `purgedMessages` event be sent to Users.
 
 ##### Parameters (JSON body)
-> | name      | type     | data type | description                                                                |
-> |-----------|----------|-----------|----------------------------------------------------------------------------|
-> | chatId    | required | string    | chat IDs                                                                   |
-> | forAll    | optional | boolean   | if set - all messages will be completely purged from Group (only by Owner) |
+> | name    | type     | data type   | description                                                                                            |
+> |---------|----------|-------------|--------------------------------------------------------------------------------------------------------|
+> | chatId  | required | string      | chat IDs                                                                                               |
+> | for     | optional | string      | (defaults to "me") if set to "all" - all messages will be completely purged from Group (only by Owner) |
 
 ##### Responses
 > | http code | content-type       | response                                                                                                 |
@@ -844,7 +844,7 @@ After messages being Purged `purgedMessages` event be sent to Users.
 > ```json
 > {
 >   "chatId": "string",
->   "forAll": "true",
+>   "for": "all"
 > }
 > ```        
 
