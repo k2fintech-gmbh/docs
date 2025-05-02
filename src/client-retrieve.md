@@ -13,11 +13,14 @@
 [Chat](types/chat.md)
 
 ## chats
+(`isOwner` - optional param to get groups of channels owned by current user 
+can be used to link comments chat which are required to be owned by same user)
 
 **request payload schema:**
 
-| Field | Type | Example |
-| ----- | ---- | ------- |
+| Field    | Type | Example |
+|----------|------|---------|
+| isOwner  | bool | false   |
 
 **response payload schema:**
 
@@ -33,6 +36,30 @@
 | startId? | integer | 199     | Message IDs            |
 | endId?   | integer | 199     | Message IDs            |
 | count?   | integer | 50      | 1 - 500, default - 300 |
+
+/// details | pagination
+
+endId and startId are optional. You cannot specify them at the same time. If you want to download several messages starting with N, specify startId=N. if the user scrolls up the chat, specify the endId (before which message the next portion should be loaded). if you need to get the last few messages, don't pass endId and startId, then the "count" of the latest ones will be loaded.
+///
+**response payload schema:**
+
+[Message](types/message.md)[]
+
+## messagesComments
+(retrieve messages from Comments groups of Channels, have additional params)
+(`channelMessageId` -  ID of message in Channel for which we want to get comments )
+(`chatMessageId` -  ID of message in Comments Chat to get only branch of comments linked to this comment )
+
+**request payload schema:**
+
+| Field            | Type       | Example     | Possible Values        |
+|------------------|------------|-------------|------------------------|
+| channelId        | string     | "klhdHUT62" | Channel IDs            |
+| channelMessageId | integer    | 123         | Channel Message IDs    |
+| chatMessageId    | integer    | 321         | Chat Message IDs       |
+| startId?         | integer    | 199         | Message IDs            |
+| endId?           | integer    | 199         | Message IDs            |
+| count?           | integer    | 50          | 1 - 500, default - 300 |
 
 /// details | pagination
 

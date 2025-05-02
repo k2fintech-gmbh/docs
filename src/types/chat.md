@@ -63,6 +63,8 @@
 | payments    | bool   | false   |
 
 ## ChatInfo
+(`linkedChannel` - may be present in Chats, means that this chat is comments chat for Channel)                    
+(`linkedChat` - may be present in Channel, means that comments for this Channel goes to that Chat)                    
 
 | Field            | Type                                               | Example                       |
 |------------------|----------------------------------------------------|-------------------------------|
@@ -75,6 +77,8 @@
 | isPrivate        | bool                                               | false                         |
 | isPaid           | bool                                               | false                         |
 | editPermissions  | [ChatEditPermissions](../chat#chateditpermissions) | "{}"                          |
+| linkedChannel    | [LinkedChannel](../chat#linkedchannel)             | "{}"                          |
+| linkedChat       | [LinkedChat](../chat#linkedchat)                   | "{}"                          |
 
 ## ChatEditPermissions
 
@@ -97,6 +101,24 @@
 | allowMedia       | bool   | false   | true    |
 | allowPinMessages | bool   | false   | false   |
 | allowCopy        | bool   | true    | true    |
+
+## LinkedChannel
+(only Owner can see)
+
+| Field            | Type     | Example                    | Default |
+|------------------|----------|----------------------------|---------|
+| channelId        | string   | "KJHyugdasht45"            |         |
+| channelName      | string   | "Cool Channel"             |         |
+| channelPhotoUrl? | string   | "https://pics.png/png.png" |         |
+
+## LinkedChat
+(only Owner can see)
+
+| Field          | Type     | Example                    | Default |
+|----------------|----------|----------------------------|---------|
+| chatId         | string   | "KJHyugdasht45"            |         |
+| chantName      | string   | "Cool comments Chat"       |         |
+| chantPhotoUrl? | string   | "https://pics.png/png.png" |         |
 
 ## Profile
 

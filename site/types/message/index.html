@@ -2189,6 +2189,9 @@
 </tbody>
 </table>
 <h2 id="group-chat-message">Group chat message<a class="headerlink" href="#group-chat-message" title="Permanent link">&para;</a></h2>
+<p>(<code>linkedMessage</code> - (only in Channels) if Channel message has linked message in Comments Group)
+(<code>channelMessageId</code> - for messages in Comments Group to filter out comments by Channel Message)
+(<code>replyMessageId</code> - for messages in Comments Group to get only comments branch by Message ID)</p>
 <table>
 <thead>
 <tr>
@@ -2260,6 +2263,24 @@
 <td>User IDs</td>
 </tr>
 <tr>
+<td>forwarded?</td>
+<td>bool</td>
+<td>true</td>
+<td>true, false</td>
+</tr>
+<tr>
+<td>replyTo?</td>
+<td><a href="../reply-to/">ReplyTo</a></td>
+<td><code>{messageId: 1, sender: "sXvf__", createdAt:123, message: "text", clientMessageId: "123-213" }</code></td>
+<td></td>
+</tr>
+<tr>
+<td>forwardedFrom?</td>
+<td><a href="../forwarded-from/">ForwardedFrom</a></td>
+<td>See <a href="../forwarded-from/">ForwardedFrom</a></td>
+<td></td>
+</tr>
+<tr>
 <td>likeViewed?</td>
 <td>number or timestamp</td>
 <td>-1 - if exists new unviewed like, empty - if no likes</td>
@@ -2276,6 +2297,24 @@
 <td>timestamp</td>
 <td>123456789</td>
 <td>Reactions array</td>
+</tr>
+<tr>
+<td>channelMessageId?</td>
+<td>string</td>
+<td>"channelID:messageId"</td>
+<td>Channel IDs + Message IDs</td>
+</tr>
+<tr>
+<td>replyMessageId?</td>
+<td>integer</td>
+<td>123</td>
+<td>Message IDs</td>
+</tr>
+<tr>
+<td>linkedMessage?</td>
+<td>string</td>
+<td>"chatID:messageId"</td>
+<td>Chat IDs + Message IDs</td>
 </tr>
 </tbody>
 </table>
