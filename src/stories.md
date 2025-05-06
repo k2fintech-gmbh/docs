@@ -499,8 +499,11 @@ Provide `chatId` to work with chat or channel stories. Should have Admin rights 
 
 <summary><code>GET</code> <code><b>/stories</b></code></summary>
 
-Fetch a list of stories available for viewing, including the current user's status (e.g., `reaction`, `isSeen`, `isPurchased`). The response is sorted by freshness, with users having the most recent stories listed first.</br>
-`type` in response will indicate source of Story ("user" | "group" | "channel") 
+Fetch a list of stories available for viewing, including the current user's status (e.g., `reaction`, `isSeen`, `isPurchased`).<br/>
+The response is sorted by freshness, with users having the most recent stories listed first.<br/>
+If provided `id` - gets viewable stories from a specific author (`userId`) or group (`chatId`) or channel (`channelId`).</br>
+`type` in response will indicate source of Story ("user" | "group" | "channel")</br>
+If `price` is undefined - story view is free. If `price` is defined - story view is paid. If `price` is `0` - story view is paid, but the user should decide how much he wants to pay.
 
 ##### Responses
 > | http code | content-type       | response                                                                          |

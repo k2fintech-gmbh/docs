@@ -1354,6 +1354,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#readyvideo" class="md-nav__link">
+    <span class="md-ellipsis">
+      readyVideo
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2167,6 +2176,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#readyvideo" class="md-nav__link">
+    <span class="md-ellipsis">
+      readyVideo
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2771,6 +2789,40 @@
 <td>number</td>
 <td>1700500000000</td>
 <td>Positive Int</td>
+</tr>
+</tbody>
+</table>
+<h2 id="readyvideo">readyVideo<a class="headerlink" href="#readyvideo" title="Permanent link">&para;</a></h2>
+<p>notification to App about video processed by Stream and ready for playback</br>
+if the video was sent as Attachment - it will have <code>messageId</code> set to final ID of message, sent to chat</br>
+otherwise (for Story) - <code>messageId</code> will be <code>-1</code> and <code>clientMessageId</code> will be random new string ID</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Example</th>
+<th>Possible Values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>fileId</td>
+<td>string</td>
+<td>"_qzjQofkCDvpFe8Da3Nlt2"</td>
+<td>Uploaded file ID</td>
+</tr>
+<tr>
+<td>messageId</td>
+<td>number</td>
+<td>-1</td>
+<td>Message IDs</td>
+</tr>
+<tr>
+<td>clientMessageId</td>
+<td>string</td>
+<td>"qzjdfsdfvpFe8Da3Nlt2"</td>
+<td>string</td>
 </tr>
 </tbody>
 </table>

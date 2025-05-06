@@ -160,3 +160,15 @@ notification to all group members about all group messages being purged by owner
 | chatId    | string | "_qzjQofkCDvpFe8Da3Nlt2"  | Chat IDs        |
 | userId    | string | "_qzjQofkCDvpFe8Da3Nlt2"  | User IDs        |
 | timestamp | number | 1700500000000             | Positive Int    |
+
+## readyVideo
+
+notification to App about video processed by Stream and ready for playback</br>
+if the video was sent as Attachment - it will have `messageId` set to final ID of message, sent to chat</br>
+otherwise (for Story) - `messageId` will be `-1` and `clientMessageId` will be random new string ID
+
+| Field             | Type   | Example                  | Possible Values  |
+|-------------------|--------|--------------------------|------------------|
+| fileId            | string | "_qzjQofkCDvpFe8Da3Nlt2" | Uploaded file ID |
+| messageId         | number | -1                       | Message IDs      |
+| clientMessageId   | string | "qzjdfsdfvpFe8Da3Nlt2"   | string           |

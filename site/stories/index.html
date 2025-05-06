@@ -4847,8 +4847,11 @@ Provide <code>chatId</code> to work with chat or channel stories. Should have Ad
 <h3 id="retrieve-stories-for-subscribers">Retrieve stories for subscribers<a class="headerlink" href="#retrieve-stories-for-subscribers" title="Permanent link">&para;</a></h3>
 <summary><code>GET</code> <code><b>/stories</b></code></summary>
 
-<p>Fetch a list of stories available for viewing, including the current user's status (e.g., <code>reaction</code>, <code>isSeen</code>, <code>isPurchased</code>). The response is sorted by freshness, with users having the most recent stories listed first.</br>
-<code>type</code> in response will indicate source of Story ("user" | "group" | "channel") </p>
+<p>Fetch a list of stories available for viewing, including the current user's status (e.g., <code>reaction</code>, <code>isSeen</code>, <code>isPurchased</code>).<br/>
+The response is sorted by freshness, with users having the most recent stories listed first.<br/>
+If provided <code>id</code> - gets viewable stories from a specific author (<code>userId</code>) or group (<code>chatId</code>) or channel (<code>channelId</code>).</br>
+<code>type</code> in response will indicate source of Story ("user" | "group" | "channel")</br>
+If <code>price</code> is undefined - story view is free. If <code>price</code> is defined - story view is paid. If <code>price</code> is <code>0</code> - story view is paid, but the user should decide how much he wants to pay.</p>
 <h5 id="responses_13">Responses<a class="headerlink" href="#responses_13" title="Permanent link">&para;</a></h5>
 <blockquote>
 <table>
