@@ -96,6 +96,7 @@ nav:
       - HTTP API: "http-api.md"
       - HTTP API channels: "http-api-channels.md"
       - HTTP API files: "http-api-files.md"
+      - HTTP API market: "http-api-market.md"
       - HTTP API KYC: "http-api-kyc.md"
       - Your network: "https://dev.iambig.ai/network"
 plugins:
