@@ -82,4 +82,13 @@
 | longitude | number  |                 | longitude       |
 | address   | string  | 'Some City,...' | Address (text)  |
 
+### Goods (market) meta
+
+| Field    | Type    | Example         | Possible Values  |
+|----------|---------|-----------------|------------------|
+| itemId   | string  | "SdewSF32DF"    | item ID's        |
+| sellerId | string  | "SdewSF32DF"    | user ID's        |
+| name     | string  | 'Antique Watch' | Item name (text) |
+| photoUrl | string  | 'https://...'   | URL (text)       |
+
               
