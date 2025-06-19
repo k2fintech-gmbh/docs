@@ -2122,12 +2122,6 @@
 <td>if user hides his status</td>
 </tr>
 <tr>
-<td>liked?</td>
-<td>boolean</td>
-<td>false</td>
-<td>if there are new reactions to user messages in chat</td>
-</tr>
-<tr>
 <td>attachmentType?</td>
 <td>"file", "image", "video"</td>
 <td>"file"</td>
@@ -2180,6 +2174,48 @@
 <td>boolean</td>
 <td>false</td>
 <td>Does this chat blocks messages (without subscription)</td>
+</tr>
+<tr>
+<td>liked?</td>
+<td>boolean</td>
+<td>false</td>
+<td>if there are new reactions to user messages in chat</td>
+</tr>
+<tr>
+<td>likedMessageId?</td>
+<td>number</td>
+<td>10</td>
+<td>Reference message ID</td>
+</tr>
+<tr>
+<td>likedMessageText?</td>
+<td>string</td>
+<td>"Some text"</td>
+<td>Liked message text</td>
+</tr>
+<tr>
+<td>likedAuthor?</td>
+<td>string</td>
+<td>"User1"</td>
+<td>Optional author of the last reaction.</td>
+</tr>
+<tr>
+<td>mention?</td>
+<td>boolean</td>
+<td>false</td>
+<td>if there are new mentions of user in chat</td>
+</tr>
+<tr>
+<td>mentionMessageId?</td>
+<td>number</td>
+<td>11</td>
+<td>Reference message ID</td>
+</tr>
+<tr>
+<td>mentionAuthor?</td>
+<td>string</td>
+<td>"User1"</td>
+<td>Optional author who mentioned user</td>
 </tr>
 </tbody>
 </table>
