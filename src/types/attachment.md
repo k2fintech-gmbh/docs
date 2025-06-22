@@ -19,12 +19,13 @@
 
 ### Image meta
 
-| Field    | Type    | Example     | Possible Values                        |
-| -------- | ------- | ----------- | -------------------------------------- |
-| mimetype | string  | "image/png" | "image/jpeg", "image/png", "image/gif" |
-| width    | integer | 800         | Image width in pixels                  |
-| height   | integer | 600         | Image height in pixels                 |
-| size     | integer | 350000      | File size in bytes                     |
+| Field     | Type     | Example                       | Possible Values                        |
+|-----------|----------|-------------------------------|----------------------------------------|
+| mimetype  | string   | "image/png"                   | "image/jpeg", "image/png", "image/gif" |
+| width     | integer  | 800                           | Image width in pixels                  |
+| height    | integer  | 600                           | Image height in pixels                 |
+| size      | integer  | 350000                        | File size in bytes                     |
+| preview   | string   | "https://iambig.ai/image.png" | Preview URL                            |
 
 ### Video meta
 
@@ -90,5 +91,15 @@
 | sellerId | string  | "SdewSF32DF"    | user ID's        |
 | name     | string  | 'Antique Watch' | Item name (text) |
 | photoUrl | string  | 'https://...'   | URL (text)       |
+
+### Sticker meta
+
+| Field    | Type    | Example      | Possible Values                        |
+|----------|---------|--------------|----------------------------------------|
+| id       | string  | "SdewSF32DF" | Sticker ID's                           |
+| mimetype | string  | "image/png"  | "image/jpeg", "image/png", "image/gif" |
+| width    | integer | 800          | Image width in pixels                  |
+| height   | integer | 600          | Image height in pixels                 |
+| size     | integer | 350000       | File size in bytes                     |
 
               

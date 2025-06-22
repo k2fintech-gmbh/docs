@@ -181,10 +181,10 @@ edit a message.
 
 **request payload schema:**
 
-| Field           | type     | data type | description                         |
-|-----------------|----------|-----------|-------------------------------------|
-| chatId          | required | string    | chat ID                             | 
-| messageId       | required | number    | message ID in the chat              | 
-| reaction        | optional | string    | string representation of reaction   | 
-| isSet           | required  | boolean   | set or remove reaction              | 
-| clientMessageId | required  | string   | clientMessageId of original message | 
+| Field             | type      | data type | description                         |
+|-------------------|-----------|-----------|-------------------------------------|
+| chatId            | required  | string    | chat ID                             | 
+| originalMessageId | required  | number    | message ID in the chat              | 
+| reaction          | optional  | string    | string representation of reaction   | 
+| isSet             | required  | boolean   | set or remove reaction              | 
+| clientMessageId   | required  | string    | clientMessageId of original message | 

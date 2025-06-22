@@ -2,25 +2,25 @@
 
 `messagePermissions` returned with Group Chat in reply to GET /chat 
 
-| Field                | Type                                             | Example                                 |
-|----------------------|--------------------------------------------------| --------------------------------------- |
-| chatId               | string                                           | "User2"                                 |
-| photoUrl             | string                                           | "iambig.ai/public/de5d8114f9"           |
-| name                 | string                                           | "Stive"                                 |
-| type                 | "dialog", "group", "channel",'ai'                | "dialog"                                |
-| lastMessageId?       | integer                                          | 1000                                    |
-| missed               | integer                                          | 0                                       |
-| firstMissed?         | string                                           | clientMessageId of first missed (unread) |
-| meta                 | [Meta](../chat#meta)                             | ...                                     |
-| lastMessageText?     | string                                           | "Hello, World!"                   | The text of the last message in the chat.                                |
-| lastMessageTime?     | Date                                             | 1700000000000                     | The timestamp of the last message. Use Date for DateTime representation. |
-| lastMessageAuthor?   | string                                           | "User1"                           | Optional author of the last message.                                     |
-| lastMessageStatus?   | MessageStatus                                    | "read"                            | "read" \| "unread" \| "undelivered" \| "deleted"                         |
-| verified?            | boolean                                          | true                              | Indicates whether the chat is verified.                                  |
-| isMine?              | boolean                                          | true                              | Indicates whether the chat item belongs to the current user.             |
-| attachmentType?      | "file", "image", "video"                         | "file"                            |                                                                          |
-| participantCount?    | number                                           | 5                                 |                                                                          |
-| messagePermissions?  | [MessagePermissions](../chat#messagepermissions) |                                   |                                                                          |
+| Field                | Type                                                           | Example                                 |
+|----------------------|----------------------------------------------------------------| --------------------------------------- |
+| chatId               | string                                                         | "User2"                                 |
+| photoUrl             | string                                                         | "iambig.ai/public/de5d8114f9"           |
+| name                 | string                                                         | "Stive"                                 |
+| type                 | "dialog", "group", "channel",'ai'                              | "dialog"                                |
+| lastMessageId?       | integer                                                        | 1000                                    |
+| missed               | integer                                                        | 0                                       |
+| firstMissed?         | string                                                         | clientMessageId of first missed (unread) |
+| meta                 | [Meta](../chat#meta)                                           | ...                                     |
+| lastMessageText?     | string                                                         | "Hello, World!"                   | The text of the last message in the chat.                                |
+| lastMessageTime?     | Date                                                           | 1700000000000                     | The timestamp of the last message. Use Date for DateTime representation. |
+| lastMessageAuthor?   | string                                                         | "User1"                           | Optional author of the last message.                                     |
+| lastMessageStatus?   | MessageStatus                                                  | "read"                            | "read" \| "unread" \| "undelivered" \| "deleted"                         |
+| verified?            | boolean                                                        | true                              | Indicates whether the chat is verified.                                  |
+| isMine?              | boolean                                                        | true                              | Indicates whether the chat item belongs to the current user.             |
+| attachmentType?      | "file", "image", "video", "sticker", "voice", "contact", "geo" | "file"                            |                                                                          |
+| participantCount?    | number                                                         | 5                                 |                                                                          |
+| messagePermissions?  | [MessagePermissions](../chat#messagepermissions)               |                                   |                                                                          |
 
 ## Meta
 
