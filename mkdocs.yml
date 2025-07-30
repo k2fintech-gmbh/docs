@@ -98,7 +98,8 @@ nav:
       - HTTP API files: "http-api-files.md"
       - HTTP API market: "http-api-market.md"
       - HTTP API KYC: "http-api-kyc.md"
-      - HTTP API money: "http-api-money.md"
+      - HTTP API wallets: "http-api-money.md"
+      - HTTP API money: "http-api-money-srv.md"
       - Your network: "https://dev.iambig.ai/network"
 plugins:
   - render_swagger:
