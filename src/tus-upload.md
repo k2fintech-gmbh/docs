@@ -36,7 +36,8 @@ transition: all 0.2s ease-in-out;">
     const uppy = new Uppy({ debug: true, autoProceed: true });
 
     let endpoint = "https://dev.files.iambig.ai/video/directUpload";
-    let jwt = {};
+    // let jwt = {};
+    let jwt = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmM2NLYUxlU0MyZDRFQk95cjJTOHMiLCJwaG9uZSI6Iis5OTkzMjEzMjEzMjEiLCJ0cnVzdCI6dHJ1ZSwibmJmIjoxNzUzOTYwNDUxLCJleHAiOjE3Nzk4ODA0NTEsImlhdCI6MTc1Mzk2MDQ1MX0.zICaFqjq4mcacUj7wsnBaaI_RswyJiW8PnZ6lMGwlv8";
 
     const onUploadSuccess = (el) => (file, response) => {
         const li = document.createElement("li");
