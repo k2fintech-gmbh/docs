@@ -35,7 +35,7 @@ transition: all 0.2s ease-in-out;">
 
     const uppy = new Uppy({ debug: true, autoProceed: true });
 
-    let endpoint = "http://localhost:8789/video/directUpload";
+    let endpoint = "https://dev.files.iambig.ai/video/directUpload";
     let jwt = {};
 
     const onUploadSuccess = (el) => (file, response) => {
@@ -67,7 +67,7 @@ transition: all 0.2s ease-in-out;">
             const jwtValue = document.getElementById("jwt-input").value;
             jwt = jwtValue ? { Authorization: `Bearer ${jwtValue}` } : {};
             const apiValue = document.getElementById("api-input").value;
-            endpoint = apiValue ? `${apiValue}/video/directUpload` : "http://localhost:8789/video/directUpload"
+            endpoint = apiValue ? `${apiValue}/video/directUpload` : "https://dev.files.iambig.ai/video/directUpload";
             console.log(endpoint)
         });
 </script>
