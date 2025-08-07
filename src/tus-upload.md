@@ -1,6 +1,6 @@
 <head>
 	<link
-		href="https://releases.transloadit.com/uppy/v3.0.1/uppy.min.css"
+		href="https://releases.transloadit.com/uppy/v4.13.3/uppy.min.css"
 		rel="stylesheet"
 	/>
 </head>
@@ -31,7 +31,7 @@ transition: all 0.2s ease-in-out;">
         Tus,
         DragDrop,
         ProgressBar,
-    } from "https://releases.transloadit.com/uppy/v3.0.1/uppy.min.mjs";
+    } from "https://releases.transloadit.com/uppy/v4.13.3/uppy.min.mjs";
 
     const uppy = new Uppy({ debug: true, autoProceed: true });
 
@@ -54,6 +54,20 @@ transition: all 0.2s ease-in-out;">
             chunkSize: 150 * 1024 * 1024,
             headers: jwt,
             endpoint: endpoint,
+			onBeforeRequest() {
+				const tusPlugin = uppy.getPlugin('Tus');
+                    if (tusPlugin) {
+                        tusPlugin.opts.headers = jwt;
+                    }
+			},
+			onUploadUrlAvailable() {
+                    console.log('Upload URL available, removing headers');
+                    // Get the Tus plugin instance and update its options
+                    const tusPlugin = uppy.getPlugin('Tus');
+                    if (tusPlugin) {
+                        tusPlugin.opts.headers = undefined;
+                    }
+                }
         })
         .use(ProgressBar, {
             target: ".for-ProgressBar",
